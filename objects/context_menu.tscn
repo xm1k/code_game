@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://be1rkrqet6pj1"]
+
+[ext_resource type="Texture2D" uid="uid://xxbllia1n7k6" path="res://images/laptop/context-menu.png" id="1_f8mda"]
+[ext_resource type="Script" uid="uid://jfbmv3p0onow" path="res://scripts/ui/context_menu.gd" id="2_oo5w1"]
+[ext_resource type="FontFile" uid="uid://8w5psfj4mj0n" path="res://resources/fonts/web_ibm_mda.ttf" id="3_aykct"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyjs"]
+bg_color = Color(0.10657964, 0.09504139, 0.11427184, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e71vb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w656"]
+bg_color = Color(0.105882354, 0.09411765, 0.11372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnkwl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="context-menu" type="TextureRect"]
+z_index = 100
+texture_filter = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_f8mda")
+script = ExtResource("2_oo5w1")
+
+[node name="ok" type="Button" parent="."]
+layout_mode = 0
+offset_left = 999.99963
+offset_top = 720.0
+offset_right = 1280.0
+offset_bottom = 779.9998
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.46054447, 0.4307619, 0.47547865, 1)
+theme_override_fonts/font = ExtResource("3_aykct")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_6iyjs")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e71vb")
+text = "OK"
+
+[node name="cancel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 720.0
+offset_right = 920.0
+offset_bottom = 780.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.45882353, 0.43137255, 0.4745098, 1)
+theme_override_fonts/font = ExtResource("3_aykct")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_4w656")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rnkwl")
+text = "CANCEL"
+
+[node name="description" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 528.4207
+offset_top = 348.42087
+offset_right = 1380.0
+offset_bottom = 672.6314
+theme_override_fonts/normal_font = ExtResource("3_aykct")
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+bbcode_enabled = true
+text = "CPU Upgrade will cost you 128 [img height=32]res://images/data/data1.png[/img]"
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="ok" to="." method="_on_ok_button_down"]
+[connection signal="button_down" from="cancel" to="." method="_on_cancel_button_down"]

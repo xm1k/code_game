@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds051lt7y1ub7"]
+
+[ext_resource type="Script" uid="uid://b52f4suaqhix6" path="res://scripts/ui/message.gd" id="1_4dbrf"]
+[ext_resource type="FontFile" uid="uid://8w5psfj4mj0n" path="res://resources/fonts/web_ibm_mda.ttf" id="2_7hs4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnkwl"]
+bg_color = Color(0, 0, 0, 0.6901961)
+
+[node name="MSG" type="PanelContainer"]
+z_index = 200
+theme_override_styles/panel = SubResource("StyleBoxFlat_rnkwl")
+script = ExtResource("1_4dbrf")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="Message" type="RichTextLabel" parent="Margin"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_7hs4u")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "ERROR: Out of quota oh my lord asfasfa  asf asf asf asf asf asf asf asf as fas fas fas fas fas as fas ff s fs "
+fit_content = true
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
