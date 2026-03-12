@@ -1,0 +1,109 @@
+[gd_scene load_steps=20 format=3 uid="uid://bd88yufxllakl"]
+
+[ext_resource type="Script" uid="uid://1srd0kk1hkyn" path="res://platformer/player.gd" id="1_5vjwt"]
+[ext_resource type="Texture2D" uid="uid://b6pnn7kujjff" path="res://images/enemies/penguin/go/go1.png" id="1_fvjyy"]
+[ext_resource type="Texture2D" uid="uid://dtvmylkaftkk" path="res://images/enemies/penguin/go/go2.png" id="3_ll8sa"]
+[ext_resource type="Texture2D" uid="uid://cydpa7fyfbnj" path="res://images/enemies/penguin/go/go3.png" id="4_f6opx"]
+[ext_resource type="Texture2D" uid="uid://c866tcqxqthyr" path="res://images/enemies/penguin/go/go4.png" id="5_livau"]
+[ext_resource type="Texture2D" uid="uid://boimjg6n0mf10" path="res://images/enemies/penguin/go/go5.png" id="6_alsi2"]
+[ext_resource type="Texture2D" uid="uid://b00h7ojxbu0sb" path="res://images/enemies/penguin/go/go6.png" id="7_443q5"]
+[ext_resource type="Texture2D" uid="uid://d4hrtedpknjpc" path="res://images/enemies/penguin/go/go7.png" id="8_8hgom"]
+[ext_resource type="Texture2D" uid="uid://s4f1qlref4lr" path="res://images/enemies/penguin/go/go8.png" id="9_5aai3"]
+[ext_resource type="Texture2D" uid="uid://dsst51e4fmfms" path="res://images/enemies/penguin/go/go9.png" id="10_o8dac"]
+[ext_resource type="Texture2D" uid="uid://wwb50my62ox8" path="res://platformer/images/tilemap.png" id="11_f6opx"]
+[ext_resource type="Script" uid="uid://csdeq28xs4jpe" path="res://platformer/map.gd" id="12_livau"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vjwt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fvjyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ll8sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f6opx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_livau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_alsi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_443q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8hgom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5aai3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o8dac")
+}],
+"loop": true,
+"name": &"go",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1qb0"]
+size = Vector2(12.4, 20)
+
+[sub_resource type="Gradient" id="Gradient_fvjyy"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5vjwt"]
+gradient = SubResource("Gradient_fvjyy")
+width = 128
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7gp6"]
+size = Vector2(129.75, 62)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_livau"]
+texture = ExtResource("11_f6opx")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_alsi2"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_livau")
+
+[node name="platformer" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(100, 900)
+scale = Vector2(5, 5)
+script = ExtResource("1_5vjwt")
+
+[node name="sprite" type="AnimatedSprite2D" parent="player"]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_5vjwt")
+animation = &"go"
+autoplay = "go"
+frame_progress = 0.0905243
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(0.200005, 0)
+shape = SubResource("RectangleShape2D_w1qb0")
+
+[node name="block" type="StaticBody2D" parent="."]
+position = Vector2(-302, 1082)
+
+[node name="sprite" type="Sprite2D" parent="block"]
+texture = SubResource("GradientTexture2D_5vjwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block"]
+position = Vector2(0.125, 1)
+shape = SubResource("RectangleShape2D_g7gp6")
+
+[node name="map" type="TileMapLayer" parent="."]
+scale = Vector2(10, 10)
+tile_set = SubResource("TileSet_alsi2")
+script = ExtResource("12_livau")
