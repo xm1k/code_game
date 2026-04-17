@@ -3,7 +3,7 @@ extends CharacterBody2D
 var direction: Vector2 = Vector2(0,0)
 var manual_control = true
 var is_manual_moving = false
-var speed = 50000 	
+var speed = 50000 
 
 @onready var ui = get_node("/root/main/UI")
 @onready var laptop = ui.get_node("Laptop")

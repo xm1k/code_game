@@ -225,5 +225,5 @@ def list_to_vector(arr):
 	vec.y = arr[1]
 	return vec
 def main():
-	set_direction([0,1])
-	print(get_direction())
+	for i in range(10):
+		print("Hello world")
