@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf0c7mxy3035c"]
+
+[ext_resource type="Script" uid="uid://dia2psc86no1c" path="res://terminal.gd" id="1_4flps"]
+[ext_resource type="Texture2D" uid="uid://wa5k0flvjrtl" path="res://images/terminal.png" id="2_ht80m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34ol3"]
+size = Vector2(110, 300)
+
+[node name="Terminal" type="Node2D"]
+script = ExtResource("1_4flps")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-915, -28)
+texture = ExtResource("2_ht80m")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="area"]
+position = Vector2(-928, 31)
+shape = SubResource("RectangleShape2D_34ol3")
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

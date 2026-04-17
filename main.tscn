@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://m20cq7nxa8sx"]
+[gd_scene load_steps=110 format=3 uid="uid://m20cq7nxa8sx"]
 
 [ext_resource type="Script" uid="uid://vkh4o3rti4k5" path="res://scripts/player.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://c24ho71not4cw" path="res://main.gd" id="1_e71vb"]
@@ -73,8 +73,9 @@
 [ext_resource type="Texture2D" uid="uid://d4hrtedpknjpc" path="res://images/enemies/penguin/go/go7.png" id="69_gx4rg"]
 [ext_resource type="Texture2D" uid="uid://s4f1qlref4lr" path="res://images/enemies/penguin/go/go8.png" id="70_5dllo"]
 [ext_resource type="Texture2D" uid="uid://dsst51e4fmfms" path="res://images/enemies/penguin/go/go9.png" id="71_phcyf"]
-[ext_resource type="Texture2D" uid="uid://wa5k0flvjrtl" path="res://images/terminal.png" id="74_34ol3"]
-[ext_resource type="Script" uid="uid://dia2psc86no1c" path="res://terminal.gd" id="74_c2n8d"]
+[ext_resource type="Texture2D" uid="uid://cvrcg5for3kmj" path="res://images/talker/space.png" id="74_34ol3"]
+[ext_resource type="Script" uid="uid://bkmp0tb03p87c" path="res://talk.gd" id="74_c2n8d"]
+[ext_resource type="Texture2D" uid="uid://0on1biutrnak" path="res://images/talker/Untitled.png" id="76_wy5fy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_birbe"]
 animations = [{
@@ -361,8 +362,80 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 draw_center = false
 border_color = Color(0.5764706, 0.5764706, 0.5764706, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34ol3"]
-size = Vector2(110, 300)
+[sub_resource type="AtlasTexture" id="AtlasTexture_birbe"]
+atlas = ExtResource("76_wy5fy")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx4rg"]
+atlas = ExtResource("76_wy5fy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phcyf"]
+atlas = ExtResource("76_wy5fy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4obbf"]
+atlas = ExtResource("76_wy5fy")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dllo"]
+atlas = ExtResource("76_wy5fy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1p13"]
+atlas = ExtResource("76_wy5fy")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovcoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_birbe")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx4rg")
+}],
+"loop": true,
+"name": &"embarassed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phcyf")
+}],
+"loop": false,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4obbf")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dllo")
+}],
+"loop": true,
+"name": &"serious",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1p13")
+}],
+"loop": true,
+"name": &"shoked",
+"speed": 5.0
+}]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_e71vb")
@@ -789,6 +862,7 @@ script = ExtResource("50_hrvbo")
 
 [node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power"]
 visible = false
+texture_filter = 1
 layout_mode = 1
 offset_left = 97.894714
 offset_top = -3.1579108
@@ -1102,18 +1176,39 @@ texture_under = ExtResource("3_rm4vd")
 texture_over = ExtResource("4_pjyto")
 texture_progress = ExtResource("5_sm6fg")
 
-[node name="Terminal" type="Node2D" parent="."]
+[node name="talk" type="Node2D" parent="UI"]
+z_index = 200
+position = Vector2(837, 907)
 script = ExtResource("74_c2n8d")
 
-[node name="sprite" type="Sprite2D" parent="Terminal"]
-position = Vector2(-915, -28)
+[node name="sprite" type="Sprite2D" parent="UI/talk"]
+texture_filter = 1
+position = Vector2(0, 2)
 texture = ExtResource("74_34ol3")
 
-[node name="area" type="Area2D" parent="Terminal"]
+[node name="text" type="Label" parent="UI/talk"]
+offset_left = -590.9999
+offset_top = -105.0
+offset_right = 574.0001
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_1bvp3")
+theme_override_font_sizes/font_size = 42
+text = "Some text
+"
 
-[node name="shape" type="CollisionShape2D" parent="Terminal/area"]
-position = Vector2(-928, 31)
-shape = SubResource("RectangleShape2D_34ol3")
+[node name="print" type="Timer" parent="UI/talk"]
+wait_time = 0.05
+
+[node name="exit" type="Timer" parent="UI/talk"]
+wait_time = 2.0
+one_shot = true
+
+[node name="anim" type="AnimatedSprite2D" parent="UI/talk"]
+texture_filter = 1
+position = Vector2(786.99994, 13.999999)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_ovcoh")
+animation = &"happy"
 
 [connection signal="timeout" from="Player/CodeTimer" to="Player" method="_on_code_timer_timeout"]
 [connection signal="button_down" from="UI/Laptop/Inventory/laptop/laptop" to="UI/Laptop/Inventory/laptop/laptop" method="_on_button_down"]
@@ -1138,4 +1233,4 @@ shape = SubResource("RectangleShape2D_34ol3")
 [connection signal="button_down" from="UI/Laptop/Inventory/laptop/Tab/Clear" to="UI/Laptop" method="_on_clear_button_down"]
 [connection signal="button_down" from="UI/Laptop/Inventory/equipment/equipment" to="UI/Laptop/Inventory/equipment/equipment" method="_on_button_down"]
 [connection signal="button_down" from="UI/Laptop/Inventory/docs/docs" to="UI/Laptop/Inventory/docs/docs" method="_on_button_down"]
-[connection signal="body_entered" from="Terminal/area" to="Terminal" method="_on_area_body_entered"]
+[connection signal="timeout" from="UI/talk/print" to="UI/talk" method="_on_print_timeout"]
