@@ -3,7 +3,8 @@ extends CharacterBody2D
 var direction: Vector2 = Vector2(0,0)
 var manual_control = true
 var is_manual_moving = false
-var speed = 50000 	
+var speed = 50000
+var busy = false          # блокировка движения при решении задания
 
 @onready var ui = get_node("/root/main/UI")
 @onready var laptop = ui.get_node("Laptop")
@@ -13,6 +14,10 @@ var speed = 50000
 
 var side_direction = "s"
 var user_script_instance: Node
+
+# Добавьте этот метод
+func set_busy(value: bool):
+	busy = value
 
 
 
@@ -28,6 +33,9 @@ func load_user_code(path: String, apply) -> void:
 		user_script_instance.call("delta", self, laptop, enemies)
 
 func manual_moving():
+	if busy or ui.get("is_laptop"):
+		direction = Vector2.ZERO
+		return
 	if is_manual_moving == true:
 		is_manual_moving = false
 		direction = Vector2.ZERO

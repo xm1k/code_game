@@ -1,6 +1,14 @@
 
 MAX_CALLS=10
 
+import multiprocessing as mp
+
+# Устанавливаем метод запуска процессов
+try:
+	mp.set_start_method("fork")
+except RuntimeError:
+	pass
+
 from py4godot.classes import gdclass
 from py4godot.classes.Node2D import Node2D
 from py4godot.classes.core import Vector2
@@ -91,19 +99,31 @@ class user_code(Node2D):
 									children = enemies_global.call("get_children")
 									enemy = children[0] if children else None
 									if enemy:
-										enemy.call("try_pass", args[0])
-									parent_conn.send({"type": "rpc_reply", "id": reqid, "result": True})
+										result = enemy.call("try_pass", args[0])
+										parent_conn.send({"type": "rpc_reply", "id": reqid, "result": result})
+									else:
+										error_msg = "no_enemy: нет врагов на сцене"
+										parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": error_msg})
+										# Немедленно выводим ошибку в консоль Godot
+										laptop.call("logging", f"[color=red]RPC Error: {error_msg}[/color]\n")
 								except Exception as e:
-									parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": str(e)})
+									error_msg = f"exception in try_pass: {e}"
+									parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": error_msg})
+									laptop.call("logging", f"[color=red]{error_msg}[/color]\n")
+									# Также выводим traceback
+									tb = traceback.format_exc()
+									laptop.call("logging", f"[color=red]{tb}[/color]\n")
 							else:
 								parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": "bad_args"})
 						else:
 							parent_conn.send({"type": "rpc_reply", "id": reqid, "result": None, "error": "unknown_rpc"})
 					except Exception as e:
+						error_msg = f"exception_in_parent: {e}"
 						try:
-							parent_conn.send({"type": "rpc_reply", "id": reqid, "result": None, "error": f"exception_in_parent: {e}"})
+							parent_conn.send({"type": "rpc_reply", "id": reqid, "result": None, "error": error_msg})
 						except Exception:
 							pass
+						laptop.call("logging", f"[color=red]{error_msg}\n{traceback.format_exc()}[/color]\n")
 					continue
 
 				elif mtype == "final":
@@ -190,10 +210,14 @@ def _sandbox_entry(conn, shared_state):
 
 	def _sandbox_try_pass(passw):
 		try:
-			return rpc_call("try_pass", [passw])
+			# ---- ИЗМЕНЕНИЕ: автоматическое преобразование в строку ----
+			return rpc_call("try_pass", [str(passw)])
 		except Exception as e:
-			print("Error on password", passw, e)
+			# Логируем ошибку в вывод (попадёт в консоль Godot)
+			print(f"Error in try_pass({passw!r}): {e}")
+			return False
 
+	# Внедряем функции в глобальное пространство песочницы
 	g = globals()
 	g["set_direction"] = _sandbox_set_direction
 	g["get_direction"] = _sandbox_get_direction
@@ -225,5 +249,6 @@ def list_to_vector(arr):
 	vec.y = arr[1]
 	return vec
 def main():
-	set_direction([0,1])
-	print(get_direction())
+	for i in range (0, 100):
+		if 3*i+17==41:
+			try_pass(i)
