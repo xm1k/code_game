@@ -249,6 +249,8 @@ def list_to_vector(arr):
 	vec.y = arr[1]
 	return vec
 def main():
-	for i in range (0, 100):
-		if 3*i+17==41:
-			try_pass(i)
+	s = 0
+	for i in range(14):
+		s+=i
+	print(s)
+	try_pass(s)

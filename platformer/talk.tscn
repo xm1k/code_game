@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://cdb0pmkagbpkq"]
+
+[ext_resource type="Script" uid="uid://c27req6ggpgu7" path="res://talk.gd" id="1_5mkqe"]
+[ext_resource type="Texture2D" uid="uid://cvrcg5for3kmj" path="res://images/talker/space.png" id="2_2xx2v"]
+[ext_resource type="FontFile" uid="uid://8w5psfj4mj0n" path="res://resources/fonts/web_ibm_mda.ttf" id="3_hmce4"]
+[ext_resource type="Texture2D" uid="uid://0on1biutrnak" path="res://images/talker/Untitled.png" id="4_24oav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_birbe"]
+atlas = ExtResource("4_24oav")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx4rg"]
+atlas = ExtResource("4_24oav")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phcyf"]
+atlas = ExtResource("4_24oav")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4obbf"]
+atlas = ExtResource("4_24oav")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dllo"]
+atlas = ExtResource("4_24oav")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1p13"]
+atlas = ExtResource("4_24oav")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovcoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_birbe")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx4rg")
+}],
+"loop": true,
+"name": &"embarassed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phcyf")
+}],
+"loop": false,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4obbf")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dllo")
+}],
+"loop": true,
+"name": &"serious",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1p13")
+}],
+"loop": true,
+"name": &"shoked",
+"speed": 5.0
+}]
+
+[node name="talk" type="Node2D"]
+z_index = 200
+script = ExtResource("1_5mkqe")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
+texture = ExtResource("2_2xx2v")
+
+[node name="text" type="Label" parent="."]
+offset_left = -590.9999
+offset_top = -105.0
+offset_right = 574.0001
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("3_hmce4")
+theme_override_font_sizes/font_size = 42
+text = "Some text
+"
+
+[node name="print" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="exit" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(786.99994, 13.999999)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_ovcoh")
+animation = &"happy"
+
+[connection signal="timeout" from="print" to="." method="_on_print_timeout"]

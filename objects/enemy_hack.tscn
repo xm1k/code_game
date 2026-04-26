@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://7dkys1vs3fn2"]
+[gd_scene load_steps=0 format=3 uid="uid://7dkys1vs3fn2"]
 
 [ext_resource type="Script" uid="uid://vch0gu3mv66d" path="res://scripts/enemy_hack.gd" id="1_db7ji"]
 
