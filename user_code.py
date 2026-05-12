@@ -1,31 +1,35 @@
 
 MAX_CALLS=10
 
-import multiprocessing as mp
+# code.py
+import sys
+import os
+import threading
+import queue
+import time
+import io
+import traceback
 
-# Устанавливаем метод запуска процессов
-try:
-	mp.set_start_method("fork")
-except RuntimeError:
-	pass
+# Настройки
+MAX_CALLS = 10
+EXEC_TIMEOUT = 10.0
 
-from py4godot.classes import gdclass
-from py4godot.classes.Node2D import Node2D
-from py4godot.classes.core import Vector2
-from multiprocessing import Process, Pipe, Manager
-import io, sys, traceback, time, itertools
-
+# Глобальные ссылки на объекты Godot
 player_global = None
 laptop_global = None
 enemies_global = None
+shared_state = {}
 
-EXEC_TIMEOUT = 0.1
+# Импорты py4godot (будут работать только в главном процессе)
+from py4godot.classes import gdclass
+from py4godot.classes.Node2D import Node2D
+from py4godot.classes.core import Vector2
 
-manager = None
-shared_state = None
-
-_child_req_counter = itertools.count(1)
-
+def list_to_vector(arr):
+	vec = Vector2.new0()
+	vec.x = arr[0]
+	vec.y = arr[1]
+	return vec
 
 @gdclass
 class user_code(Node2D):
@@ -37,220 +41,131 @@ class user_code(Node2D):
 		self.run_main(laptop)
 
 	def run_main(self, laptop):
-		parent_conn, child_conn = Pipe(duplex=True)
-		global manager, shared_state
+		global shared_state
 
-		if manager is None:
-			manager = Manager()
-			shared_state = manager.dict()
+		# Получаем чистый пользовательский код из редактора
+		user_code = laptop.call("get_code_text")
+		if not user_code or user_code.strip() == "":
+			laptop.call("logging", "[color=yellow]No user code to execute[/color]\n")
+			return
 
-		p = Process(target=_sandbox_entry, args=(child_conn, shared_state), daemon=True)
-		p.start()
-		child_conn.close()
-
-		start = time.time()
-		result = None
+		request_queue = queue.Queue()
 		call_count = 0
-		allowed_rpc = {"set_direction", "get_direction", "try_pass"}
+		thread_error = []  # для перехвата ошибок из потока
+
+		def user_thread():
+			output_capture = io.StringIO()
+			old_stdout, old_stderr = sys.stdout, sys.stderr
+			sys.stdout = sys.stderr = output_capture
+
+			def _set_direction(arr):
+				rid = f"req_{threading.get_ident()}_{time.time()}"
+				resp_q = queue.Queue()
+				request_queue.put(("set_direction", arr, rid, resp_q))
+				return resp_q.get()
+
+			def _get_direction():
+				rid = f"req_{threading.get_ident()}_{time.time()}"
+				resp_q = queue.Queue()
+				request_queue.put(("get_direction", None, rid, resp_q))
+				return resp_q.get()
+
+			def _try_pass(password):
+				rid = f"req_{threading.get_ident()}_{time.time()}"
+				resp_q = queue.Queue()
+				request_queue.put(("try_pass", password, rid, resp_q))
+				return resp_q.get()
+
+			user_globals = {
+				"set_direction": _set_direction,
+				"get_direction": _get_direction,
+				"try_pass": _try_pass,
+				"storage": shared_state,
+			}
+
+			try:
+				exec(user_code, user_globals)
+				if "main" in user_globals:
+					user_globals["main"]()
+				else:
+					output_capture.write("\n[GAME] main() function not defined\n")
+			except Exception:
+				output_capture.write("\nERROR in user code:\n")
+				output_capture.write(traceback.format_exc())
+			finally:
+				sys.stdout, sys.stderr = old_stdout, old_stderr
+				request_queue.put(("__final__", output_capture.getvalue(), None, None))
+
+		thread = threading.Thread(target=user_thread, daemon=True)
+		thread.start()
+
+		start_time = time.time()
+		final_output = ""
 
 		while True:
-			if parent_conn.poll(0.001):
-				try:
-					msg = parent_conn.recv()
-				except Exception:
+			# Ждём либо сообщение из очереди, либо поток перестаёт быть живым
+			try:
+				msg = request_queue.get(timeout=0.1)
+			except queue.Empty:
+				# Проверяем таймаут
+				if time.time() - start_time > EXEC_TIMEOUT:
+					laptop.call("logging", "\nERROR: Execution timed out\n")
 					break
-
-				if not isinstance(msg, dict):
-					continue
-
-				mtype = msg.get("type")
-				if mtype == "rpc_request":
-					reqid = msg.get("id")
-					name = msg.get("name")
-					args = msg.get("args", [])
-
-					call_count += 1
-					if call_count > MAX_CALLS:
-						try:
-							parent_conn.send({"type": "rpc_reply", "id": reqid, "result": None, "error": "functions_call_limit_exceeded"})
-						except Exception:
-							pass
-						try:
-							p.terminate()
-						except Exception:
-							pass
-						p.join()
-						laptop.call("logging", "\nERROR: call limit exceeded\n")
-						return
-
-					try:
-						if name == "set_direction":
-							if isinstance(args, (list, tuple)) and len(args) >= 2:
-								player_global.set("direction", list_to_vector(args))
-								parent_conn.send({"type": "rpc_reply", "id": reqid, "result": True})
-							else:
-								parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": "bad_args"})
-						elif name == "get_direction":
-							val = [player_global.get("direction").x, player_global.get("direction").y]
-							parent_conn.send({"type": "rpc_reply", "id": reqid, "result": val})
-						elif name == "try_pass":
-							if isinstance(args, (list, tuple)) and len(args) == 1:
-								try:
-									children = enemies_global.call("get_children")
-									enemy = children[0] if children else None
-									if enemy:
-										result = enemy.call("try_pass", args[0])
-										parent_conn.send({"type": "rpc_reply", "id": reqid, "result": result})
-									else:
-										error_msg = "no_enemy: нет врагов на сцене"
-										parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": error_msg})
-										# Немедленно выводим ошибку в консоль Godot
-										laptop.call("logging", f"[color=red]RPC Error: {error_msg}[/color]\n")
-								except Exception as e:
-									error_msg = f"exception in try_pass: {e}"
-									parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": error_msg})
-									laptop.call("logging", f"[color=red]{error_msg}[/color]\n")
-									# Также выводим traceback
-									tb = traceback.format_exc()
-									laptop.call("logging", f"[color=red]{tb}[/color]\n")
-							else:
-								parent_conn.send({"type": "rpc_reply", "id": reqid, "result": False, "error": "bad_args"})
-						else:
-							parent_conn.send({"type": "rpc_reply", "id": reqid, "result": None, "error": "unknown_rpc"})
-					except Exception as e:
-						error_msg = f"exception_in_parent: {e}"
-						try:
-							parent_conn.send({"type": "rpc_reply", "id": reqid, "result": None, "error": error_msg})
-						except Exception:
-							pass
-						laptop.call("logging", f"[color=red]{error_msg}\n{traceback.format_exc()}[/color]\n")
-					continue
-
-				elif mtype == "final":
-					result = msg
+				# Если поток не живой, а сообщения нет — что-то пошло не так
+				if not thread.is_alive():
+					laptop.call("logging", "\nERROR: sandbox thread died unexpectedly\n")
 					break
-				else:
-					if "output" in msg and "commands" in msg:
-						result = msg
-						break
-					continue
+				continue
 
-			if time.time() - start > EXEC_TIMEOUT:
-				try:
-					p.terminate()
-				except Exception:
-					pass
-				p.join()
-				laptop.call("logging", "\nERROR: Execution timed out\n")
-				return
-
-			if not p.is_alive():
+			cmd = msg[0]
+			if cmd == "__final__":
+				final_output = msg[1]
 				break
+			elif cmd == "set_direction":
+				arr, rid, resp_q = msg[1], msg[2], msg[3]
+				call_count += 1
+				if call_count > MAX_CALLS:
+					resp_q.put(False)
+				else:
+					try:
+						if isinstance(arr, list) and len(arr) >= 2:
+							player_global.set("direction", list_to_vector(arr))
+							resp_q.put(True)
+						else:
+							resp_q.put(False)
+					except Exception as e:
+						laptop.call("logging", f"[color=red]set_direction error: {e}[/color]\n")
+						resp_q.put(False)
+			elif cmd == "get_direction":
+				call_count += 1
+				if call_count > MAX_CALLS:
+					msg[3].put([0, 0])
+				else:
+					val = [player_global.get("direction").x, player_global.get("direction").y]
+					msg[3].put(val)
+			elif cmd == "try_pass":
+				password, rid, resp_q = msg[1], msg[2], msg[3]
+				call_count += 1
+				if call_count > MAX_CALLS:
+					resp_q.put(False)
+				else:
+					try:
+						children = enemies_global.call("get_children")
+						enemy = children[0] if children else None
+						if enemy:
+							result = enemy.call("try_pass", password)
+							resp_q.put(result)
+						else:
+							laptop.call("logging", "[color=red]RPC Error: no_enemy[/color]\n")
+							resp_q.put(False)
+					except Exception as e:
+						laptop.call("logging", f"[color=red]exception in try_pass: {e}\n{traceback.format_exc()}[/color]\n")
+						resp_q.put(False)
 
-		p.join()
-
-		try:
-			if result is None:
-				laptop.call("logging", "\nERROR: no final payload from sandbox\n")
-			else:
-				out = result.get("output", "")
-				cmds = result.get("commands", [])
-				if out:
-					laptop.call("logging", out)
-				if cmds:
-					laptop.call("logging", "\nSandbox commands: {}\n".format(cmds))
-		except Exception:
+		if final_output:
+			laptop.call("logging", final_output)
+		else:
+			# Если ничего не получили — не выводим повторную ошибку, она уже залогирована
 			pass
-		return
-
-
-def _format_user_traceback(exc_info):
-	return "".join(traceback.format_exception(*exc_info))
-
-
-def _sandbox_entry(conn, shared_state):
-	output = io.StringIO()
-	old_stdout, old_stderr = sys.stdout, sys.stderr
-	sys.stdout = sys.stderr = output
-
-	commands = []
-
-	def _next_req_id():
-		return next(_child_req_counter)
-
-	def rpc_call(name, args=None):
-		if args is None:
-			args = []
-		reqid = _next_req_id()
-		try:
-			conn.send({"type": "rpc_request", "name": name, "args": args, "id": reqid})
-		except Exception:
-			print("Sandbox: failed to send rpc request", name)
-			return None
-		try:
-			reply = conn.recv()
-		except Exception:
-			print("Sandbox: no reply for rpc", name)
-			return None
-		if isinstance(reply, dict) and reply.get("type") == "rpc_reply" and reply.get("id") == reqid:
-			return reply.get("result")
-		return None
-
-	def _sandbox_get_direction():
-		res = rpc_call("get_direction", [])
-		if isinstance(res, (list, tuple)) and len(res) >= 2:
-			return [res[0], res[1]]
-		return [0, 0]
-
-	def _sandbox_set_direction(arr):
-		try:
-			rpc_call("set_direction", [float(arr[0]), float(arr[1])])
-		except Exception:
-			print("Sandbox: invalid set_direction argument:", arr)
-
-	def _sandbox_try_pass(passw):
-		try:
-			# ---- ИЗМЕНЕНИЕ: автоматическое преобразование в строку ----
-			return rpc_call("try_pass", [str(passw)])
-		except Exception as e:
-			# Логируем ошибку в вывод (попадёт в консоль Godot)
-			print(f"Error in try_pass({passw!r}): {e}")
-			return False
-
-	# Внедряем функции в глобальное пространство песочницы
-	g = globals()
-	g["set_direction"] = _sandbox_set_direction
-	g["get_direction"] = _sandbox_get_direction
-	g["try_pass"] = _sandbox_try_pass
-	g["storage"] = shared_state
-
-	try:
-		try:
-			main()
-		except Exception:
-			output.write("\nERROR in user code:\n")
-			output.write(_format_user_traceback(sys.exc_info()))
-	finally:
-		payload = {"type": "final", "output": output.getvalue(), "commands": commands}
-		sys.stdout, sys.stderr = old_stdout, old_stderr
-		try:
-			conn.send(payload)
-		except Exception:
-			pass
-		try:
-			conn.close()
-		except Exception:
-			pass
-
-
-def list_to_vector(arr):
-	vec = Vector2.new0()
-	vec.x = arr[0]
-	vec.y = arr[1]
-	return vec
 def main():
-	s = 0
-	for i in range(14):
-		s+=i
-	print(s)
-	try_pass(s)
+	try_pass('17')
