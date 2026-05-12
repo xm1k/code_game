@@ -168,8 +168,8 @@ func _generate_level5():
 			for ch in word:
 				var code = ch.unicode_at(0)
 				var shifted = code + 1
-				if shifted > ord('Z'):
-					shifted = ord('A')
+				if shifted > 'Z'.unicode_at(0):
+					shifted = 'A'.unicode_at(0)
 				encrypted += char(shifted)
 			challenge_text = "Расшифруй (сдвиг -1): " + encrypted
 			password = word

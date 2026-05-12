@@ -12,6 +12,9 @@ var MAX_CALLS = 10
 
 const USER_SCRIPT_PATH := "res://user_code.py"
 
+func get_code_text() -> String:
+	return code_editor.text
+	
 func get_python_script() -> String:
 	var path = "res://system_code/code.py"
 	var file = FileAccess.open(path, FileAccess.READ)
