@@ -168,5 +168,7 @@ class user_code(Node2D):
 			# Если ничего не получили — не выводим повторную ошибку, она уже залогирована
 			pass
 def main():
-	try_pass("1")
-	
+	ans=0
+	for i in range(1,13):
+		ans+=i
+	try_pass(str(ans))
