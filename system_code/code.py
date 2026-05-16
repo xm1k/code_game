@@ -70,7 +70,7 @@ class user_code(Node2D):
 			def _try_pass(password):
 				rid = f"req_{threading.get_ident()}_{time.time()}"
 				resp_q = queue.Queue()
-				request_queue.put(("try_pass", password, rid, resp_q))
+				request_queue.put(("try_pass", str(password), rid, resp_q))
 				return resp_q.get()
 
 			user_globals = {
