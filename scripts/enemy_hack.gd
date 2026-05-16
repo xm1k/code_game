@@ -205,16 +205,16 @@ func _eval_expr(expr: String) -> int:
 	var b = int(parts[2])
 	var op2 = parts[3]
 	var c = int(parts[4])
-	var temp = 0
-	match op1:
-		"+": temp = a + b
-		"-": temp = a - b
-		"*": temp = a * b
-	match op2:
-		"+": temp += c
-		"-": temp -= c
-		"*": temp *= c
-	return temp
+	
+	if op1 == "*" or op1 == "/":
+		var left = a * b if op1 == "*" else a / b
+		return left + c if op2 == "+" else left - c if op2 == "-" else left * c if op2 == "*" else left / c
+	elif op2 == "*" or op2 == "/":
+		var right = b * c if op2 == "*" else b / c
+		return a + right if op1 == "+" else a - right if op1 == "-" else a * right if op1 == "*" else a / right
+	else:
+		var left = a + b if op1 == "+" else a - b
+		return left + c if op2 == "+" else left - c
 
 func _gcd(a: int, b: int) -> int:
 	while b != 0:
