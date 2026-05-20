@@ -249,5 +249,5 @@ def list_to_vector(arr):
 	vec.y = arr[1]
 	return vec
 def main():
-	print(get_direction())
-	set_direction([0, 0.5])
+	for i in range(10,90):
+		try_pass(i)

@@ -46,8 +46,10 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if position.y<-380:
-		var new_scene_res = load("res://main.tscn")
-		var new_scene = new_scene_res.instantiate()
+		var parent_var = get_parent().get_node("map").current_level_index
+		var path = "res://levels/" + str(parent_var+2) + ".tscn"
+		var new_scene_res = load(path)
+		var new_scene = new_scene_res.instantiate() 
 		
 		get_tree().root.add_child(new_scene)
 		get_tree().current_scene = new_scene
