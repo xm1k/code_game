@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=4 uid="uid://chwrgt3yi30wv"]
+[gd_scene format=4 uid="uid://chwrgt3yi30wv"]
 
 [ext_resource type="Script" uid="uid://c24ho71not4cw" path="res://main.gd" id="1_ef612"]
 [ext_resource type="Script" uid="uid://wvylvf6rp7rl" path="res://scripts/enemies.gd" id="2_q58x0"]
@@ -90,6 +90,7 @@
 [ext_resource type="PackedScene" uid="uid://cf0c7mxy3035c" path="res://platformer/terminal.tscn" id="88_yj20q"]
 [ext_resource type="Texture2D" uid="uid://bnih3wwuwskuj" path="res://images/Tilemap.png" id="89_834by"]
 [ext_resource type="Texture2D" uid="uid://bca40d8cag5c" path="res://images/sprites1.png" id="90_njqud"]
+[ext_resource type="PackedScene" uid="uid://cq63ecur6r7up" path="res://objects/trigger.tscn" id="91_0uckd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2n8d"]
 size = Vector2(20, 70)
@@ -591,234 +592,234 @@ texture = ExtResource("89_834by")
 [sub_resource type="TileSet" id="TileSet_lwnsi"]
 sources/0 = SubResource("TileSetAtlasSource_53bls")
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" unique_id=118980182]
 script = ExtResource("1_ef612")
 
-[node name="enemies" type="Node2D" parent="."]
+[node name="enemies" type="Node2D" parent="." unique_id=771633463]
 position = Vector2(0, 1)
 script = ExtResource("2_q58x0")
 
-[node name="Enemy" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy" type="CharacterBody2D" parent="enemies" unique_id=1929974641]
 position = Vector2(2782, -356)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy" unique_id=683773167]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy" unique_id=1783795498]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy/DetectionArea" unique_id=1234667418]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy" unique_id=1720792305]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy6" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy6" type="CharacterBody2D" parent="enemies" unique_id=1903745609]
 position = Vector2(2355, -567)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy6" unique_id=374054576]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy6"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy6" unique_id=20902745]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy6/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy6/DetectionArea" unique_id=426157650]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy6"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy6" unique_id=4256583]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy7" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy7" type="CharacterBody2D" parent="enemies" unique_id=613576132]
 position = Vector2(2828, 103)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy7" unique_id=1965417232]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy7"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy7" unique_id=1764004628]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy7/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy7/DetectionArea" unique_id=851051926]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy7"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy7" unique_id=2005278353]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy8" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy8" type="CharacterBody2D" parent="enemies" unique_id=1794918149]
 position = Vector2(3527, -329)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy8" unique_id=1841993820]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy8"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy8" unique_id=82542502]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy8/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy8/DetectionArea" unique_id=1626339853]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy8"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy8" unique_id=1585972927]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy4" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy4" type="CharacterBody2D" parent="enemies" unique_id=1482557778]
 position = Vector2(3294, 473)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy4" unique_id=936272661]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy4"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy4" unique_id=686794993]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy4/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy4/DetectionArea" unique_id=1863713913]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy4"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy4" unique_id=1421490532]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy5" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy5" type="CharacterBody2D" parent="enemies" unique_id=560294343]
 position = Vector2(3672, 10)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy5" unique_id=1454447827]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy5"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy5" unique_id=612578292]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy5/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy5/DetectionArea" unique_id=1356505704]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy5"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy5" unique_id=1116381386]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy3" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy3" type="CharacterBody2D" parent="enemies" unique_id=1702085380]
 position = Vector2(2231, 643)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy3" unique_id=1085541665]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy3"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy3" unique_id=1192793058]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy3/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy3/DetectionArea" unique_id=2014288337]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy3"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy3" unique_id=1572983608]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy2" type="CharacterBody2D" parent="enemies"]
+[node name="Enemy2" type="CharacterBody2D" parent="enemies" unique_id=1901207099]
 position = Vector2(2028, -13)
 script = ExtResource("3_3yp01")
 difficulty = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2" unique_id=474754122]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy2"]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy2" unique_id=594649361]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2/DetectionArea" unique_id=212881057]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy2" unique_id=562279138]
 position = Vector2(22, -2)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="penguin" type="CharacterBody2D" parent="enemies" groups=["enemy"]]
+[node name="penguin" type="CharacterBody2D" parent="enemies" unique_id=1701208378 groups=["enemy"]]
 position = Vector2(-338, -108)
 collision_layer = 2
 collision_mask = 7
 collision_priority = 2.0
 script = ExtResource("16_iwlod")
 
-[node name="sprite" type="AnimatedSprite2D" parent="enemies/penguin"]
+[node name="sprite" type="AnimatedSprite2D" parent="enemies/penguin" unique_id=1189252937]
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_birbe")
 animation = &"go"
 autoplay = "go"
 
-[node name="shape" type="CollisionShape2D" parent="enemies/penguin"]
+[node name="shape" type="CollisionShape2D" parent="enemies/penguin" unique_id=891270077]
 position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_kkkcx")
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=373569559 groups=["player"]]
 position = Vector2(-70, -79)
 collision_mask = 7
 safe_margin = 1.0
 script = ExtResource("26_6oa4u")
 
-[node name="sprite" type="AnimatedSprite2D" parent="Player"]
+[node name="sprite" type="AnimatedSprite2D" parent="Player" unique_id=267562995]
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kkkcx")
 animation = &"run_w"
 autoplay = "idle_s"
 
-[node name="CodeTimer" type="Timer" parent="Player"]
+[node name="CodeTimer" type="Timer" parent="Player" unique_id=949698057]
 
-[node name="shape" type="CollisionShape2D" parent="Player"]
+[node name="shape" type="CollisionShape2D" parent="Player" unique_id=2043297285]
 position = Vector2(3, 7)
 shape = SubResource("RectangleShape2D_jx0wj")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=166133852]
 limit_smoothed = true
 position_smoothing_speed = 1.0
 script = ExtResource("63_sg1ru")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1440471731]
 script = ExtResource("64_vf4vt")
 
-[node name="Laptop" type="Node2D" parent="UI"]
+[node name="Laptop" type="Node2D" parent="UI" unique_id=2125249404]
 z_index = 1
 texture_filter = 1
 position = Vector2(1182, 700)
 scale = Vector2(0.95, 0.95)
 script = ExtResource("65_hiojh")
 
-[node name="Laptop_back" type="TextureRect" parent="UI/Laptop"]
+[node name="Laptop_back" type="TextureRect" parent="UI/Laptop" unique_id=1398554103]
 z_as_relative = false
 offset_left = -1194.0
 offset_top = -678.697
@@ -826,7 +827,7 @@ offset_right = 726.0
 offset_bottom = 401.303
 texture = ExtResource("66_y0tlv")
 
-[node name="CodeEditor" type="CodeEdit" parent="UI/Laptop"]
+[node name="CodeEditor" type="CodeEdit" parent="UI/Laptop" unique_id=614520676]
 offset_left = -244.211
 offset_top = -650.526
 offset_right = 382.456
@@ -850,7 +851,7 @@ caret_blink = true
 syntax_highlighter = SubResource("CodeHighlighter_0xm2m")
 draw_tabs = true
 
-[node name="SaveButton" type="Button" parent="UI/Laptop"]
+[node name="SaveButton" type="Button" parent="UI/Laptop" unique_id=479870860]
 offset_left = -243.158
 offset_top = 261.053
 offset_right = 695.842
@@ -861,7 +862,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kek77")
 text = "SHIFT + ENTER"
 
-[node name="Logger" type="RichTextLabel" parent="UI/Laptop"]
+[node name="Logger" type="RichTextLabel" parent="UI/Laptop" unique_id=110525387]
 offset_left = -1155.0
 offset_top = -157.0
 offset_right = -597.632
@@ -876,15 +877,15 @@ theme_override_font_sizes/mono_font_size = 14
 bbcode_enabled = true
 autowrap_mode = 1
 
-[node name="Inventory" type="Node2D" parent="UI/Laptop"]
+[node name="Inventory" type="Node2D" parent="UI/Laptop" unique_id=139468048]
 
-[node name="laptop" type="Control" parent="UI/Laptop/Inventory"]
+[node name="laptop" type="Control" parent="UI/Laptop/Inventory" unique_id=1109971106]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="laptop" type="Button" parent="UI/Laptop/Inventory/laptop"]
+[node name="laptop" type="Button" parent="UI/Laptop/Inventory/laptop" unique_id=1439038185]
 texture_filter = 1
 layout_mode = 0
 offset_left = -1153.68
@@ -901,18 +902,18 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "laptop"
 script = ExtResource("69_vaip7")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/laptop"]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/laptop" unique_id=1893313474]
 position = Vector2(-1153.68, -640)
 script = SubResource("GDScript_abqjc")
 
-[node name="TextureRect" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab"]
+[node name="TextureRect" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1979280373]
 offset_left = 210.526
 offset_top = 120.0
 offset_right = 370.526
 offset_bottom = 170.0
 texture = ExtResource("70_jbdmx")
 
-[node name="Automate" type="CheckButton" parent="UI/Laptop/Inventory/laptop/Tab"]
+[node name="Automate" type="CheckButton" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=2084133159]
 offset_left = 9.47368
 offset_top = 120.0
 offset_right = 101.474
@@ -924,7 +925,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_wnkbs")
 theme_override_icons/checked = ExtResource("71_7fs4y")
 theme_override_icons/unchecked = ExtResource("72_qr0d3")
 
-[node name="Duration" type="OptionButton" parent="UI/Laptop/Inventory/laptop/Tab"]
+[node name="Duration" type="OptionButton" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1278144137]
 texture_filter = 1
 offset_left = 220.0
 offset_top = 120.0
@@ -956,7 +957,7 @@ popup/item_4/text = "0.1s"
 popup/item_4/id = 4
 popup/item_4/disabled = true
 
-[node name="Labels" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
+[node name="Labels" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=457254760]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -77.8947
@@ -964,7 +965,7 @@ offset_top = -84.2105
 offset_right = -77.8947
 offset_bottom = -84.2105
 
-[node name="Automate mode" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+[node name="Automate mode" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=248723268]
 texture_filter = 1
 layout_mode = 0
 offset_left = 89.4737
@@ -975,7 +976,7 @@ theme_override_fonts/font = ExtResource("68_va5ds")
 theme_override_font_sizes/font_size = 32
 text = "Automatic mode"
 
-[node name="Every" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+[node name="Every" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=1923375749]
 texture_filter = 1
 layout_mode = 0
 offset_left = 186.316
@@ -986,7 +987,7 @@ theme_override_fonts/font = ExtResource("68_va5ds")
 theme_override_font_sizes/font_size = 28
 text = "every"
 
-[node name="Metrics" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+[node name="Metrics" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=842626623]
 layout_mode = 0
 offset_left = 90.5263
 offset_top = 262.105
@@ -996,7 +997,7 @@ theme_override_fonts/font = ExtResource("68_va5ds")
 theme_override_font_sizes/font_size = 32
 text = "Metrics"
 
-[node name="logs quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+[node name="logs quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=1829442541]
 layout_mode = 0
 offset_left = 91.5789
 offset_top = 431.579
@@ -1006,7 +1007,7 @@ theme_override_fonts/font = ExtResource("68_va5ds")
 theme_override_font_sizes/font_size = 28
 text = "logs quota"
 
-[node name="energy" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+[node name="energy" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=961446779]
 layout_mode = 0
 offset_left = 93.6842
 offset_top = 354.737
@@ -1016,7 +1017,7 @@ theme_override_fonts/font = ExtResource("68_va5ds")
 theme_override_font_sizes/font_size = 28
 text = "energy"
 
-[node name="temperature" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+[node name="temperature" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=6979553]
 layout_mode = 0
 offset_left = 90.5263
 offset_top = 316.842
@@ -1026,7 +1027,7 @@ theme_override_fonts/font = ExtResource("68_va5ds")
 theme_override_font_sizes/font_size = 28
 text = "temperature"
 
-[node name="code quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+[node name="code quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=27085153]
 layout_mode = 0
 offset_left = 95.7895
 offset_top = 392.632
@@ -1036,13 +1037,13 @@ theme_override_fonts/font = ExtResource("68_va5ds")
 theme_override_font_sizes/font_size = 28
 text = "code quota"
 
-[node name="Accessories" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
+[node name="Accessories" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=272371565]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="acess" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+[node name="acess" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1916389449]
 texture_filter = 1
 layout_mode = 0
 offset_left = 449.474
@@ -1051,14 +1052,14 @@ offset_right = 569.474
 offset_bottom = 441.579
 texture = ExtResource("73_cpj7t")
 
-[node name="icons" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+[node name="icons" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=811218126]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 71.5789
 offset_right = 487.368
 offset_bottom = 73.6843
 
-[node name="hdd" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+[node name="hdd" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=183786672]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1071,7 +1072,7 @@ offset_bottom = 268.421
 grow_horizontal = 0
 script = ExtResource("74_kvfej")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd"]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd" unique_id=1775814973]
 visible = false
 layout_mode = 1
 offset_left = 84.2105
@@ -1084,7 +1085,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "Additional storage expands the system’s log and code storage capacity."
 autowrap_mode = 2
 
-[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1597241679]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1097,7 +1098,7 @@ offset_bottom = 132.632
 grow_horizontal = 0
 script = ExtResource("74_kvfej")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu"]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu" unique_id=1684849572]
 visible = false
 layout_mode = 1
 offset_left = 81.0526
@@ -1110,7 +1111,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The CPU determines how many lines of code can be executed per run. Upgrading it increases the number of lines executed in a single execution."
 autowrap_mode = 2
 
-[node name="cooler" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+[node name="cooler" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1673162968]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1123,7 +1124,7 @@ offset_bottom = 209.474
 grow_horizontal = 0
 script = ExtResource("74_kvfej")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler"]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler" unique_id=982446269]
 visible = false
 layout_mode = 1
 offset_left = 73.6842
@@ -1136,7 +1137,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The fan gradually reduces the laptop’s temperature. Upgrading it makes cooling more efficient and speeds up heat dissipation."
 autowrap_mode = 2
 
-[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=547628376]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1149,7 +1150,7 @@ offset_bottom = 57.8949
 grow_horizontal = 0
 script = ExtResource("74_kvfej")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu"]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu" unique_id=1243401722]
 visible = false
 layout_mode = 1
 offset_left = 90.5264
@@ -1162,7 +1163,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The GPU increases how often processes can be executed."
 autowrap_mode = 2
 
-[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1749140805]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1175,7 +1176,7 @@ offset_bottom = 364.211
 grow_horizontal = 0
 script = ExtResource("74_kvfej")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power"]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power" unique_id=1517311938]
 visible = false
 layout_mode = 1
 offset_left = 97.8947
@@ -1188,7 +1189,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "Power Supply increases the laptop’s maximum energy capacity."
 autowrap_mode = 2
 
-[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1241548898]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 71.5789
@@ -1196,7 +1197,7 @@ offset_right = 452.632
 offset_bottom = 75.7896
 script = ExtResource("75_x7pjx")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu" unique_id=597557553]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 85.2633
@@ -1207,7 +1208,7 @@ value = 1.0
 texture_under = ExtResource("76_sy4fw")
 texture_progress = ExtResource("77_57dq2")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu" unique_id=574486851]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 78.9475
@@ -1217,7 +1218,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_0mm2b")
 
-[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=862159774]
 anchors_preset = 0
 offset_left = 448.421
 offset_top = 71.5791
@@ -1225,7 +1226,7 @@ offset_right = 451.579
 offset_bottom = 76.8422
 script = ExtResource("79_e6gib")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu" unique_id=1511829672]
 layout_mode = 0
 offset_left = 103.158
 offset_top = 17.8949
@@ -1236,7 +1237,7 @@ value = 1.0
 texture_under = ExtResource("76_sy4fw")
 texture_progress = ExtResource("77_57dq2")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu" unique_id=1541079345]
 layout_mode = 0
 offset_left = 369.474
 offset_top = 13.6844
@@ -1246,7 +1247,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_0mm2b")
 
-[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1244842439]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 278.948
@@ -1254,7 +1255,7 @@ offset_right = 452.632
 offset_bottom = 283.158
 script = ExtResource("80_lcrrv")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power" unique_id=423219281]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 86.3159
@@ -1265,7 +1266,7 @@ value = 1.0
 texture_under = ExtResource("76_sy4fw")
 texture_progress = ExtResource("77_57dq2")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power" unique_id=888365690]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 82.1054
@@ -1275,7 +1276,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_0mm2b")
 
-[node name="storage" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+[node name="storage" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=6843373]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 209.474
@@ -1283,7 +1284,7 @@ offset_right = 452.632
 offset_bottom = 213.684
 script = ExtResource("81_le604")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage" unique_id=231976942]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 86.3159
@@ -1294,7 +1295,7 @@ value = 1.0
 texture_under = ExtResource("76_sy4fw")
 texture_progress = ExtResource("77_57dq2")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage" unique_id=1181171985]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 82.1054
@@ -1304,7 +1305,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_0mm2b")
 
-[node name="fan" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+[node name="fan" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=344245161]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 143.158
@@ -1312,7 +1313,7 @@ offset_right = 452.632
 offset_bottom = 147.369
 script = ExtResource("82_30qkt")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan" unique_id=574703528]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 83.158
@@ -1323,7 +1324,7 @@ value = 1.0
 texture_under = ExtResource("76_sy4fw")
 texture_progress = ExtResource("77_57dq2")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan" unique_id=1805550160]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 77.8949
@@ -1333,14 +1334,14 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_0mm2b")
 
-[node name="Counters" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
+[node name="Counters" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=2106461916]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("83_crepm")
 
-[node name="temp" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+[node name="temp" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=1298545830]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 233.684
@@ -1352,11 +1353,11 @@ bbcode_enabled = true
 text = "[color=#a33939]0°C[/color]"
 horizontal_alignment = 2
 
-[node name="Timer" type="Timer" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+[node name="Timer" type="Timer" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=143283636]
 wait_time = 0.5
 autostart = true
 
-[node name="logs" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+[node name="logs" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=1469486999]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 347.368
@@ -1368,7 +1369,7 @@ bbcode_enabled = true
 text = "0/200"
 horizontal_alignment = 2
 
-[node name="code" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+[node name="code" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=28101540]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 309.474
@@ -1380,7 +1381,7 @@ bbcode_enabled = true
 text = "100/200"
 horizontal_alignment = 2
 
-[node name="energy" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+[node name="energy" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=102361073]
 layout_mode = 0
 offset_left = 135.789
 offset_top = 273.684
@@ -1392,7 +1393,7 @@ bbcode_enabled = true
 text = "3986/5000"
 horizontal_alignment = 2
 
-[node name="Clear" type="Button" parent="UI/Laptop/Inventory/laptop/Tab"]
+[node name="Clear" type="Button" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1372716390]
 offset_left = 23.1578
 offset_top = 398.947
 offset_right = 121.158
@@ -1406,13 +1407,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_uit24")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ruth0")
 text = "clear"
 
-[node name="equipment" type="Control" parent="UI/Laptop/Inventory"]
+[node name="equipment" type="Control" parent="UI/Laptop/Inventory" unique_id=1313549681]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="equipment" type="Button" parent="UI/Laptop/Inventory/equipment"]
+[node name="equipment" type="Button" parent="UI/Laptop/Inventory/equipment" unique_id=779514978]
 texture_filter = 1
 layout_mode = 0
 offset_left = -853.684
@@ -1429,17 +1430,17 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "equipment"
 script = ExtResource("69_vaip7")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/equipment"]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/equipment" unique_id=449490713]
 visible = false
 position = Vector2(-853.684, -640)
 
-[node name="docs" type="Control" parent="UI/Laptop/Inventory"]
+[node name="docs" type="Control" parent="UI/Laptop/Inventory" unique_id=755543932]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="docs" type="Button" parent="UI/Laptop/Inventory/docs"]
+[node name="docs" type="Button" parent="UI/Laptop/Inventory/docs" unique_id=679402613]
 texture_filter = 1
 layout_mode = 0
 offset_left = -553.684
@@ -1456,11 +1457,11 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "docs"
 script = ExtResource("69_vaip7")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/docs"]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/docs" unique_id=1684391618]
 visible = false
 position = Vector2(-553.684, -640)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/Laptop/Inventory/docs/Tab"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Laptop/Inventory/docs/Tab" unique_id=1443302986]
 offset_left = -596.842
 offset_top = 60.0
 offset_right = -163.158
@@ -1469,14 +1470,14 @@ bbcode_enabled = true
 text = "[url={https://vk.com}]текст ссылки[/url]
 "
 
-[node name="Messages" type="VBoxContainer" parent="UI"]
+[node name="Messages" type="VBoxContainer" parent="UI" unique_id=1682995069]
 offset_left = 11.0
 offset_top = 605.0
 offset_right = 644.0
 offset_bottom = 1071.0
 alignment = 2
 
-[node name="Health" type="TextureProgressBar" parent="UI"]
+[node name="Health" type="TextureProgressBar" parent="UI" unique_id=648405955]
 texture_filter = 1
 offset_left = 1917.0
 offset_top = 54.0
@@ -1490,28 +1491,32 @@ texture_under = ExtResource("84_2aje2")
 texture_over = ExtResource("85_t7ofj")
 texture_progress = ExtResource("86_58b40")
 
-[node name="talk" parent="UI" instance=ExtResource("87_y73s5")]
+[node name="talk" parent="UI" unique_id=1833494640 instance=ExtResource("87_y73s5")]
 position = Vector2(887, 847)
 
-[node name="Terminal" parent="." instance=ExtResource("88_yj20q")]
+[node name="Terminal" parent="." unique_id=1918647050 instance=ExtResource("88_yj20q")]
 position = Vector2(6621, -27)
 level_index = 4
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=286839187]
 texture_filter = 1
 position = Vector2(-5, 0)
 scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_h6isl")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=273568649]
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1243470491]
 z_index = -1
 texture_filter = 1
 scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAHAP//AAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAALAAAAAAADAAAAAAAMAAAAAAADAAAAAAANAAAAAAADAAAAAAAOAAAAAAADAAAAAAAOAAEAAAADAAAAAAAOAP//AAADAAAAAAANAP//AAADAAAAAAAMAP//AAADAAAAAAALAP//AAADAAAAAAAKAP//AAADAAAAAAAJAP//AAADAAAAAAAIAP//AAADAAAAAAAfAP//AAADAAAAAAAfAAAAAAADAAAAAAAgAAAAAAADAAAAAAAhAAAAAAADAAAAAAAhAAEAAAADAAAAAAAiAAEAAAADAAAAAAAjAAEAAAADAAAAAAAkAAEAAAADAAAAAAAlAAEAAAADAAAAAAAlAAAAAAADAAAAAAAmAAAAAAADAAAAAAAmAP//AAADAAAAAAAlAP//AAADAAAAAAAkAP//AAADAAAAAAAjAP//AAADAAAAAAAiAP//AAADAAAAAAAhAP//AAADAAAAAAAgAP//AAADAAAAAAAiAAAAAAADAAAAAAAjAAAAAAADAAAAAAAkAAAAAAADAAAAAAD7//3/AAAGAAAAAAD7//7/AAAGAAAAAAD7////AAAGAAAAAAD7/wAAAAAGAAEAAAD7/wEAAAAGAAAAAAD7/wIAAAAFAAEAAAD8/wIAAAAFAAEAAAD8/wEAAAAFAAAAAAD8/wAAAAAGAAAAAAD8////AAAFAAAAAAD8//7/AAAGAAEAAAD8//3/AAAFAAEAAAD9//3/AAAGAAAAAAD6//3/AAAFAAEAAAD6//7/AAAGAAEAAAD6////AAAGAAAAAAD6/wAAAAAGAAEAAAD6/wIAAAAGAAEAAAD+/wIAAAAGAAEAAAD9/wIAAAAFAAEAAAD9/wEAAAAGAAAAAAD9/wAAAAAGAAEAAAD9////AAAGAAAAAAD9//7/AAAFAAAAAAD+//3/AAAFAAAAAAD+//7/AAAGAAAAAAD+////AAAFAAEAAAD+/wAAAAAFAAEAAAD+/wEAAAAFAAAAAAD//wIAAAAGAAEAAAAAAAIAAAAGAAEAAAABAAIAAAAFAAEAAAACAAIAAAAFAAAAAAADAAIAAAAFAAAAAAAEAAIAAAAFAAAAAAAFAAIAAAAFAAAAAAAGAAIAAAAGAAAAAAAGAAEAAAAFAAAAAAAFAAEAAAAGAAAAAAAEAAEAAAAFAAAAAAAEAAAAAAAFAAAAAAADAAAAAAAGAAAAAAACAAAAAAAGAAEAAAABAAAAAAAGAAEAAAABAAEAAAAFAAEAAAAAAAEAAAAFAAEAAAD//wEAAAAGAAAAAAACAAEAAAAGAAEAAAADAAEAAAAGAAAAAAAFAAAAAAAFAAAAAAAGAAAAAAAFAAAAAAAGAP//AAAFAAEAAAAGAP7/AAAGAAAAAAAGAP3/AAAGAAEAAAAFAP3/AAAGAAAAAAAEAP3/AAAGAAAAAAADAP3/AAAGAAAAAAACAP3/AAAFAAEAAAABAP3/AAAFAAEAAAAAAP3/AAAFAAAAAAD///3/AAAGAAAAAAD///7/AAAGAAEAAAD/////AAAFAAAAAAD//wAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAP//AAAGAAAAAAAAAP7/AAAGAAEAAAABAP7/AAAGAAAAAAABAP//AAAFAAAAAAACAP//AAAFAAEAAAACAP7/AAAGAAEAAAADAP7/AAAFAAEAAAADAP//AAAGAAEAAAAEAP//AAAGAAEAAAAFAP//AAAFAAAAAAAFAP7/AAAGAAEAAAAEAP7/AAAFAAAAAAAPAPj/AAAGAAEAAAAPAPn/AAAGAAAAAAAPAPr/AAAFAAAAAAAPAPv/AAAFAAEAAAAPAPz/AAAGAAEAAAAPAP3/AAAFAAAAAAAOAP3/AAAFAAEAAAAOAP7/AAAFAAAAAAAOAPj/AAAFAAAAAAAOAPn/AAAFAAAAAAAOAPr/AAAFAAEAAAAOAPv/AAAFAAEAAAAOAPz/AAAGAAEAAAAOAAIAAAAFAAAAAAAOAAMAAAAGAAAAAAAOAAQAAAAFAAEAAAAOAAUAAAAFAAAAAAAOAAYAAAAGAAEAAAAOAAcAAAAFAAEAAAAOAAgAAAAFAAAAAAAPAAgAAAAGAAEAAAAQAAgAAAAFAAEAAAARAAgAAAAGAAEAAAASAAgAAAAGAAEAAAATAAgAAAAGAAAAAAAUAAgAAAAFAAEAAAAVAAgAAAAFAAEAAAAWAAgAAAAGAAAAAAAXAAgAAAAGAAAAAAAYAAgAAAAFAAAAAAAZAAgAAAAGAAEAAAAaAAgAAAAFAAEAAAAbAAgAAAAGAAEAAAAcAAgAAAAGAAAAAAAdAAgAAAAFAAAAAAAeAAgAAAAGAAEAAAAeAAcAAAAGAAEAAAAdAAcAAAAGAAAAAAAcAAcAAAAFAAAAAAAbAAcAAAAGAAAAAAAaAAcAAAAGAAAAAAAZAAcAAAAFAAAAAAAYAAcAAAAFAAAAAAAXAAcAAAAFAAAAAAAWAAcAAAAFAAAAAAAVAAcAAAAFAAAAAAAUAAcAAAAGAAAAAAATAAcAAAAGAAAAAAATAAYAAAAGAAEAAAASAAYAAAAFAAAAAAARAAYAAAAFAAEAAAAQAAYAAAAGAAEAAAAQAAcAAAAGAAEAAAAPAAcAAAAFAAAAAAARAAcAAAAGAAEAAAASAAcAAAAFAAAAAAAUAAYAAAAFAAAAAAAVAAYAAAAFAAAAAAAWAAYAAAAFAAAAAAAXAAYAAAAFAAEAAAAYAAYAAAAGAAAAAAAZAAYAAAAGAAEAAAAaAAYAAAAGAAEAAAAbAAYAAAAGAAEAAAAcAAYAAAAFAAAAAAAdAAYAAAAFAAEAAAAeAAYAAAAGAAAAAAAeAAUAAAAFAAEAAAAdAAUAAAAFAAEAAAAcAAUAAAAGAAAAAAAbAAUAAAAFAAEAAAAaAAUAAAAGAAEAAAAZAAUAAAAGAAAAAAAYAAUAAAAGAAAAAAAXAAUAAAAFAAEAAAAWAAUAAAAGAAEAAAAVAAQAAAAGAAAAAAAUAAQAAAAGAAAAAAATAAQAAAAFAAEAAAASAAQAAAAFAAAAAAARAAQAAAAGAAEAAAAQAAQAAAAGAAEAAAAQAAUAAAAFAAAAAAAPAAUAAAAFAAEAAAAPAAYAAAAGAAAAAAARAAUAAAAGAAEAAAASAAUAAAAGAAEAAAATAAUAAAAFAAAAAAAUAAUAAAAFAAEAAAAVAAUAAAAFAAEAAAAWAAQAAAAGAAAAAAAPAAQAAAAFAAAAAAAPAAMAAAAFAAAAAAAPAAIAAAAGAAEAAAAPAAEAAAAFAAEAAAAPAAAAAAAFAAAAAAAPAP//AAAFAAAAAAAPAP7/AAAGAAEAAAAQAAAAAAAFAAEAAAAQAAEAAAAGAAEAAAAQAAIAAAAGAAEAAAAQAAMAAAAFAAAAAAARAAMAAAAFAAEAAAASAAMAAAAFAAAAAAATAAMAAAAGAAAAAAAUAAMAAAAFAAEAAAAVAAMAAAAGAAEAAAAWAAMAAAAGAAAAAAAXAAMAAAAGAAEAAAAXAAQAAAAGAAAAAAAYAAQAAAAFAAEAAAAZAAQAAAAGAAAAAAAaAAQAAAAFAAEAAAAbAAQAAAAGAAAAAAAcAAQAAAAGAAAAAAAdAAQAAAAGAAAAAAAeAAQAAAAGAAAAAAAeAAMAAAAGAAEAAAAdAAMAAAAFAAEAAAAcAAMAAAAFAAEAAAAbAAMAAAAGAAAAAAAaAAMAAAAFAAEAAAAZAAMAAAAFAAEAAAAYAAMAAAAGAAAAAAAXAAIAAAAFAAEAAAAYAAIAAAAFAAEAAAAZAAIAAAAGAAAAAAAaAAIAAAAFAAEAAAAbAAIAAAAGAAAAAAAcAAIAAAAFAAAAAAAdAAIAAAAGAAEAAAAeAAIAAAAFAAEAAAAeAAEAAAAGAAAAAAAdAAEAAAAGAAEAAAAcAAEAAAAGAAEAAAAbAAEAAAAFAAEAAAAaAAEAAAAFAAAAAAAZAAEAAAAFAAAAAAAYAAEAAAAFAAEAAAAXAAEAAAAGAAEAAAAWAAEAAAAGAAEAAAAWAAIAAAAGAAEAAAAVAAIAAAAGAAAAAAAUAAIAAAAFAAEAAAAUAAEAAAAFAAEAAAATAAEAAAAGAAEAAAASAAEAAAAFAAEAAAASAAIAAAAGAAAAAAATAAIAAAAGAAEAAAARAAIAAAAFAAEAAAARAAEAAAAFAAAAAAARAAAAAAAGAAAAAAASAAAAAAAGAAAAAAATAAAAAAAGAAEAAAAUAAAAAAAGAAAAAAAVAAAAAAAGAAAAAAAVAAEAAAAFAAEAAAAWAAAAAAAFAAEAAAAXAAAAAAAFAAAAAAAYAAAAAAAGAAEAAAAZAAAAAAAFAAAAAAAaAAAAAAAFAAAAAAAbAAAAAAAGAAAAAAAcAAAAAAAGAAAAAAAdAAAAAAAFAAAAAAAeAAAAAAAFAAEAAAAeAP//AAAFAAEAAAAdAP//AAAFAAEAAAAcAP//AAAGAAEAAAAbAP//AAAFAAEAAAAaAP//AAAGAAEAAAAZAP//AAAFAAAAAAAYAP//AAAGAAAAAAAXAP//AAAGAAEAAAAWAP//AAAGAAEAAAAVAP//AAAGAAAAAAAUAP//AAAGAAAAAAATAP//AAAFAAEAAAASAP//AAAGAAAAAAARAP//AAAFAAAAAAAQAP//AAAGAAAAAAAQAP7/AAAGAAEAAAAQAP3/AAAGAAEAAAARAP3/AAAFAAAAAAASAP3/AAAGAAEAAAATAP3/AAAFAAEAAAAUAP3/AAAGAAAAAAAVAP3/AAAFAAAAAAAWAP3/AAAFAAAAAAAUAP7/AAAFAAEAAAATAP7/AAAFAAAAAAASAP7/AAAGAAAAAAARAP7/AAAGAAEAAAAVAP7/AAAGAAEAAAAWAP7/AAAFAAAAAAAXAP7/AAAFAAEAAAAYAP7/AAAFAAAAAAAZAP7/AAAGAAAAAAAaAP7/AAAFAAEAAAAbAP7/AAAFAAEAAAAcAP7/AAAGAAEAAAAdAP7/AAAFAAAAAAAeAP7/AAAFAAAAAAAfAP7/AAAGAAAAAAAgAP7/AAAGAAAAAAAeAP3/AAAFAAEAAAAeAPz/AAAFAAAAAAAdAPz/AAAGAAAAAAAcAPz/AAAFAAAAAAAbAPz/AAAGAAEAAAAaAPz/AAAFAAEAAAAZAPz/AAAGAAAAAAAYAPz/AAAGAAAAAAAXAPz/AAAGAAEAAAAWAPz/AAAFAAAAAAAVAPz/AAAFAAEAAAAXAP3/AAAFAAAAAAAYAP3/AAAFAAEAAAAZAP3/AAAGAAAAAAAaAP3/AAAGAAEAAAAbAP3/AAAFAAAAAAAcAP3/AAAGAAEAAAAdAP3/AAAGAAEAAAAdAPv/AAAFAAEAAAAeAPv/AAAFAAAAAAAeAPr/AAAFAAEAAAAeAPn/AAAGAAAAAAAeAPj/AAAFAAAAAAAdAPj/AAAFAAAAAAAcAPj/AAAGAAEAAAAbAPj/AAAGAAEAAAAaAPj/AAAFAAEAAAAZAPj/AAAFAAEAAAAYAPj/AAAFAAAAAAAXAPj/AAAFAAEAAAAWAPj/AAAGAAEAAAAVAPj/AAAFAAEAAAAUAPj/AAAGAAEAAAATAPj/AAAGAAEAAAASAPj/AAAGAAAAAAARAPj/AAAFAAEAAAAQAPj/AAAFAAEAAAAQAPn/AAAGAAEAAAAQAPv/AAAFAAAAAAAQAPz/AAAFAAEAAAARAPz/AAAFAAEAAAARAPv/AAAFAAAAAAASAPv/AAAFAAEAAAATAPv/AAAFAAEAAAAUAPv/AAAFAAAAAAARAPr/AAAGAAEAAAAQAPr/AAAGAAAAAAASAPr/AAAFAAEAAAATAPr/AAAFAAAAAAATAPn/AAAFAAAAAAASAPn/AAAGAAAAAAARAPn/AAAFAAAAAAASAPz/AAAGAAAAAAATAPz/AAAFAAEAAAAUAPz/AAAGAAAAAAAVAPv/AAAGAAEAAAAVAPr/AAAFAAEAAAAVAPn/AAAGAAEAAAAUAPn/AAAFAAEAAAAUAPr/AAAFAAAAAAAWAPv/AAAGAAEAAAAWAPr/AAAGAAAAAAAXAPr/AAAGAAAAAAAXAPn/AAAGAAAAAAAWAPn/AAAGAAAAAAAXAPv/AAAGAAAAAAAYAPv/AAAGAAAAAAAYAPr/AAAGAAEAAAAZAPv/AAAGAAEAAAAaAPv/AAAFAAAAAAAbAPv/AAAFAAAAAAAbAPr/AAAFAAEAAAAbAPn/AAAGAAEAAAAaAPn/AAAGAAEAAAAZAPn/AAAGAAEAAAAYAPn/AAAFAAAAAAAZAPr/AAAFAAAAAAAaAPr/AAAFAAAAAAAcAPr/AAAGAAAAAAAcAPn/AAAFAAEAAAAcAPv/AAAGAAAAAAAdAPr/AAAGAAEAAAAdAPn/AAAGAAEAAAAnAP3/AAAFAAEAAAAnAP7/AAAFAAAAAAAnAP//AAAGAAEAAAAnAAAAAAAFAAEAAAAnAAEAAAAGAAEAAAAnAAIAAAAFAAEAAAAoAAIAAAAGAAEAAAApAAIAAAAFAAEAAAAqAAIAAAAGAAEAAAArAAIAAAAGAAEAAAAsAAIAAAAGAAEAAAAsAAEAAAAFAAAAAAAsAAAAAAAFAAAAAAAsAP//AAAGAAEAAAAsAP7/AAAFAAAAAAAsAP3/AAAFAAEAAAArAP3/AAAGAAEAAAAqAP3/AAAGAAAAAAApAP3/AAAFAAAAAAAoAP3/AAAFAAEAAAAoAP7/AAAGAAEAAAAoAP//AAAFAAEAAAAoAAAAAAAGAAEAAAAoAAEAAAAGAAAAAAApAAEAAAAFAAEAAAAqAAEAAAAFAAEAAAArAAEAAAAGAAEAAAArAAAAAAAFAAEAAAArAP//AAAGAAEAAAArAP7/AAAFAAEAAAAqAP7/AAAFAAAAAAApAP7/AAAGAAEAAAApAP//AAAGAAEAAAApAAAAAAAFAAEAAAAqAAAAAAAFAAAAAAAqAP//AAAGAAAAAAA=")
 tile_set = SubResource("TileSet_lwnsi")
+
+[node name="trigger8" parent="." unique_id=1345091940 instance=ExtResource("91_0uckd")]
+position = Vector2(1, -22)
+message = "НОД — наибольший общий делитель. Пока числа не\\nравны: большее заменяем на остаток от деления на меньшее.\\n Когда остаток 0 — меньшее и есть НОД"
 
 [connection signal="timeout" from="Player/CodeTimer" to="Player" method="_on_code_timer_timeout"]
 [connection signal="button_down" from="UI/Laptop/Inventory/laptop/laptop" to="UI/Laptop/Inventory/laptop/laptop" method="_on_button_down"]
