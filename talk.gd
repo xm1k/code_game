@@ -11,7 +11,7 @@ func message(str: String, emote: String = 'happy'):
 func _process(_delta: float) -> void:
 	if messages.size() > 0 and current_text_to_print == "" and $print.is_stopped() and $exit.is_stopped():
 		set("visible", true)
-		current_text_to_print = messages.pop_front()
+		current_text_to_print = messages.pop_front().c_unescape()
 		var current_emote = emotes.pop_front()
 		$anim.animation = current_emote
 		$text.text = ""

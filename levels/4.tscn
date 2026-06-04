@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://ciypeb03cjvw6"]
+[gd_scene load_steps=127 format=4 uid="uid://ciypeb03cjvw6"]
 
 [ext_resource type="Script" uid="uid://c24ho71not4cw" path="res://main.gd" id="1_lnq05"]
 [ext_resource type="Script" uid="uid://wvylvf6rp7rl" path="res://scripts/enemies.gd" id="2_a67gv"]
@@ -592,107 +592,107 @@ texture = ExtResource("89_if88w")
 [sub_resource type="TileSet" id="TileSet_lwnsi"]
 sources/0 = SubResource("TileSetAtlasSource_53bls")
 
-[node name="talk" type="Node2D" unique_id=869608691]
+[node name="talk" type="Node2D"]
 script = ExtResource("1_lnq05")
 
-[node name="enemies" type="Node2D" parent="." unique_id=1769309934]
+[node name="enemies" type="Node2D" parent="."]
 position = Vector2(-1737, 1274)
 script = ExtResource("2_a67gv")
 
-[node name="Enemy" type="CharacterBody2D" parent="enemies" unique_id=1481695183]
+[node name="Enemy" type="CharacterBody2D" parent="enemies"]
 position = Vector2(-98, -947)
 script = ExtResource("3_533ll")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy" unique_id=406399578]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy"]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy" unique_id=443552198]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy"]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy/DetectionArea" unique_id=659267066]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy/DetectionArea"]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy" unique_id=908010925]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy"]
 position = Vector2(31, 6)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy2" type="CharacterBody2D" parent="enemies" unique_id=1154887179]
+[node name="Enemy2" type="CharacterBody2D" parent="enemies"]
 position = Vector2(-71, -1534)
 script = ExtResource("3_533ll")
 difficulty = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2" unique_id=1761794587]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2"]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy2" unique_id=422155922]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy2"]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2/DetectionArea" unique_id=1184290301]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2/DetectionArea"]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy2" unique_id=1695372369]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy2"]
 position = Vector2(31, 6)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="penguin" type="CharacterBody2D" parent="enemies" unique_id=1148048486 groups=["enemy"]]
+[node name="penguin" type="CharacterBody2D" parent="enemies" groups=["enemy"]]
 position = Vector2(1676, -1232)
 collision_layer = 2
 collision_mask = 7
 collision_priority = 2.0
 script = ExtResource("16_c04b2")
 
-[node name="sprite" type="AnimatedSprite2D" parent="enemies/penguin" unique_id=1788995733]
+[node name="sprite" type="AnimatedSprite2D" parent="enemies/penguin"]
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_birbe")
 animation = &"go"
 autoplay = "go"
 
-[node name="shape" type="CollisionShape2D" parent="enemies/penguin" unique_id=1651171602]
+[node name="shape" type="CollisionShape2D" parent="enemies/penguin"]
 position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_kkkcx")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1299407097 groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(-70, -79)
 collision_mask = 7
 safe_margin = 1.0
 script = ExtResource("26_7i35r")
 
-[node name="sprite" type="AnimatedSprite2D" parent="Player" unique_id=371635955]
+[node name="sprite" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kkkcx")
 animation = &"run_w"
 autoplay = "idle_s"
 
-[node name="CodeTimer" type="Timer" parent="Player" unique_id=1375536667]
+[node name="CodeTimer" type="Timer" parent="Player"]
 
-[node name="shape" type="CollisionShape2D" parent="Player" unique_id=1271026510]
+[node name="shape" type="CollisionShape2D" parent="Player"]
 position = Vector2(3, 7)
 shape = SubResource("RectangleShape2D_jx0wj")
 
-[node name="Camera" type="Camera2D" parent="." unique_id=456772294]
+[node name="Camera" type="Camera2D" parent="."]
 limit_smoothed = true
 position_smoothing_speed = 1.0
 script = ExtResource("63_cy4ro")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=617210964]
+[node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("64_f1v4v")
 
-[node name="Laptop" type="Node2D" parent="UI" unique_id=1348253003]
+[node name="Laptop" type="Node2D" parent="UI"]
 z_index = 1
 texture_filter = 1
 position = Vector2(1182, 700)
 scale = Vector2(0.95, 0.95)
 script = ExtResource("65_b8l50")
 
-[node name="Laptop_back" type="TextureRect" parent="UI/Laptop" unique_id=692909443]
+[node name="Laptop_back" type="TextureRect" parent="UI/Laptop"]
 z_as_relative = false
 offset_left = -1194.0
 offset_top = -678.697
@@ -700,7 +700,7 @@ offset_right = 726.0
 offset_bottom = 401.303
 texture = ExtResource("66_2tm85")
 
-[node name="CodeEditor" type="CodeEdit" parent="UI/Laptop" unique_id=877844288]
+[node name="CodeEditor" type="CodeEdit" parent="UI/Laptop"]
 offset_left = -244.211
 offset_top = -650.526
 offset_right = 382.456
@@ -724,7 +724,7 @@ caret_blink = true
 syntax_highlighter = SubResource("CodeHighlighter_0xm2m")
 draw_tabs = true
 
-[node name="SaveButton" type="Button" parent="UI/Laptop" unique_id=757736636]
+[node name="SaveButton" type="Button" parent="UI/Laptop"]
 offset_left = -243.158
 offset_top = 261.053
 offset_right = 695.842
@@ -735,7 +735,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kek77")
 text = "SHIFT + ENTER"
 
-[node name="Logger" type="RichTextLabel" parent="UI/Laptop" unique_id=365163154]
+[node name="Logger" type="RichTextLabel" parent="UI/Laptop"]
 offset_left = -1155.0
 offset_top = -157.0
 offset_right = -597.632
@@ -750,15 +750,15 @@ theme_override_font_sizes/mono_font_size = 14
 bbcode_enabled = true
 autowrap_mode = 1
 
-[node name="Inventory" type="Node2D" parent="UI/Laptop" unique_id=1367923120]
+[node name="Inventory" type="Node2D" parent="UI/Laptop"]
 
-[node name="laptop" type="Control" parent="UI/Laptop/Inventory" unique_id=739379352]
+[node name="laptop" type="Control" parent="UI/Laptop/Inventory"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="laptop" type="Button" parent="UI/Laptop/Inventory/laptop" unique_id=1140174465]
+[node name="laptop" type="Button" parent="UI/Laptop/Inventory/laptop"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -1153.68
@@ -775,18 +775,18 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "laptop"
 script = ExtResource("69_wvi2s")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/laptop" unique_id=317549928]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/laptop"]
 position = Vector2(-1153.68, -640)
 script = SubResource("GDScript_abqjc")
 
-[node name="TextureRect" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=593604114]
+[node name="TextureRect" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab"]
 offset_left = 210.526
 offset_top = 120.0
 offset_right = 370.526
 offset_bottom = 170.0
 texture = ExtResource("70_oiejv")
 
-[node name="Automate" type="CheckButton" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1056005818]
+[node name="Automate" type="CheckButton" parent="UI/Laptop/Inventory/laptop/Tab"]
 offset_left = 9.47368
 offset_top = 120.0
 offset_right = 101.474
@@ -798,7 +798,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_wnkbs")
 theme_override_icons/checked = ExtResource("71_bfpvf")
 theme_override_icons/unchecked = ExtResource("72_5ti1f")
 
-[node name="Duration" type="OptionButton" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=763055185]
+[node name="Duration" type="OptionButton" parent="UI/Laptop/Inventory/laptop/Tab"]
 texture_filter = 1
 offset_left = 220.0
 offset_top = 120.0
@@ -830,7 +830,7 @@ popup/item_4/text = "0.1s"
 popup/item_4/id = 4
 popup/item_4/disabled = true
 
-[node name="Labels" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1551697276]
+[node name="Labels" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -77.8947
@@ -838,7 +838,7 @@ offset_top = -84.2105
 offset_right = -77.8947
 offset_bottom = -84.2105
 
-[node name="Automate mode" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=1206351603]
+[node name="Automate mode" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 89.4737
@@ -849,7 +849,7 @@ theme_override_fonts/font = ExtResource("68_fqdad")
 theme_override_font_sizes/font_size = 32
 text = "Automatic mode"
 
-[node name="Every" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=1429751171]
+[node name="Every" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 186.316
@@ -860,7 +860,7 @@ theme_override_fonts/font = ExtResource("68_fqdad")
 theme_override_font_sizes/font_size = 28
 text = "every"
 
-[node name="Metrics" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=95150063]
+[node name="Metrics" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 90.5263
 offset_top = 262.105
@@ -870,7 +870,7 @@ theme_override_fonts/font = ExtResource("68_fqdad")
 theme_override_font_sizes/font_size = 32
 text = "Metrics"
 
-[node name="logs quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=1569128647]
+[node name="logs quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 91.5789
 offset_top = 431.579
@@ -880,7 +880,7 @@ theme_override_fonts/font = ExtResource("68_fqdad")
 theme_override_font_sizes/font_size = 28
 text = "logs quota"
 
-[node name="energy" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=538792519]
+[node name="energy" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 93.6842
 offset_top = 354.737
@@ -890,7 +890,7 @@ theme_override_fonts/font = ExtResource("68_fqdad")
 theme_override_font_sizes/font_size = 28
 text = "energy"
 
-[node name="temperature" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=247853624]
+[node name="temperature" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 90.5263
 offset_top = 316.842
@@ -900,7 +900,7 @@ theme_override_fonts/font = ExtResource("68_fqdad")
 theme_override_font_sizes/font_size = 28
 text = "temperature"
 
-[node name="code quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=504290978]
+[node name="code quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 95.7895
 offset_top = 392.632
@@ -910,13 +910,13 @@ theme_override_fonts/font = ExtResource("68_fqdad")
 theme_override_font_sizes/font_size = 28
 text = "code quota"
 
-[node name="Accessories" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=2005130189]
+[node name="Accessories" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="acess" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1531516370]
+[node name="acess" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 449.474
@@ -925,14 +925,14 @@ offset_right = 569.474
 offset_bottom = 441.579
 texture = ExtResource("73_blqdq")
 
-[node name="icons" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=71549544]
+[node name="icons" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 71.5789
 offset_right = 487.368
 offset_bottom = 73.6843
 
-[node name="hdd" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1254712374]
+[node name="hdd" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -945,7 +945,7 @@ offset_bottom = 268.421
 grow_horizontal = 0
 script = ExtResource("74_us1sc")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd" unique_id=670767998]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd"]
 visible = false
 layout_mode = 1
 offset_left = 84.2105
@@ -958,7 +958,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "Additional storage expands the system’s log and code storage capacity."
 autowrap_mode = 2
 
-[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=101046993]
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -971,7 +971,7 @@ offset_bottom = 132.632
 grow_horizontal = 0
 script = ExtResource("74_us1sc")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu" unique_id=1194788824]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu"]
 visible = false
 layout_mode = 1
 offset_left = 81.0526
@@ -984,7 +984,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The CPU determines how many lines of code can be executed per run. Upgrading it increases the number of lines executed in a single execution."
 autowrap_mode = 2
 
-[node name="cooler" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1338201409]
+[node name="cooler" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -997,7 +997,7 @@ offset_bottom = 209.474
 grow_horizontal = 0
 script = ExtResource("74_us1sc")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler" unique_id=858358353]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler"]
 visible = false
 layout_mode = 1
 offset_left = 73.6842
@@ -1010,7 +1010,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The fan gradually reduces the laptop’s temperature. Upgrading it makes cooling more efficient and speeds up heat dissipation."
 autowrap_mode = 2
 
-[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1838010545]
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1023,7 +1023,7 @@ offset_bottom = 57.8949
 grow_horizontal = 0
 script = ExtResource("74_us1sc")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu" unique_id=182907798]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu"]
 visible = false
 layout_mode = 1
 offset_left = 90.5264
@@ -1036,7 +1036,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The GPU increases how often processes can be executed."
 autowrap_mode = 2
 
-[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=165537738]
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1049,7 +1049,7 @@ offset_bottom = 364.211
 grow_horizontal = 0
 script = ExtResource("74_us1sc")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power" unique_id=1462044788]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power"]
 visible = false
 layout_mode = 1
 offset_left = 97.8947
@@ -1062,7 +1062,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "Power Supply increases the laptop’s maximum energy capacity."
 autowrap_mode = 2
 
-[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1343459297]
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 71.5789
@@ -1070,7 +1070,7 @@ offset_right = 452.632
 offset_bottom = 75.7896
 script = ExtResource("75_u51bh")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu" unique_id=237787522]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 85.2633
@@ -1081,7 +1081,7 @@ value = 1.0
 texture_under = ExtResource("76_84jyl")
 texture_progress = ExtResource("77_8vxf8")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu" unique_id=1180635733]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 78.9475
@@ -1091,7 +1091,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_fdtk4")
 
-[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=81260914]
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 448.421
 offset_top = 71.5791
@@ -1099,7 +1099,7 @@ offset_right = 451.579
 offset_bottom = 76.8422
 script = ExtResource("79_nmglh")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu" unique_id=1175341062]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
 layout_mode = 0
 offset_left = 103.158
 offset_top = 17.8949
@@ -1110,7 +1110,7 @@ value = 1.0
 texture_under = ExtResource("76_84jyl")
 texture_progress = ExtResource("77_8vxf8")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu" unique_id=422394162]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
 layout_mode = 0
 offset_left = 369.474
 offset_top = 13.6844
@@ -1120,7 +1120,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_fdtk4")
 
-[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=2087408348]
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 278.948
@@ -1128,7 +1128,7 @@ offset_right = 452.632
 offset_bottom = 283.158
 script = ExtResource("80_sar8i")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power" unique_id=37275408]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 86.3159
@@ -1139,7 +1139,7 @@ value = 1.0
 texture_under = ExtResource("76_84jyl")
 texture_progress = ExtResource("77_8vxf8")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power" unique_id=1110668440]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 82.1054
@@ -1149,7 +1149,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_fdtk4")
 
-[node name="storage" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=222776170]
+[node name="storage" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 209.474
@@ -1157,7 +1157,7 @@ offset_right = 452.632
 offset_bottom = 213.684
 script = ExtResource("81_oof6e")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage" unique_id=1488421505]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 86.3159
@@ -1168,7 +1168,7 @@ value = 1.0
 texture_under = ExtResource("76_84jyl")
 texture_progress = ExtResource("77_8vxf8")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage" unique_id=810919280]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 82.1054
@@ -1178,7 +1178,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_fdtk4")
 
-[node name="fan" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=117601067]
+[node name="fan" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 143.158
@@ -1186,7 +1186,7 @@ offset_right = 452.632
 offset_bottom = 147.369
 script = ExtResource("82_d2ufp")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan" unique_id=1852337781]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 83.158
@@ -1197,7 +1197,7 @@ value = 1.0
 texture_under = ExtResource("76_84jyl")
 texture_progress = ExtResource("77_8vxf8")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan" unique_id=680635783]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 77.8949
@@ -1207,14 +1207,14 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_fdtk4")
 
-[node name="Counters" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1133789023]
+[node name="Counters" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("83_cau7k")
 
-[node name="temp" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=486887987]
+[node name="temp" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 233.684
@@ -1226,11 +1226,11 @@ bbcode_enabled = true
 text = "[color=#a33939]0°C[/color]"
 horizontal_alignment = 2
 
-[node name="Timer" type="Timer" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=2122580081]
+[node name="Timer" type="Timer" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 wait_time = 0.5
 autostart = true
 
-[node name="logs" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=800333091]
+[node name="logs" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 347.368
@@ -1242,7 +1242,7 @@ bbcode_enabled = true
 text = "0/200"
 horizontal_alignment = 2
 
-[node name="code" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=1204432959]
+[node name="code" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 309.474
@@ -1254,7 +1254,7 @@ bbcode_enabled = true
 text = "100/200"
 horizontal_alignment = 2
 
-[node name="energy" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=348780250]
+[node name="energy" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 135.789
 offset_top = 273.684
@@ -1266,7 +1266,7 @@ bbcode_enabled = true
 text = "3986/5000"
 horizontal_alignment = 2
 
-[node name="Clear" type="Button" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1220120255]
+[node name="Clear" type="Button" parent="UI/Laptop/Inventory/laptop/Tab"]
 offset_left = 23.1578
 offset_top = 398.947
 offset_right = 121.158
@@ -1280,13 +1280,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_uit24")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ruth0")
 text = "clear"
 
-[node name="equipment" type="Control" parent="UI/Laptop/Inventory" unique_id=517069081]
+[node name="equipment" type="Control" parent="UI/Laptop/Inventory"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="equipment" type="Button" parent="UI/Laptop/Inventory/equipment" unique_id=398324545]
+[node name="equipment" type="Button" parent="UI/Laptop/Inventory/equipment"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -853.684
@@ -1303,17 +1303,17 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "equipment"
 script = ExtResource("69_wvi2s")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/equipment" unique_id=1676268982]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/equipment"]
 visible = false
 position = Vector2(-853.684, -640)
 
-[node name="docs" type="Control" parent="UI/Laptop/Inventory" unique_id=383194226]
+[node name="docs" type="Control" parent="UI/Laptop/Inventory"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="docs" type="Button" parent="UI/Laptop/Inventory/docs" unique_id=1381584599]
+[node name="docs" type="Button" parent="UI/Laptop/Inventory/docs"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -553.684
@@ -1330,11 +1330,11 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "docs"
 script = ExtResource("69_wvi2s")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/docs" unique_id=407869739]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/docs"]
 visible = false
 position = Vector2(-553.684, -640)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/Laptop/Inventory/docs/Tab" unique_id=51705220]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Laptop/Inventory/docs/Tab"]
 offset_left = -596.842
 offset_top = 60.0
 offset_right = -163.158
@@ -1343,14 +1343,14 @@ bbcode_enabled = true
 text = "[url={https://vk.com}]текст ссылки[/url]
 "
 
-[node name="Messages" type="VBoxContainer" parent="UI" unique_id=1632172312]
+[node name="Messages" type="VBoxContainer" parent="UI"]
 offset_left = 11.0
 offset_top = 605.0
 offset_right = 644.0
 offset_bottom = 1071.0
 alignment = 2
 
-[node name="Health" type="TextureProgressBar" parent="UI" unique_id=2079496398]
+[node name="Health" type="TextureProgressBar" parent="UI"]
 texture_filter = 1
 offset_left = 1917.0
 offset_top = 54.0
@@ -1364,30 +1364,30 @@ texture_under = ExtResource("84_3d5up")
 texture_over = ExtResource("85_1usxi")
 texture_progress = ExtResource("86_dkyvu")
 
-[node name="talk" parent="UI" unique_id=1134711198 instance=ExtResource("87_rrg3x")]
+[node name="talk" parent="UI" instance=ExtResource("87_rrg3x")]
 position = Vector2(887, 847)
 
-[node name="Terminal" parent="." unique_id=987601241 instance=ExtResource("88_hacqe")]
+[node name="Terminal" parent="." instance=ExtResource("88_hacqe")]
 position = Vector2(-858, -2048)
 level_index = 3
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1036305501]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 position = Vector2(-5, 0)
 scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAD8//3/AAACAAIAAAD8//7/AAACAAIAAAD8/wEAAAACAAIAAAD8/wIAAAACAAIAAAD9/wIAAAACAAIAAAD+/wIAAAACAAIAAAD//wIAAAACAAIAAAAAAAIAAAACAAIAAAABAAIAAAACAAIAAAACAAIAAAACAAIAAAADAAIAAAACAAIAAAADAAEAAAACAAIAAAADAAAAAAACAAIAAAADAP//AAACAAIAAAADAP7/AAACAAIAAAADAP3/AAACAAIAAAACAP3/AAACAAIAAAABAP3/AAACAAIAAAD9//3/AAACAAIAAAD+//3/AAACAAIAAAD///3/AAACAAIAAAAAAP3/AAACAAIAAAD7/wEAAAACAAIAAAD6/wEAAAACAAIAAAD5/wEAAAACAAIAAAD4/wEAAAACAAIAAAD7//7/AAACAAIAAAD6//7/AAACAAIAAAD5//7/AAACAAIAAAD4//7/AAACAAIAAAD4/wIAAAACAAIAAAD3/wIAAAACAAIAAAD3/wMAAAACAAIAAAD2/wMAAAACAAIAAAD2/wQAAAACAAIAAAD1/wQAAAACAAIAAAD1/wUAAAACAAIAAAD0/wUAAAACAAIAAAD0/wYAAAACAAIAAADz/wYAAAACAAIAAADz/wcAAAACAAIAAADy/wcAAAACAAIAAADy/wgAAAACAAIAAADx/wgAAAACAAIAAADx/wcAAAACAAIAAADw/wcAAAACAAIAAADw/wYAAAACAAIAAADv/wYAAAACAAIAAADv/wUAAAACAAIAAADu/wUAAAACAAIAAADu/wQAAAACAAIAAADt/wQAAAACAAIAAADt/wMAAAACAAIAAADs/wMAAAACAAIAAADs/wIAAAACAAIAAAD4//3/AAACAAIAAAD3//3/AAACAAIAAAD3//z/AAACAAIAAAD2//z/AAACAAIAAAD2//v/AAACAAIAAAD1//v/AAACAAIAAAD1//r/AAACAAIAAAD0//r/AAACAAIAAAD0//n/AAACAAIAAADr/wIAAAACAAIAAADr/wEAAAACAAIAAADq/wEAAAACAAIAAADq/wAAAAACAAIAAADq////AAACAAIAAADq//7/AAACAAIAAADr//7/AAACAAIAAADr//3/AAACAAIAAADs//3/AAACAAIAAADs//z/AAACAAIAAADt//z/AAACAAIAAADt//v/AAACAAIAAADu//v/AAACAAIAAADu//r/AAACAAIAAADv//r/AAACAAIAAADv//n/AAACAAIAAADw//n/AAACAAIAAADw//j/AAACAAIAAADz//n/AAACAAIAAADz//j/AAACAAIAAADw//f/AAACAAIAAADw//b/AAACAAIAAADw//X/AAACAAIAAADz//f/AAACAAIAAADz//b/AAACAAIAAADz//X/AAACAAIAAADz//T/AAACAAIAAADw//T/AAACAAIAAADw//P/AAACAAIAAADv//P/AAACAAIAAADu//P/AAACAAIAAADu//L/AAACAAIAAADu//H/AAACAAIAAADu//D/AAACAAIAAADu/+//AAACAAIAAADu/+7/AAACAAIAAADv/+7/AAACAAIAAADw/+7/AAACAAIAAADx/+7/AAACAAIAAADy/+7/AAACAAIAAADz/+7/AAACAAIAAAD0/+7/AAACAAIAAADz//P/AAACAAIAAAD0//P/AAACAAIAAAD1//P/AAACAAIAAAD1/+7/AAACAAIAAAD1/+//AAACAAIAAAD1//D/AAACAAIAAAD1//H/AAACAAIAAAD1//L/AAACAAIAAAA=")
 tile_set = SubResource("TileSet_h6isl")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1067905454]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=584543695]
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
 z_index = -1
 texture_filter = 1
 scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAD9//7/AAAGAAAAAAD+//7/AAAGAAEAAAD///7/AAAGAAAAAAAAAP7/AAAGAAEAAAABAP7/AAAGAAEAAAACAP7/AAAFAAEAAAACAP//AAAGAAAAAAABAP//AAAGAAEAAAAAAP//AAAFAAAAAAD/////AAAGAAEAAAD+////AAAGAAAAAAD9////AAAGAAEAAAD8////AAAFAAEAAAD8/wAAAAAFAAEAAAD9/wAAAAAFAAAAAAD9/wEAAAAFAAEAAAD+/wEAAAAGAAAAAAD+/wAAAAAFAAAAAAD//wAAAAAFAAAAAAAAAAAAAAAGAAAAAAABAAAAAAAFAAEAAAACAAAAAAAGAAAAAAABAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAD//wEAAAAGAAAAAAD7/wAAAAAFAAAAAAD7////AAAGAAAAAAD6////AAAGAAAAAAD7//7/AAAGAAEAAAD6//7/AAAFAAEAAAD5////AAAFAAAAAAD5/wAAAAAGAAAAAAD6/wAAAAAGAAAAAAD4/wAAAAAFAAEAAAD4////AAAFAAEAAAD3////AAAFAAEAAAD2////AAAFAAAAAAD2/wAAAAAGAAAAAAD2/wEAAAAGAAEAAAD3/wEAAAAFAAEAAAD3/wAAAAAFAAAAAAD2/wIAAAAFAAEAAAD1/wIAAAAGAAEAAAD1/wMAAAAGAAAAAAD1/wQAAAAFAAAAAAD0/wQAAAAFAAAAAADz/wQAAAAGAAAAAADz/wUAAAAFAAAAAADy/wUAAAAGAAAAAADy/wYAAAAGAAAAAADx/wYAAAAGAAEAAADx/wUAAAAGAAAAAADw/wUAAAAFAAAAAADw/wQAAAAFAAAAAADv/wQAAAAFAAAAAADv/wUAAAAFAAEAAADw/wYAAAAFAAAAAADu/wQAAAAFAAAAAADu/wMAAAAFAAAAAADt/wMAAAAGAAEAAADt/wIAAAAGAAAAAADs/wIAAAAGAAEAAADr/wIAAAAGAAAAAADr/wEAAAAGAAAAAADr/wAAAAAGAAEAAADq/wAAAAAGAAAAAADq////AAAGAAAAAADr////AAAFAAEAAADr//7/AAAGAAAAAADs//7/AAAGAAAAAADs//3/AAAGAAEAAADs//z/AAAGAAAAAADt//z/AAAFAAAAAADu//z/AAAGAAEAAADu//v/AAAFAAEAAADu//r/AAAGAAEAAADv//r/AAAGAAAAAADw//r/AAAGAAAAAADx//r/AAAFAAAAAADy//r/AAAFAAAAAADz//r/AAAFAAEAAAD0//r/AAAFAAEAAAD0//v/AAAGAAEAAAD1//v/AAAGAAAAAAD1//z/AAAGAAEAAAD2//z/AAAGAAEAAAD3//z/AAAFAAAAAAD3//3/AAAGAAEAAAD3//7/AAAFAAAAAAD2//7/AAAFAAAAAAD2//3/AAAGAAEAAAD1//3/AAAFAAAAAAD0//3/AAAFAAEAAAD0//z/AAAFAAAAAADz//z/AAAGAAEAAADy//z/AAAFAAAAAADy//v/AAAGAAAAAADx//v/AAAFAAEAAADw//v/AAAFAAAAAADw//z/AAAGAAEAAADx//z/AAAFAAEAAADv//z/AAAFAAAAAADv//v/AAAGAAAAAADz//v/AAAFAAEAAAD0//7/AAAGAAEAAAD0////AAAGAAEAAAD0/wAAAAAGAAEAAAD0/wEAAAAGAAEAAAD0/wIAAAAFAAAAAAD0/wMAAAAGAAEAAADz/wMAAAAGAAEAAADy/wMAAAAGAAAAAADx/wMAAAAGAAAAAADx/wQAAAAFAAEAAADy/wQAAAAGAAAAAADy/wIAAAAGAAEAAADx/wIAAAAGAAAAAADw/wIAAAAGAAAAAADw/wMAAAAGAAAAAADv/wMAAAAGAAAAAADu/wIAAAAGAAEAAADv/wIAAAAGAAEAAADv/wEAAAAFAAAAAADu/wEAAAAFAAEAAADt/wEAAAAFAAAAAADs/wEAAAAGAAAAAADs/wAAAAAGAAAAAADs////AAAFAAAAAADt////AAAGAAAAAADt/wAAAAAGAAEAAADu//7/AAAGAAAAAADu//3/AAAFAAAAAADt//3/AAAGAAAAAADt//7/AAAFAAEAAADu////AAAFAAAAAADu/wAAAAAFAAEAAADv/wAAAAAFAAAAAADv////AAAFAAAAAADw////AAAFAAEAAADw//7/AAAFAAEAAADv//7/AAAGAAEAAADw//3/AAAFAAEAAADx//3/AAAFAAAAAADv//3/AAAGAAAAAADy//3/AAAFAAAAAADz//3/AAAGAAEAAADz//7/AAAFAAEAAADy//7/AAAGAAEAAADz////AAAGAAEAAAD1////AAAFAAEAAAD1/wAAAAAGAAEAAAD1//7/AAAGAAEAAAD1/wEAAAAGAAAAAADz/wEAAAAGAAEAAADy/wEAAAAFAAEAAADx/wEAAAAFAAEAAADz/wIAAAAGAAAAAADz/wAAAAAGAAAAAADy/wAAAAAGAAAAAADx/wAAAAAFAAAAAADw/wAAAAAFAAEAAADw/wEAAAAFAAAAAADy////AAAFAAAAAADx//7/AAAFAAAAAADx////AAAFAAAAAADx//n/AAAFAAEAAADx//j/AAAFAAEAAADx//f/AAAFAAEAAADx//b/AAAFAAEAAADx//X/AAAFAAEAAADx//T/AAAGAAEAAADx//P/AAAFAAAAAADx//L/AAAFAAEAAADy//L/AAAFAAEAAADy//P/AAAFAAEAAADy//T/AAAFAAEAAADy//X/AAAFAAEAAADy//b/AAAGAAAAAADy//f/AAAGAAAAAADy//j/AAAGAAEAAADy//n/AAAFAAEAAADw//n/AAAFAAEAAADw//j/AAAGAAAAAADw//f/AAAFAAAAAADw//b/AAAFAAEAAADw//X/AAAGAAEAAADw//T/AAAGAAEAAADw//P/AAAFAAAAAADx/+//AAAGAAEAAADw/+//AAAGAAAAAADv/+//AAAGAAAAAADu/+//AAAFAAAAAADu//D/AAAGAAEAAADu//H/AAAGAAEAAADv//H/AAAGAAAAAADw//H/AAAGAAAAAADw//L/AAAGAAEAAADv//L/AAAGAAEAAADu//L/AAAFAAAAAADv//D/AAAGAAAAAADw//D/AAAFAAAAAADx//D/AAAGAAEAAADx//H/AAAFAAEAAADz//L/AAAFAAAAAAD0//L/AAAGAAAAAAD0//H/AAAFAAEAAAD0//D/AAAGAAAAAAD0/+//AAAFAAAAAADz/+//AAAFAAAAAADy/+//AAAFAAAAAADy//D/AAAFAAEAAADy//H/AAAGAAAAAADz//H/AAAFAAAAAADz//D/AAAFAAAAAAA=")
 tile_set = SubResource("TileSet_lwnsi")
 
-[node name="trigger7" parent="." unique_id=1679328317 instance=ExtResource("91_8pbsg")]
+[node name="trigger7" parent="." instance=ExtResource("91_8pbsg")]
 position = Vector2(-214, 7)
 message = "Цикл while(условие) — исполняется пока выполняется \\nусловие; a = 1, b =3 while(b!=a)\\n b=b-1 будет выполнен два раза"
 

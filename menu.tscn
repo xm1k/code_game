@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy2srtivdg0on"]
+
+[ext_resource type="Script" uid="uid://faul6086qu0x" path="res://menu.gd" id="1_lti8b"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lti8b")
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 552.0
+offset_right = 1222.0
+offset_bottom = 670.0
+theme_override_font_sizes/font_size = 31
+text = "Continue"
+
+[node name="start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 411.0
+offset_right = 1219.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 30
+text = "Start game "
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 692.0
+offset_right = 1225.0
+offset_bottom = 810.0
+theme_override_font_sizes/font_size = 32
+text = "Exit game"

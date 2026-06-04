@@ -96,8 +96,8 @@ offset_right = 574.0001
 offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("3_hmce4")
 theme_override_font_sizes/font_size = 42
-text = "Some text
-"
+text = "Some text"
+autowrap_mode = 3
 
 [node name="print" type="Timer" parent="."]
 wait_time = 0.05

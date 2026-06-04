@@ -19,8 +19,6 @@ var user_script_instance: Node
 func set_busy(value: bool):
 	busy = value
 
-
-
 func load_user_code(path: String, apply) -> void:
 	if user_script_instance: 
 		user_script_instance.queue_free()
@@ -72,6 +70,7 @@ func _process(delta):
 	else:
 		sprite.animation = "idle_" + side_direction
 		velocity = Vector2.ZERO
+	_check_energy()
 	
 	move_and_slide()
 
@@ -89,8 +88,21 @@ func _on_code_timer_timeout() -> void:
 			counters.energy-=1
 			user_script_instance.call("delta", self, laptop, enemies)
 
+func _check_energy() -> void:
+	if counters.energy <= 0:
+		if has_node("CodeTimer"):
+			$CodeTimer.stop()
+		var current_scene_path = get_tree().current_scene.scene_file_path
+		var menu_scene = load("res://menu.tscn")
+		var menu_instance = menu_scene.instantiate()
+		if "current_level_path" in menu_instance:
+			menu_instance.current_level_path = current_scene_path
+		
+		get_tree().root.add_child(menu_instance)
 
+		get_tree().current_scene.queue_free()
 
+		get_tree().current_scene = menu_instance
 
 func _on_duration_item_selected(index: int) -> void:
 	_on_automate_toggled(not(manual_control))

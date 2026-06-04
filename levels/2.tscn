@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://sj1r8ovnihxn"]
+[gd_scene load_steps=127 format=4 uid="uid://sj1r8ovnihxn"]
 
 [ext_resource type="Script" uid="uid://c24ho71not4cw" path="res://main.gd" id="1_qn0am"]
 [ext_resource type="Script" uid="uid://wvylvf6rp7rl" path="res://scripts/enemies.gd" id="2_1peg3"]
@@ -592,108 +592,108 @@ texture = ExtResource("89_s3yte")
 [sub_resource type="TileSet" id="TileSet_lwnsi"]
 sources/0 = SubResource("TileSetAtlasSource_53bls")
 
-[node name="main" type="Node2D" unique_id=1086907620]
+[node name="main" type="Node2D"]
 script = ExtResource("1_qn0am")
 
-[node name="enemies" type="Node2D" parent="." unique_id=1405097267]
+[node name="enemies" type="Node2D" parent="."]
 position = Vector2(0, 1)
 script = ExtResource("2_1peg3")
 
-[node name="Enemy" type="CharacterBody2D" parent="enemies" unique_id=208786907]
+[node name="Enemy" type="CharacterBody2D" parent="enemies"]
 position = Vector2(-17, -1483)
 script = ExtResource("3_laf6e")
 difficulty = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy" unique_id=638773485]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy"]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy" unique_id=1133020213]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy"]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy/DetectionArea" unique_id=443220237]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy/DetectionArea"]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy" unique_id=1931418394]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy"]
 position = Vector2(31, 6)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="Enemy2" type="CharacterBody2D" parent="enemies" unique_id=1133555019]
+[node name="Enemy2" type="CharacterBody2D" parent="enemies"]
 position = Vector2(-1608, -1812)
 script = ExtResource("3_laf6e")
 difficulty = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2" unique_id=650149365]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2"]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_c2n8d")
 
-[node name="DetectionArea" type="Area2D" parent="enemies/Enemy2" unique_id=1668161583]
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy2"]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2/DetectionArea" unique_id=1760023962]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2/DetectionArea"]
 position = Vector2(22, 8)
 shape = SubResource("RectangleShape2D_5yh34")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy2" unique_id=1669182679]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy2"]
 position = Vector2(31, 6)
 sprite_frames = SubResource("SpriteFrames_1yv1y")
 animation = &"walk_right"
 
-[node name="penguin" type="CharacterBody2D" parent="enemies" unique_id=600214154 groups=["enemy"]]
+[node name="penguin" type="CharacterBody2D" parent="enemies" groups=["enemy"]]
 position = Vector2(-338, -108)
 collision_layer = 2
 collision_mask = 7
 collision_priority = 2.0
 script = ExtResource("16_j57tj")
 
-[node name="sprite" type="AnimatedSprite2D" parent="enemies/penguin" unique_id=224214214]
+[node name="sprite" type="AnimatedSprite2D" parent="enemies/penguin"]
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_birbe")
 animation = &"go"
 autoplay = "go"
 
-[node name="shape" type="CollisionShape2D" parent="enemies/penguin" unique_id=1878940357]
+[node name="shape" type="CollisionShape2D" parent="enemies/penguin"]
 position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_kkkcx")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2034817795 groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(-70, -79)
 collision_mask = 7
 safe_margin = 1.0
 script = ExtResource("26_wk4ad")
 
-[node name="sprite" type="AnimatedSprite2D" parent="Player" unique_id=342211439]
+[node name="sprite" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kkkcx")
 animation = &"run_w"
 autoplay = "idle_s"
 
-[node name="CodeTimer" type="Timer" parent="Player" unique_id=730013840]
+[node name="CodeTimer" type="Timer" parent="Player"]
 
-[node name="shape" type="CollisionShape2D" parent="Player" unique_id=1866247393]
+[node name="shape" type="CollisionShape2D" parent="Player"]
 position = Vector2(3, 7)
 shape = SubResource("RectangleShape2D_jx0wj")
 
-[node name="Camera" type="Camera2D" parent="." unique_id=1492483401]
+[node name="Camera" type="Camera2D" parent="."]
 limit_smoothed = true
 position_smoothing_speed = 1.0
 script = ExtResource("63_mtwo7")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1798456706]
+[node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("64_u4cpj")
 
-[node name="Laptop" type="Node2D" parent="UI" unique_id=115176483]
+[node name="Laptop" type="Node2D" parent="UI"]
 z_index = 1
 texture_filter = 1
 position = Vector2(1182, 700)
 scale = Vector2(0.95, 0.95)
 script = ExtResource("65_k4qn6")
 
-[node name="Laptop_back" type="TextureRect" parent="UI/Laptop" unique_id=1938262372]
+[node name="Laptop_back" type="TextureRect" parent="UI/Laptop"]
 z_as_relative = false
 offset_left = -1194.0
 offset_top = -678.697
@@ -701,7 +701,7 @@ offset_right = 726.0
 offset_bottom = 401.303
 texture = ExtResource("66_7m1rv")
 
-[node name="CodeEditor" type="CodeEdit" parent="UI/Laptop" unique_id=1362493917]
+[node name="CodeEditor" type="CodeEdit" parent="UI/Laptop"]
 offset_left = -244.211
 offset_top = -650.526
 offset_right = 382.456
@@ -725,7 +725,7 @@ caret_blink = true
 syntax_highlighter = SubResource("CodeHighlighter_0xm2m")
 draw_tabs = true
 
-[node name="SaveButton" type="Button" parent="UI/Laptop" unique_id=1306092312]
+[node name="SaveButton" type="Button" parent="UI/Laptop"]
 offset_left = -243.158
 offset_top = 261.053
 offset_right = 695.842
@@ -736,7 +736,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kek77")
 text = "SHIFT + ENTER"
 
-[node name="Logger" type="RichTextLabel" parent="UI/Laptop" unique_id=29377259]
+[node name="Logger" type="RichTextLabel" parent="UI/Laptop"]
 offset_left = -1155.0
 offset_top = -157.0
 offset_right = -597.632
@@ -751,15 +751,15 @@ theme_override_font_sizes/mono_font_size = 14
 bbcode_enabled = true
 autowrap_mode = 1
 
-[node name="Inventory" type="Node2D" parent="UI/Laptop" unique_id=1324295520]
+[node name="Inventory" type="Node2D" parent="UI/Laptop"]
 
-[node name="laptop" type="Control" parent="UI/Laptop/Inventory" unique_id=935768237]
+[node name="laptop" type="Control" parent="UI/Laptop/Inventory"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="laptop" type="Button" parent="UI/Laptop/Inventory/laptop" unique_id=1792232454]
+[node name="laptop" type="Button" parent="UI/Laptop/Inventory/laptop"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -1153.68
@@ -776,18 +776,18 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "laptop"
 script = ExtResource("69_cjkg8")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/laptop" unique_id=502837379]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/laptop"]
 position = Vector2(-1153.68, -640)
 script = SubResource("GDScript_abqjc")
 
-[node name="TextureRect" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1531487135]
+[node name="TextureRect" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab"]
 offset_left = 210.526
 offset_top = 120.0
 offset_right = 370.526
 offset_bottom = 170.0
 texture = ExtResource("70_e13yb")
 
-[node name="Automate" type="CheckButton" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=67141111]
+[node name="Automate" type="CheckButton" parent="UI/Laptop/Inventory/laptop/Tab"]
 offset_left = 9.47368
 offset_top = 120.0
 offset_right = 101.474
@@ -799,7 +799,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_wnkbs")
 theme_override_icons/checked = ExtResource("71_1jjjc")
 theme_override_icons/unchecked = ExtResource("72_xw1vq")
 
-[node name="Duration" type="OptionButton" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=358028543]
+[node name="Duration" type="OptionButton" parent="UI/Laptop/Inventory/laptop/Tab"]
 texture_filter = 1
 offset_left = 220.0
 offset_top = 120.0
@@ -831,7 +831,7 @@ popup/item_4/text = "0.1s"
 popup/item_4/id = 4
 popup/item_4/disabled = true
 
-[node name="Labels" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1266814549]
+[node name="Labels" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -77.8947
@@ -839,7 +839,7 @@ offset_top = -84.2105
 offset_right = -77.8947
 offset_bottom = -84.2105
 
-[node name="Automate mode" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=743118827]
+[node name="Automate mode" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 89.4737
@@ -850,7 +850,7 @@ theme_override_fonts/font = ExtResource("68_ingjo")
 theme_override_font_sizes/font_size = 32
 text = "Automatic mode"
 
-[node name="Every" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=739375604]
+[node name="Every" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 186.316
@@ -861,7 +861,7 @@ theme_override_fonts/font = ExtResource("68_ingjo")
 theme_override_font_sizes/font_size = 28
 text = "every"
 
-[node name="Metrics" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=118888553]
+[node name="Metrics" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 90.5263
 offset_top = 262.105
@@ -871,7 +871,7 @@ theme_override_fonts/font = ExtResource("68_ingjo")
 theme_override_font_sizes/font_size = 32
 text = "Metrics"
 
-[node name="logs quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=1364492505]
+[node name="logs quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 91.5789
 offset_top = 431.579
@@ -881,7 +881,7 @@ theme_override_fonts/font = ExtResource("68_ingjo")
 theme_override_font_sizes/font_size = 28
 text = "logs quota"
 
-[node name="energy" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=821624155]
+[node name="energy" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 93.6842
 offset_top = 354.737
@@ -891,7 +891,7 @@ theme_override_fonts/font = ExtResource("68_ingjo")
 theme_override_font_sizes/font_size = 28
 text = "energy"
 
-[node name="temperature" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=764056152]
+[node name="temperature" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 90.5263
 offset_top = 316.842
@@ -901,7 +901,7 @@ theme_override_fonts/font = ExtResource("68_ingjo")
 theme_override_font_sizes/font_size = 28
 text = "temperature"
 
-[node name="code quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels" unique_id=537496583]
+[node name="code quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
 layout_mode = 0
 offset_left = 95.7895
 offset_top = 392.632
@@ -911,13 +911,13 @@ theme_override_fonts/font = ExtResource("68_ingjo")
 theme_override_font_sizes/font_size = 28
 text = "code quota"
 
-[node name="Accessories" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=1259953638]
+[node name="Accessories" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="acess" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=722548320]
+[node name="acess" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 449.474
@@ -926,14 +926,14 @@ offset_right = 569.474
 offset_bottom = 441.579
 texture = ExtResource("73_gxpbs")
 
-[node name="icons" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1289460016]
+[node name="icons" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 71.5789
 offset_right = 487.368
 offset_bottom = 73.6843
 
-[node name="hdd" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=2072714203]
+[node name="hdd" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -946,7 +946,7 @@ offset_bottom = 268.421
 grow_horizontal = 0
 script = ExtResource("74_e5we6")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd" unique_id=533210371]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd"]
 visible = false
 layout_mode = 1
 offset_left = 84.2105
@@ -959,7 +959,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "Additional storage expands the system’s log and code storage capacity."
 autowrap_mode = 2
 
-[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1198598469]
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -972,7 +972,7 @@ offset_bottom = 132.632
 grow_horizontal = 0
 script = ExtResource("74_e5we6")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu" unique_id=492986241]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu"]
 visible = false
 layout_mode = 1
 offset_left = 81.0526
@@ -985,7 +985,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The CPU determines how many lines of code can be executed per run. Upgrading it increases the number of lines executed in a single execution."
 autowrap_mode = 2
 
-[node name="cooler" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=581062705]
+[node name="cooler" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -998,7 +998,7 @@ offset_bottom = 209.474
 grow_horizontal = 0
 script = ExtResource("74_e5we6")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler" unique_id=1253462355]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler"]
 visible = false
 layout_mode = 1
 offset_left = 73.6842
@@ -1011,7 +1011,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The fan gradually reduces the laptop’s temperature. Upgrading it makes cooling more efficient and speeds up heat dissipation."
 autowrap_mode = 2
 
-[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1317194347]
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1024,7 +1024,7 @@ offset_bottom = 57.8949
 grow_horizontal = 0
 script = ExtResource("74_e5we6")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu" unique_id=1419580070]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu"]
 visible = false
 layout_mode = 1
 offset_left = 90.5264
@@ -1037,7 +1037,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "The GPU increases how often processes can be executed."
 autowrap_mode = 2
 
-[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons" unique_id=1744236457]
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 1
@@ -1050,7 +1050,7 @@ offset_bottom = 364.211
 grow_horizontal = 0
 script = ExtResource("74_e5we6")
 
-[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power" unique_id=1793767505]
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power"]
 visible = false
 layout_mode = 1
 offset_left = 97.8947
@@ -1063,7 +1063,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
 text = "Power Supply increases the laptop’s maximum energy capacity."
 autowrap_mode = 2
 
-[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=722155410]
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 71.5789
@@ -1071,7 +1071,7 @@ offset_right = 452.632
 offset_bottom = 75.7896
 script = ExtResource("75_tjefl")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu" unique_id=490102786]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 85.2633
@@ -1082,7 +1082,7 @@ value = 1.0
 texture_under = ExtResource("76_1jkra")
 texture_progress = ExtResource("77_ewr0u")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu" unique_id=1694537522]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 78.9475
@@ -1092,7 +1092,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_mk4p7")
 
-[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1056370910]
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 448.421
 offset_top = 71.5791
@@ -1100,7 +1100,7 @@ offset_right = 451.579
 offset_bottom = 76.8422
 script = ExtResource("79_3d4e8")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu" unique_id=1190083273]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
 layout_mode = 0
 offset_left = 103.158
 offset_top = 17.8949
@@ -1111,7 +1111,7 @@ value = 1.0
 texture_under = ExtResource("76_1jkra")
 texture_progress = ExtResource("77_ewr0u")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu" unique_id=1752791766]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
 layout_mode = 0
 offset_left = 369.474
 offset_top = 13.6844
@@ -1121,7 +1121,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_mk4p7")
 
-[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1617006943]
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 278.948
@@ -1129,7 +1129,7 @@ offset_right = 452.632
 offset_bottom = 283.158
 script = ExtResource("80_cuhd7")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power" unique_id=2032075009]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 86.3159
@@ -1140,7 +1140,7 @@ value = 1.0
 texture_under = ExtResource("76_1jkra")
 texture_progress = ExtResource("77_ewr0u")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power" unique_id=62059278]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 82.1054
@@ -1150,7 +1150,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_mk4p7")
 
-[node name="storage" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=1038851067]
+[node name="storage" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 209.474
@@ -1158,7 +1158,7 @@ offset_right = 452.632
 offset_bottom = 213.684
 script = ExtResource("81_lt518")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage" unique_id=1184831578]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 86.3159
@@ -1169,7 +1169,7 @@ value = 1.0
 texture_under = ExtResource("76_1jkra")
 texture_progress = ExtResource("77_ewr0u")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage" unique_id=194036831]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 82.1054
@@ -1179,7 +1179,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_mk4p7")
 
-[node name="fan" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories" unique_id=857995922]
+[node name="fan" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
 anchors_preset = 0
 offset_left = 449.474
 offset_top = 143.158
@@ -1187,7 +1187,7 @@ offset_right = 452.632
 offset_bottom = 147.369
 script = ExtResource("82_0onw0")
 
-[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan" unique_id=1258596078]
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
 layout_mode = 0
 offset_left = 102.105
 offset_top = 83.158
@@ -1198,7 +1198,7 @@ value = 1.0
 texture_under = ExtResource("76_1jkra")
 texture_progress = ExtResource("77_ewr0u")
 
-[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan" unique_id=895174475]
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
 layout_mode = 0
 offset_left = 368.421
 offset_top = 77.8949
@@ -1208,14 +1208,14 @@ mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
 icon = ExtResource("78_mk4p7")
 
-[node name="Counters" type="Control" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=211849312]
+[node name="Counters" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("83_5qm3o")
 
-[node name="temp" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=250431354]
+[node name="temp" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 233.684
@@ -1227,11 +1227,11 @@ bbcode_enabled = true
 text = "[color=#a33939]0°C[/color]"
 horizontal_alignment = 2
 
-[node name="Timer" type="Timer" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=990589688]
+[node name="Timer" type="Timer" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 wait_time = 0.5
 autostart = true
 
-[node name="logs" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=327178935]
+[node name="logs" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 347.368
@@ -1243,7 +1243,7 @@ bbcode_enabled = true
 text = "0/200"
 horizontal_alignment = 2
 
-[node name="code" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=1788302972]
+[node name="code" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 234.737
 offset_top = 309.474
@@ -1255,7 +1255,7 @@ bbcode_enabled = true
 text = "100/200"
 horizontal_alignment = 2
 
-[node name="energy" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters" unique_id=674907200]
+[node name="energy" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
 layout_mode = 0
 offset_left = 135.789
 offset_top = 273.684
@@ -1267,7 +1267,7 @@ bbcode_enabled = true
 text = "3986/5000"
 horizontal_alignment = 2
 
-[node name="Clear" type="Button" parent="UI/Laptop/Inventory/laptop/Tab" unique_id=2103495014]
+[node name="Clear" type="Button" parent="UI/Laptop/Inventory/laptop/Tab"]
 offset_left = 23.1578
 offset_top = 398.947
 offset_right = 121.158
@@ -1281,13 +1281,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_uit24")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ruth0")
 text = "clear"
 
-[node name="equipment" type="Control" parent="UI/Laptop/Inventory" unique_id=1940617430]
+[node name="equipment" type="Control" parent="UI/Laptop/Inventory"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="equipment" type="Button" parent="UI/Laptop/Inventory/equipment" unique_id=1260666398]
+[node name="equipment" type="Button" parent="UI/Laptop/Inventory/equipment"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -853.684
@@ -1304,17 +1304,17 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "equipment"
 script = ExtResource("69_cjkg8")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/equipment" unique_id=1897738522]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/equipment"]
 visible = false
 position = Vector2(-853.684, -640)
 
-[node name="docs" type="Control" parent="UI/Laptop/Inventory" unique_id=1642684731]
+[node name="docs" type="Control" parent="UI/Laptop/Inventory"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="docs" type="Button" parent="UI/Laptop/Inventory/docs" unique_id=1396029730]
+[node name="docs" type="Button" parent="UI/Laptop/Inventory/docs"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -553.684
@@ -1331,11 +1331,11 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
 text = "docs"
 script = ExtResource("69_cjkg8")
 
-[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/docs" unique_id=299704989]
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/docs"]
 visible = false
 position = Vector2(-553.684, -640)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/Laptop/Inventory/docs/Tab" unique_id=224497585]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Laptop/Inventory/docs/Tab"]
 offset_left = -596.842
 offset_top = 60.0
 offset_right = -163.158
@@ -1344,14 +1344,14 @@ bbcode_enabled = true
 text = "[url={https://vk.com}]текст ссылки[/url]
 "
 
-[node name="Messages" type="VBoxContainer" parent="UI" unique_id=1968429741]
+[node name="Messages" type="VBoxContainer" parent="UI"]
 offset_left = 11.0
 offset_top = 605.0
 offset_right = 644.0
 offset_bottom = 1071.0
 alignment = 2
 
-[node name="Health" type="TextureProgressBar" parent="UI" unique_id=1793681439]
+[node name="Health" type="TextureProgressBar" parent="UI"]
 texture_filter = 1
 offset_left = 1917.0
 offset_top = 54.0
@@ -1365,14 +1365,14 @@ texture_under = ExtResource("84_4kqj5")
 texture_over = ExtResource("85_wdvd3")
 texture_progress = ExtResource("86_nviri")
 
-[node name="talk" parent="UI" unique_id=263234636 instance=ExtResource("87_8x18k")]
+[node name="talk" parent="UI" instance=ExtResource("87_8x18k")]
 position = Vector2(887, 847)
 
-[node name="Terminal" parent="." unique_id=1502727036 instance=ExtResource("88_upq5t")]
+[node name="Terminal" parent="." instance=ExtResource("88_upq5t")]
 position = Vector2(-2350, -1035)
 level_index = 1
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1153458781]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 position = Vector2(3030, -83)
 rotation = 6.28319
@@ -1380,20 +1380,20 @@ scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AADh/wQAAAAAAAAAAADh/wMAAAAAAAEAAADh/wIAAAAAAAEAAADh/wEAAAAAAAEAAADh/wAAAAAAAAEAAADh////AAAAAAEAAADh//7/AAAAAAEAAADh//3/AAAAAAEAAADh//z/AAABAAIAAADi//z/AAABAAEAAADj//z/AAABAAAAAADi/wQAAAAAAAIAAADj/wQAAAABAAEAAADk/wQAAAACAAAAAADl/wQAAAACAAAAAADm/wQAAAAAAAAAAADn/wQAAAAAAAAAAADo/wQAAAACAAAAAADp/wQAAAAAAAAAAADq/wQAAAAAAAAAAADr/wQAAAAAAAAAAADs/wQAAAABAAAAAADt/wQAAAAAAAMAAADu/wQAAAABAAIAAADv/wQAAAAAAAAAAADv/wMAAAABAAEAAADv/wIAAAAAAAAAAADv/wEAAAABAAIAAADv/wAAAAABAAIAAADv////AAABAAEAAADv//7/AAABAAMAAADv//3/AAACAAAAAADv//z/AAABAAAAAADu//z/AAABAAMAAADt//z/AAABAAIAAADs//z/AAABAAAAAADr//z/AAACAAAAAADq//z/AAABAAMAAADk//z/AAACAAAAAADl//z/AAABAAAAAADm//z/AAACAAAAAADm//v/AAAAAAMAAADm//r/AAABAAAAAADm//n/AAAAAAMAAADm//j/AAABAAAAAADq//v/AAABAAMAAADq//r/AAABAAIAAADq//n/AAAAAAIAAADq//j/AAAAAAIAAADq//f/AAABAAAAAADm//f/AAAAAAAAAADl//f/AAACAAAAAADk//f/AAAAAAIAAADj//f/AAABAAAAAADi//f/AAACAAAAAADh//f/AAACAAAAAADg//f/AAAAAAAAAADf//f/AAAAAAMAAADe//f/AAAAAAAAAADd//f/AAACAAAAAADc//f/AAABAAIAAADb//f/AAAAAAMAAADb//b/AAABAAEAAADa//b/AAACAAAAAADa//X/AAABAAMAAADa//T/AAAAAAMAAADa//D/AAABAAMAAADa/+//AAAAAAIAAADa/+7/AAABAAIAAADa/+3/AAABAAAAAADb/+3/AAAAAAIAAADb/+z/AAAAAAMAAADc/+z/AAABAAMAAADd/+z/AAACAAAAAADe/+z/AAABAAMAAADf/+z/AAABAAMAAADg/+z/AAACAAAAAADh/+z/AAAAAAAAAADi/+z/AAAAAAMAAADj/+z/AAACAAAAAADk/+z/AAAAAAAAAADl/+z/AAABAAEAAADm/+z/AAABAAMAAADn/+z/AAABAAEAAADo/+z/AAABAAAAAADp/+z/AAABAAIAAADq/+z/AAAAAAIAAADr/+z/AAABAAMAAADs/+z/AAABAAAAAADt/+z/AAAAAAIAAADt/+3/AAAAAAIAAADu/+3/AAABAAAAAADr//f/AAAAAAAAAADs//f/AAABAAMAAADs//b/AAAAAAMAAADt//b/AAABAAIAAADu//b/AAAAAAAAAADu//X/AAABAAMAAADu//T/AAABAAEAAADu//P/AAAAAAMAAADu//L/AAABAAEAAADu//H/AAABAAAAAADu//D/AAABAAMAAADu/+//AAAAAAAAAADu/+7/AAAAAAAAAADZ//T/AAACAAAAAADY//T/AAAAAAMAAADX//T/AAABAAAAAADZ//D/AAABAAMAAADY//D/AAABAAEAAADX//D/AAABAAIAAADW//T/AAAAAAMAAADV//T/AAABAAEAAADU//T/AAABAAEAAADT//T/AAACAAAAAADW//D/AAABAAMAAADV//D/AAAAAAAAAADU//D/AAABAAAAAADT//D/AAABAAMAAADT/+//AAABAAIAAADT/+7/AAABAAMAAADT/+3/AAACAAAAAADS/+z/AAACAAAAAADR/+z/AAABAAAAAADQ/+z/AAACAAAAAADP/+z/AAABAAAAAADO/+z/AAABAAEAAADN/+z/AAABAAMAAADM/+z/AAAAAAAAAADL/+3/AAAAAAMAAADL/+7/AAABAAEAAADL/+//AAABAAAAAADL//D/AAABAAAAAADL//H/AAABAAIAAADL//L/AAABAAAAAADL//P/AAABAAMAAADL//T/AAABAAEAAADL//X/AAACAAAAAADL//b/AAAAAAIAAADL//f/AAABAAAAAADL//j/AAABAAMAAADL//n/AAABAAAAAADM//n/AAAAAAIAAADM//r/AAACAAAAAADN//r/AAABAAAAAADO//r/AAAAAAIAAADP//r/AAACAAAAAADQ//r/AAABAAEAAADR//r/AAABAAEAAADS//r/AAACAAAAAADS//n/AAABAAAAAADT//j/AAACAAAAAADT//f/AAABAAIAAADT//b/AAABAAEAAADT//X/AAABAAEAAADT//n/AAABAAIAAADM/+3/AAACAAAAAADS/+3/AAABAAMAAAA=")
 tile_set = SubResource("TileSet_h6isl")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=704567115]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1791343000]
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
 z_index = -1
 texture_filter = 1
 scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AADr//D/AAADAAEAAAD6/wIAAAADAAEAAAD5/wIAAAADAAEAAAD5/wMAAAADAAEAAAD6/wMAAAADAAEAAAD6/wEAAAADAAEAAAD5/wEAAAADAAEAAAD5/wAAAAADAAEAAAD5////AAADAAEAAAD5//7/AAADAAEAAAD5//3/AAADAAEAAAD6//3/AAADAAEAAAD6//7/AAADAAEAAAD6////AAADAAEAAAD6/wAAAAADAAEAAAD7/wAAAAADAAEAAAD7////AAADAAEAAAD7//7/AAADAAEAAAD7//3/AAADAAEAAAD6//z/AAADAAEAAAD5//z/AAADAAEAAAD7//z/AAADAAEAAAD7/wEAAAADAAEAAAD7/wIAAAADAAEAAAD7/wMAAAADAAEAAAD8/wMAAAADAAEAAAD8/wIAAAADAAEAAAD8/wEAAAADAAEAAAD8/wAAAAADAAEAAAD8////AAADAAEAAAD8//7/AAADAAEAAAD8//3/AAADAAEAAAD8//z/AAADAAEAAAD9//z/AAADAAEAAAD9//3/AAADAAEAAAD9//7/AAADAAEAAAD9////AAADAAEAAAD9/wAAAAADAAEAAAD9/wEAAAADAAEAAAD9/wIAAAADAAEAAAD9/wMAAAADAAEAAAD+/wMAAAADAAEAAAD//wMAAAADAAEAAAD//wIAAAADAAEAAAD+/wIAAAADAAEAAAD+//3/AAADAAEAAAD+//z/AAADAAEAAAD+//7/AAADAAEAAAD+////AAADAAEAAAD+/wAAAAADAAEAAAD+/wEAAAADAAEAAAD//wEAAAADAAEAAAD//wAAAAADAAEAAAD/////AAADAAEAAAD///7/AAADAAEAAAD///3/AAADAAEAAAD///z/AAADAAEAAAD///v/AAADAAEAAAD+//v/AAADAAEAAAAAAPv/AAADAAEAAAAAAPz/AAADAAEAAAABAPz/AAADAAEAAAABAPv/AAADAAEAAAACAPz/AAADAAEAAAADAPz/AAADAAEAAAAEAPz/AAADAAEAAAAFAPz/AAADAAEAAAAGAPz/AAADAAEAAAAGAP3/AAADAAEAAAAGAP7/AAADAAEAAAAGAP//AAADAAEAAAAGAAAAAAADAAEAAAAGAAEAAAADAAEAAAAGAAIAAAADAAEAAAAFAAIAAAADAAEAAAAEAAIAAAADAAEAAAADAAIAAAADAAEAAAACAAIAAAADAAEAAAABAAIAAAADAAEAAAAAAAIAAAADAAEAAAABAAMAAAADAAEAAAAAAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAADAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAFAAEAAAADAAEAAAAFAAAAAAADAAEAAAAFAP//AAADAAEAAAAFAP7/AAADAAEAAAAFAP3/AAADAAEAAAAEAP3/AAADAAEAAAAEAP7/AAADAAEAAAADAP7/AAADAAEAAAADAP//AAADAAEAAAADAAAAAAADAAEAAAADAAEAAAADAAEAAAAEAAAAAAADAAEAAAAEAP//AAADAAEAAAAEAAEAAAADAAEAAAADAP3/AAADAAEAAAACAP3/AAADAAEAAAABAP3/AAADAAEAAAABAP7/AAADAAEAAAABAP//AAADAAEAAAACAP//AAADAAEAAAACAAAAAAADAAEAAAACAP7/AAADAAEAAAACAAEAAAADAAEAAAABAAEAAAADAAEAAAABAAAAAAADAAEAAAAAAP7/AAADAAEAAAAAAP//AAADAAEAAAAAAAAAAAADAAEAAAAAAAEAAAADAAEAAAAAAP3/AAADAAEAAAABAPr/AAADAAEAAAABAPn/AAADAAEAAAABAPj/AAADAAEAAAABAPf/AAADAAEAAAABAPb/AAADAAEAAAABAPX/AAADAAEAAAABAPT/AAADAAEAAAABAPP/AAADAAEAAAABAPL/AAADAAEAAAABAPH/AAADAAEAAAABAPD/AAADAAEAAAABAO//AAADAAEAAAABAO7/AAADAAEAAAABAO3/AAADAAEAAAABAOz/AAADAAEAAAACAOz/AAADAAEAAAACAO3/AAADAAEAAAACAO7/AAADAAEAAAACAO//AAADAAEAAAACAPD/AAADAAEAAAACAPH/AAADAAEAAAACAPL/AAADAAEAAAACAPP/AAADAAEAAAACAPT/AAADAAEAAAACAPX/AAADAAEAAAACAPb/AAADAAEAAAADAPb/AAADAAEAAAADAPX/AAADAAEAAAADAPT/AAADAAEAAAADAPP/AAADAAEAAAADAPL/AAADAAEAAAADAPH/AAADAAEAAAADAPD/AAADAAEAAAADAO//AAADAAEAAAADAO7/AAADAAEAAAADAO3/AAADAAEAAAADAOz/AAADAAEAAAAEAOz/AAADAAEAAAAEAO3/AAADAAEAAAAEAO7/AAADAAEAAAAEAO//AAADAAEAAAAEAPD/AAADAAEAAAAEAPH/AAADAAEAAAAEAPL/AAADAAEAAAAEAPP/AAADAAEAAAAEAPT/AAADAAEAAAAEAPX/AAADAAEAAAAFAPX/AAADAAEAAAAFAPT/AAADAAEAAAAFAPP/AAADAAEAAAAFAPL/AAADAAEAAAAFAPH/AAADAAEAAAAFAPD/AAADAAEAAAAFAO//AAADAAEAAAAFAO7/AAADAAEAAAAFAO3/AAADAAEAAAAAAOz/AAADAAEAAAAAAO3/AAADAAEAAAAAAO7/AAADAAEAAAAAAO//AAADAAEAAAAAAPD/AAADAAEAAAAAAPH/AAADAAEAAAAAAPL/AAADAAEAAAAAAPP/AAADAAEAAAAAAPT/AAADAAEAAAAAAPX/AAADAAEAAAAAAPb/AAADAAEAAAAAAPf/AAADAAEAAAAAAPj/AAADAAEAAAAAAPn/AAADAAEAAAAAAPr/AAADAAEAAAD///r/AAADAAEAAAD///n/AAADAAEAAAD///j/AAADAAEAAAD///f/AAADAAEAAAD///b/AAADAAEAAAD///X/AAADAAEAAAD///T/AAADAAEAAAD///P/AAADAAEAAAD///L/AAADAAEAAAD///H/AAADAAEAAAD///D/AAADAAEAAAD//+//AAADAAEAAAD//+7/AAADAAEAAAD//+3/AAADAAEAAAD//+z/AAADAAEAAAD+//r/AAADAAEAAAD+//n/AAADAAEAAAD+//j/AAADAAEAAAD+//f/AAADAAEAAAD+//b/AAADAAEAAAD+//X/AAADAAEAAAD+//T/AAADAAEAAAD+//P/AAADAAEAAAD+//L/AAADAAEAAAD+//H/AAADAAEAAAD+//D/AAADAAEAAAD+/+//AAADAAEAAAD+/+7/AAADAAEAAAD+/+3/AAADAAEAAAD+/+z/AAADAAEAAAD9/+z/AAADAAEAAAD9/+3/AAADAAEAAAD9/+7/AAADAAEAAAD9/+//AAADAAEAAAD9//D/AAADAAEAAAD9//H/AAADAAEAAAD9//L/AAADAAEAAAD9//P/AAADAAEAAAD9//T/AAADAAEAAAD9//X/AAADAAEAAAD9//b/AAADAAEAAAD8//b/AAADAAEAAAD8//X/AAADAAEAAAD8//T/AAADAAEAAAD8//P/AAADAAEAAAD8//L/AAADAAEAAAD8//H/AAADAAEAAAD8//D/AAADAAEAAAD8/+//AAADAAEAAAD8/+7/AAADAAEAAAD8/+3/AAADAAEAAAD8/+z/AAADAAEAAAD7/+z/AAADAAEAAAD6/+z/AAADAAEAAAD5/+z/AAADAAEAAAD4/+z/AAADAAEAAAD3/+z/AAADAAEAAAD2/+z/AAADAAEAAAD1/+z/AAADAAEAAAD0/+z/AAADAAEAAADz/+z/AAADAAEAAADy/+z/AAADAAEAAADz/+3/AAADAAEAAAD0/+3/AAADAAEAAAD1/+3/AAADAAEAAAD2/+3/AAADAAEAAAD3/+3/AAADAAEAAAD4/+3/AAADAAEAAAD0/+7/AAADAAEAAADz/+7/AAADAAEAAADy/+7/AAADAAEAAADx/+7/AAADAAEAAADy/+//AAADAAEAAADz/+//AAADAAEAAAD0/+//AAADAAEAAAD1/+//AAADAAEAAAD2/+//AAADAAEAAAD3/+//AAADAAEAAAD4/+//AAADAAEAAAD5/+//AAADAAEAAAD5//D/AAADAAEAAAD4//D/AAADAAEAAAD3//D/AAADAAEAAAD2//D/AAADAAEAAAD1//D/AAADAAEAAAD0//D/AAADAAEAAAD1//H/AAADAAEAAAD2//H/AAADAAEAAAD3//H/AAADAAEAAAD4//H/AAADAAEAAAD5//H/AAADAAEAAAD0//H/AAADAAEAAADz//H/AAADAAEAAADy//H/AAADAAEAAADz//D/AAADAAEAAAD1/+7/AAADAAEAAAD2/+7/AAADAAEAAAD3/+7/AAADAAEAAAD4/+7/AAADAAEAAAD5/+7/AAADAAEAAAD6/+7/AAADAAEAAAD7/+7/AAADAAEAAAD7/+3/AAADAAEAAAD6/+3/AAADAAEAAAD5/+3/AAADAAEAAAD7/+//AAADAAEAAAD6/+//AAADAAEAAAD6//D/AAADAAEAAAD7//D/AAADAAEAAAD6//H/AAADAAEAAAD7//H/AAADAAEAAAD7//L/AAADAAEAAAD6//L/AAADAAEAAAD5//L/AAADAAEAAAD4//L/AAADAAEAAAD3//L/AAADAAEAAAD2//L/AAADAAEAAAD1//L/AAADAAEAAAD0//L/AAADAAEAAADz//L/AAADAAEAAADy//L/AAADAAEAAAD7//P/AAADAAEAAAD7//T/AAADAAEAAAD6//T/AAADAAEAAAD6//X/AAADAAEAAAD7//X/AAADAAEAAAD6//b/AAADAAEAAAD7//b/AAADAAEAAAD6//P/AAADAAEAAAD5//P/AAADAAEAAAD4//P/AAADAAEAAAD4//T/AAADAAEAAAD4//X/AAADAAEAAAD5//X/AAADAAEAAAD5//T/AAADAAEAAAD5//b/AAADAAEAAAD4//b/AAADAAEAAAD3//b/AAADAAEAAAD3//X/AAADAAEAAAD3//T/AAADAAEAAAD3//P/AAADAAEAAAD2//P/AAADAAEAAAD2//T/AAADAAEAAAD2//X/AAADAAEAAAD2//b/AAADAAEAAAD1//b/AAADAAEAAAD1//X/AAADAAEAAAD1//T/AAADAAEAAAD1//P/AAADAAEAAAD0//P/AAADAAEAAAD0//T/AAADAAEAAAD0//X/AAADAAEAAAD0//b/AAADAAEAAADz//b/AAADAAEAAADz//X/AAADAAEAAADz//T/AAADAAEAAADz//P/AAADAAEAAADy//P/AAADAAEAAADy//T/AAADAAEAAADy//X/AAADAAEAAADy//D/AAADAAEAAADr//H/AAADAAEAAADr//L/AAADAAEAAADr//P/AAADAAEAAADs//P/AAADAAEAAADt//P/AAADAAEAAADu//P/AAADAAEAAADv//P/AAADAAEAAADw//P/AAADAAEAAADx//P/AAADAAEAAADx//L/AAADAAEAAADw//L/AAADAAEAAADv//L/AAADAAEAAADu//L/AAADAAEAAADt//L/AAADAAEAAADs//L/AAADAAEAAADs//H/AAADAAEAAADs//D/AAADAAEAAADt//D/AAADAAEAAADu//D/AAADAAEAAADv//D/AAADAAEAAADw//D/AAADAAEAAADx//D/AAADAAEAAADw//H/AAADAAEAAADv//H/AAADAAEAAADu//H/AAADAAEAAADt//H/AAADAAEAAADx//H/AAADAAEAAADk//j/AAADAAEAAADl//j/AAADAAEAAADm//j/AAADAAEAAADm//n/AAADAAEAAADl//n/AAADAAEAAADk//n/AAADAAEAAADn//n/AAADAAEAAADn//j/AAADAAEAAADo//j/AAADAAEAAADo//n/AAADAAEAAADp//n/AAADAAEAAADp//j/AAADAAEAAADq//j/AAADAAEAAADq//f/AAADAAEAAADq//b/AAADAAEAAADq//X/AAADAAEAAADq//T/AAADAAEAAADq//P/AAADAAEAAADq//L/AAADAAEAAADq//H/AAADAAEAAADq//D/AAADAAEAAADq/+//AAADAAEAAADq/+7/AAADAAEAAADq/+3/AAADAAEAAADp/+3/AAADAAEAAADp/+z/AAADAAEAAADo/+z/AAADAAEAAADn/+z/AAADAAEAAADm/+z/AAADAAEAAADl/+z/AAADAAEAAADl/+3/AAADAAEAAADk/+3/AAADAAEAAADk/+z/AAADAAEAAADm/+3/AAADAAEAAADl/+7/AAADAAEAAADm/+7/AAADAAEAAADn/+7/AAADAAEAAADn/+3/AAADAAEAAADo/+3/AAADAAEAAADo/+7/AAADAAEAAADo/+//AAADAAEAAADn/+//AAADAAEAAADm/+//AAADAAEAAADl/+//AAADAAEAAADk/+//AAADAAEAAADk/+7/AAADAAEAAADj/+3/AAADAAEAAADj/+7/AAADAAEAAADj/+//AAADAAEAAADj//D/AAADAAEAAADj//H/AAADAAEAAADj//L/AAADAAEAAADj//P/AAADAAEAAADj//T/AAADAAEAAADj//X/AAADAAEAAADj//b/AAADAAEAAADj//f/AAADAAEAAADk//f/AAADAAEAAADl//f/AAADAAEAAADl//b/AAADAAEAAADl//X/AAADAAEAAADl//T/AAADAAEAAADl//P/AAADAAEAAADl//L/AAADAAEAAADl//H/AAADAAEAAADm//D/AAADAAEAAADl//D/AAADAAEAAADk//D/AAADAAEAAADk//H/AAADAAEAAADk//L/AAADAAEAAADk//P/AAADAAEAAADk//T/AAADAAEAAADk//X/AAADAAEAAADk//b/AAADAAEAAADm//P/AAADAAEAAADm//L/AAADAAEAAADm//H/AAADAAEAAADn//D/AAADAAEAAADn//H/AAADAAEAAADn//L/AAADAAEAAADn//P/AAADAAEAAADn//T/AAADAAEAAADn//X/AAADAAEAAADn//b/AAADAAEAAADm//T/AAADAAEAAADm//X/AAADAAEAAADm//b/AAADAAEAAADn//f/AAADAAEAAADm//f/AAADAAEAAADo//f/AAADAAEAAADo//b/AAADAAEAAADp//b/AAADAAEAAADp//X/AAADAAEAAADp//T/AAADAAEAAADp//P/AAADAAEAAADp//L/AAADAAEAAADp//H/AAADAAEAAADp//D/AAADAAEAAADp/+//AAADAAEAAADp/+7/AAADAAEAAADp//f/AAADAAEAAADo//X/AAADAAEAAADo//T/AAADAAEAAADo//P/AAADAAEAAADo//L/AAADAAEAAADo//H/AAADAAEAAADo//D/AAADAAEAAAA=")
 tile_set = SubResource("TileSet_lwnsi")
 
-[node name="trigger4" parent="." unique_id=1853927011 instance=ExtResource("91_fs42v")]
+[node name="trigger4" parent="." instance=ExtResource("91_fs42v")]
 position = Vector2(-66, -73)
 message = "Условие(if): — развилка. and / or исользуют для \\nсложных условий. Минимум двух: if a<b: min=a else: min=b"
 
-[node name="trigger5" parent="." unique_id=1659883971 instance=ExtResource("91_fs42v")]
+[node name="trigger5" parent="." instance=ExtResource("91_fs42v")]
 position = Vector2(7, -1110)
 message = "Полное: if условие: действие1 else: действие2. \\nНеполное: только if без else. Условие истинно (True) или \\nложно (False). Простое: x>5. Составное: x>5 and y<10"
 
