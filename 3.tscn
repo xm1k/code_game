@@ -1,0 +1,1410 @@
+[gd_scene load_steps=126 format=4 uid="uid://sj1r8ovnihxn"]
+
+[ext_resource type="Script" uid="uid://c24ho71not4cw" path="res://main.gd" id="1_qn0am"]
+[ext_resource type="Script" uid="uid://wvylvf6rp7rl" path="res://scripts/enemies.gd" id="2_1peg3"]
+[ext_resource type="Script" uid="uid://vch0gu3mv66d" path="res://scripts/enemy_hack.gd" id="3_laf6e"]
+[ext_resource type="Texture2D" uid="uid://deaedafu8ebc7" path="res://images/cpu_bug/9.png" id="4_k2cwi"]
+[ext_resource type="Texture2D" uid="uid://bpcdviq2hyv5i" path="res://images/cpu_bug/cp side stand.png" id="5_dtqre"]
+[ext_resource type="Texture2D" uid="uid://dlfvl27jvx1nk" path="res://images/cpu_bug/cp down stand.png" id="6_6w6vd"]
+[ext_resource type="Texture2D" uid="uid://ct42mdvxuolon" path="res://images/cpu_bug/1.png" id="7_43so8"]
+[ext_resource type="Texture2D" uid="uid://cfe4ahgoeegxt" path="res://images/cpu_bug/2.png" id="8_fickl"]
+[ext_resource type="Texture2D" uid="uid://3bqmur0ouhfp" path="res://images/cpu_bug/3.png" id="9_mxlim"]
+[ext_resource type="Texture2D" uid="uid://r355uy6tjig7" path="res://images/cpu_bug/8.png" id="10_0203u"]
+[ext_resource type="Texture2D" uid="uid://e80pg4er7xir" path="res://images/cpu_bug/4.png" id="11_apb1h"]
+[ext_resource type="Texture2D" uid="uid://cdvrjf0lejkio" path="res://images/cpu_bug/5.png" id="12_2o36s"]
+[ext_resource type="Texture2D" uid="uid://dtc8i44euvrst" path="res://images/cpu_bug/6.png" id="13_lmsgs"]
+[ext_resource type="Texture2D" uid="uid://byjiahweg4pfc" path="res://images/cpu_bug/7.png" id="14_0004t"]
+[ext_resource type="Texture2D" uid="uid://dqfiukl3b7j7d" path="res://images/cpu_bug/cp up stand.png" id="15_2gsrf"]
+[ext_resource type="Script" uid="uid://bq24ch102j34" path="res://scripts/enemy.gd" id="16_j57tj"]
+[ext_resource type="Texture2D" uid="uid://b6pnn7kujjff" path="res://images/enemies/penguin/go/go1.png" id="17_squhg"]
+[ext_resource type="Texture2D" uid="uid://dtvmylkaftkk" path="res://images/enemies/penguin/go/go2.png" id="18_escbl"]
+[ext_resource type="Texture2D" uid="uid://cydpa7fyfbnj" path="res://images/enemies/penguin/go/go3.png" id="19_w0qhx"]
+[ext_resource type="Texture2D" uid="uid://c866tcqxqthyr" path="res://images/enemies/penguin/go/go4.png" id="20_2srgd"]
+[ext_resource type="Texture2D" uid="uid://boimjg6n0mf10" path="res://images/enemies/penguin/go/go5.png" id="21_2i6sn"]
+[ext_resource type="Texture2D" uid="uid://b00h7ojxbu0sb" path="res://images/enemies/penguin/go/go6.png" id="22_pqqyr"]
+[ext_resource type="Texture2D" uid="uid://d4hrtedpknjpc" path="res://images/enemies/penguin/go/go7.png" id="23_lf75v"]
+[ext_resource type="Texture2D" uid="uid://s4f1qlref4lr" path="res://images/enemies/penguin/go/go8.png" id="24_xkvmc"]
+[ext_resource type="Texture2D" uid="uid://dsst51e4fmfms" path="res://images/enemies/penguin/go/go9.png" id="25_e2r2m"]
+[ext_resource type="Script" uid="uid://vkh4o3rti4k5" path="res://scripts/player.gd" id="26_wk4ad"]
+[ext_resource type="Texture2D" uid="uid://ysiihkf866g0" path="res://images/player/rotations/east.png" id="27_lilqx"]
+[ext_resource type="Texture2D" uid="uid://bv5d0v16xh6x0" path="res://images/player/rotations/north.png" id="28_b0o1y"]
+[ext_resource type="Texture2D" uid="uid://bnwr745dhg0r7" path="res://images/player/rotations/south.png" id="29_p47v8"]
+[ext_resource type="Texture2D" uid="uid://co4egg1likelj" path="res://images/player/rotations/west.png" id="30_dps26"]
+[ext_resource type="Texture2D" uid="uid://g2buoaes2r0m" path="res://images/player/animations/running-8-frames/east/frame_000.png" id="31_tmfay"]
+[ext_resource type="Texture2D" uid="uid://cablbn2dq3ek8" path="res://images/player/animations/running-8-frames/east/frame_001.png" id="32_oojn6"]
+[ext_resource type="Texture2D" uid="uid://cx0nxqx0pt7u3" path="res://images/player/animations/running-8-frames/east/frame_002.png" id="33_7fejl"]
+[ext_resource type="Texture2D" uid="uid://cyw6hbbneftym" path="res://images/player/animations/running-8-frames/east/frame_003.png" id="34_t3ume"]
+[ext_resource type="Texture2D" uid="uid://v3gytlyp8u5i" path="res://images/player/animations/running-8-frames/east/frame_004.png" id="35_embbq"]
+[ext_resource type="Texture2D" uid="uid://doeui8aqd474" path="res://images/player/animations/running-8-frames/east/frame_005.png" id="36_rjiho"]
+[ext_resource type="Texture2D" uid="uid://ctv7wtdraukrx" path="res://images/player/animations/running-8-frames/east/frame_006.png" id="37_lra1t"]
+[ext_resource type="Texture2D" uid="uid://ty2sisgmbp5l" path="res://images/player/animations/running-8-frames/east/frame_007.png" id="38_cf7w0"]
+[ext_resource type="Texture2D" uid="uid://b6gog3rgxkl8l" path="res://images/player/animations/running-8-frames/north/frame_000.png" id="39_ns65k"]
+[ext_resource type="Texture2D" uid="uid://don41yil8lq4n" path="res://images/player/animations/running-8-frames/north/frame_001.png" id="40_884nb"]
+[ext_resource type="Texture2D" uid="uid://bhrp24j2xja2l" path="res://images/player/animations/running-8-frames/north/frame_002.png" id="41_8l05n"]
+[ext_resource type="Texture2D" uid="uid://dxasbwlx7chnc" path="res://images/player/animations/running-8-frames/north/frame_003.png" id="42_88egn"]
+[ext_resource type="Texture2D" uid="uid://2dggd4cqc7ts" path="res://images/player/animations/running-8-frames/north/frame_004.png" id="43_ij7vc"]
+[ext_resource type="Texture2D" uid="uid://bmgvq5b50d883" path="res://images/player/animations/running-8-frames/north/frame_005.png" id="44_8uub6"]
+[ext_resource type="Texture2D" uid="uid://dk6bjg1aoa623" path="res://images/player/animations/running-8-frames/north/frame_006.png" id="45_8wj25"]
+[ext_resource type="Texture2D" uid="uid://bd61cgtracer3" path="res://images/player/animations/running-8-frames/north/frame_007.png" id="46_25om7"]
+[ext_resource type="Texture2D" uid="uid://dm07ird5i2d7q" path="res://images/player/animations/running-8-frames/south/frame_000.png" id="47_dn4oa"]
+[ext_resource type="Texture2D" uid="uid://dwuv55cq1abnp" path="res://images/player/animations/running-8-frames/south/frame_001.png" id="48_d3s6h"]
+[ext_resource type="Texture2D" uid="uid://vdqotlbdonj4" path="res://images/player/animations/running-8-frames/south/frame_002.png" id="49_rrnwn"]
+[ext_resource type="Texture2D" uid="uid://cncq2s75b2imm" path="res://images/player/animations/running-8-frames/south/frame_003.png" id="50_822cj"]
+[ext_resource type="Texture2D" uid="uid://curfm3ts7uap" path="res://images/player/animations/running-8-frames/south/frame_004.png" id="51_ucwoy"]
+[ext_resource type="Texture2D" uid="uid://dro8k22eyeoiq" path="res://images/player/animations/running-8-frames/south/frame_005.png" id="52_hsijb"]
+[ext_resource type="Texture2D" uid="uid://bj0mjv3d1oht6" path="res://images/player/animations/running-8-frames/south/frame_006.png" id="53_boih8"]
+[ext_resource type="Texture2D" uid="uid://vpbi02s33bou" path="res://images/player/animations/running-8-frames/south/frame_007.png" id="54_o7ngu"]
+[ext_resource type="Texture2D" uid="uid://co86gu2drmnia" path="res://images/player/animations/running-8-frames/west/frame_000.png" id="55_m3lg7"]
+[ext_resource type="Texture2D" uid="uid://c2i53c15okl6k" path="res://images/player/animations/running-8-frames/west/frame_001.png" id="56_jn4si"]
+[ext_resource type="Texture2D" uid="uid://8alvuv5o7324" path="res://images/player/animations/running-8-frames/west/frame_002.png" id="57_7axbu"]
+[ext_resource type="Texture2D" uid="uid://3vdncliug08q" path="res://images/player/animations/running-8-frames/west/frame_003.png" id="58_kko4w"]
+[ext_resource type="Texture2D" uid="uid://dw2h3s8gpo3a3" path="res://images/player/animations/running-8-frames/west/frame_004.png" id="59_olokb"]
+[ext_resource type="Texture2D" uid="uid://dw85xq5pdwj8q" path="res://images/player/animations/running-8-frames/west/frame_005.png" id="60_fg44o"]
+[ext_resource type="Texture2D" uid="uid://dpno4apb6uygj" path="res://images/player/animations/running-8-frames/west/frame_006.png" id="61_c3prd"]
+[ext_resource type="Texture2D" uid="uid://bk6hputocfjyf" path="res://images/player/animations/running-8-frames/west/frame_007.png" id="62_4orsf"]
+[ext_resource type="Script" uid="uid://x1isb0hvg7o2" path="res://scripts/camera.gd" id="63_mtwo7"]
+[ext_resource type="Script" uid="uid://cvgaghyr5s7dh" path="res://scripts/ui/ui.gd" id="64_u4cpj"]
+[ext_resource type="Script" uid="uid://bt3eo1p6t180k" path="res://scripts/ui/laptop.gd" id="65_k4qn6"]
+[ext_resource type="Texture2D" uid="uid://b2afqndxwwlu8" path="res://images/laptop/laptop.png" id="66_7m1rv"]
+[ext_resource type="FontFile" uid="uid://b63wg2va7edr" path="res://resources/fonts/PixelifySans-VariableFont_wght.ttf" id="67_514et"]
+[ext_resource type="FontFile" uid="uid://8w5psfj4mj0n" path="res://resources/fonts/web_ibm_mda.ttf" id="68_ingjo"]
+[ext_resource type="Script" uid="uid://dhaxouw7sj4vk" path="res://scripts/ui/laptop_tab.gd" id="69_cjkg8"]
+[ext_resource type="Texture2D" uid="uid://b31ht8mccn18y" path="res://images/laptop/drop-list.png" id="70_e13yb"]
+[ext_resource type="Texture2D" uid="uid://dxqhmao7vwcmi" path="res://images/laptop/check-button1.png" id="71_1jjjc"]
+[ext_resource type="Texture2D" uid="uid://xh3fnydpooew" path="res://images/laptop/check-button2.png" id="72_xw1vq"]
+[ext_resource type="Texture2D" uid="uid://dhgqhmpd2abub" path="res://images/laptop/laptop_acess.png" id="73_gxpbs"]
+[ext_resource type="Script" uid="uid://bxc6xc1j5tpec" path="res://scripts/ui/desc.gd" id="74_e5we6"]
+[ext_resource type="Script" uid="uid://dxsnv4et1xleu" path="res://scripts/laptop_access/cpu.gd" id="75_tjefl"]
+[ext_resource type="Texture2D" uid="uid://dpxaga8ccjvsk" path="res://images/laptop/counter-5/counter1.png" id="76_1jkra"]
+[ext_resource type="Texture2D" uid="uid://ddu5v8w4sj2k1" path="res://images/laptop/counter-5/counter6.png" id="77_ewr0u"]
+[ext_resource type="Texture2D" uid="uid://ccbjfbmmjmen" path="res://images/laptop/counter-5/plus.png" id="78_mk4p7"]
+[ext_resource type="Script" uid="uid://b6tic1f03w3to" path="res://scripts/laptop_access/gpu.gd" id="79_3d4e8"]
+[ext_resource type="Script" uid="uid://bt8p0didmc4go" path="res://scripts/laptop_access/power.gd" id="80_cuhd7"]
+[ext_resource type="Script" uid="uid://booduqnme23x1" path="res://scripts/laptop_access/storage.gd" id="81_lt518"]
+[ext_resource type="Script" uid="uid://dqg61o1lknqab" path="res://scripts/laptop_access/fan.gd" id="82_0onw0"]
+[ext_resource type="Script" uid="uid://cuh1gx568vmwj" path="res://scripts/ui/laptop_counters.gd" id="83_5qm3o"]
+[ext_resource type="Texture2D" uid="uid://cq62o0urcr1nj" path="res://images/player/health/back.png" id="84_4kqj5"]
+[ext_resource type="Texture2D" uid="uid://cooxe0yxrkh3j" path="res://images/player/health/over.png" id="85_wdvd3"]
+[ext_resource type="Texture2D" uid="uid://tjrpquloo5e8" path="res://images/player/health/counter.png" id="86_nviri"]
+[ext_resource type="PackedScene" uid="uid://cdb0pmkagbpkq" path="res://platformer/talk.tscn" id="87_8x18k"]
+[ext_resource type="PackedScene" uid="uid://cf0c7mxy3035c" path="res://platformer/terminal.tscn" id="88_upq5t"]
+[ext_resource type="Texture2D" uid="uid://bigp2q0yvbiym" path="res://images/Tilemap.png" id="89_s3yte"]
+[ext_resource type="Texture2D" uid="uid://bca40d8cag5c" path="res://images/sprites1.png" id="90_3b4h8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2n8d"]
+size = Vector2(20, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yh34"]
+size = Vector2(150, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yv1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k2cwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dtqre")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6w6vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6w6vd")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_43so8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fickl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mxlim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0203u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_apb1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2o36s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lmsgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0004t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k2cwi")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k2cwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fickl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0203u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0004t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mxlim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lmsgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2o36s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_apb1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_43so8")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_2gsrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2gsrf")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_birbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_squhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_escbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w0qhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2srgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2i6sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pqqyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lf75v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xkvmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_e2r2m")
+}],
+"loop": true,
+"name": &"go",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkkcx"]
+size = Vector2(61, 82)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kkkcx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_lilqx")
+}],
+"loop": true,
+"name": &"idle_e",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_b0o1y")
+}],
+"loop": true,
+"name": &"idle_n",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_p47v8")
+}],
+"loop": true,
+"name": &"idle_s",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_dps26")
+}],
+"loop": true,
+"name": &"idle_w",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_tmfay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_oojn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7fejl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_t3ume")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_embbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_rjiho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_lra1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_cf7w0")
+}],
+"loop": true,
+"name": &"run_e",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_ns65k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_884nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8l05n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_88egn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ij7vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_8uub6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_8wj25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_25om7")
+}],
+"loop": true,
+"name": &"run_n",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_dn4oa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_d3s6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_rrnwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_822cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ucwoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_hsijb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_boih8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_o7ngu")
+}],
+"loop": true,
+"name": &"run_s",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_m3lg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_jn4si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_7axbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_kko4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_olokb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_fg44o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_c3prd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_4orsf")
+}],
+"loop": true,
+"name": &"run_w",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx0wj"]
+size = Vector2(81, 204)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c57u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_0xm2m"]
+number_color = Color(0.364287, 0.219629, 0.493292, 1)
+symbol_color = Color(0.71793, 0.465908, 0.221024, 1)
+function_color = Color(0.410472, 0.815465, 0.431897, 1)
+member_variable_color = Color(0.159339, 0.438696, 0.586691, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
+bg_color = Color(0.190762, 0.190762, 0.190762, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.113725, 0.109804, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnost"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n3wm"]
+bg_color = Color(0.177214, 0.161518, 0.161517, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gngh3"]
+bg_color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2t1y"]
+bg_color = Color(0.117647, 0.105882, 0.105882, 1)
+
+[sub_resource type="GDScript" id="GDScript_abqjc"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	pass
+
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnkbs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_wnkbs"]
+default_font = ExtResource("68_ingjo")
+default_font_size = 18
+PopupMenu/font_sizes/font_size = 28
+PopupMenu/fonts/font = ExtResource("68_ingjo")
+PopupMenu/styles/panel = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6a44"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypp3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrvbo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cbny"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blkrb"]
+bg_color = Color(0.0745098, 0.0745098, 0.0745098, 0.803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w656"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruth0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_color = Color(0.576471, 0.576471, 0.576471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uit24"]
+bg_color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vke2r"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnkwl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.576471, 0.576471, 0.576471, 0.160784)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n5t1e"]
+texture = ExtResource("89_s3yte")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6isl"]
+texture = ExtResource("90_3b4h8")
+3:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:2/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+10:6/size_in_atlas = Vector2i(2, 1)
+10:6/0 = 0
+10:7/size_in_atlas = Vector2i(2, 1)
+10:7/0 = 0
+10:4/size_in_atlas = Vector2i(2, 2)
+10:4/0 = 0
+7:4/size_in_atlas = Vector2i(3, 2)
+7:4/0 = 0
+7:6/size_in_atlas = Vector2i(3, 2)
+7:6/0 = 0
+2:4/size_in_atlas = Vector2i(5, 4)
+2:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yysqy"]
+texture = ExtResource("89_s3yte")
+
+[sub_resource type="TileSet" id="TileSet_h6isl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_n5t1e")
+sources/1 = SubResource("TileSetAtlasSource_h6isl")
+sources/2 = SubResource("TileSetAtlasSource_yysqy")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53bls"]
+texture = ExtResource("89_s3yte")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lwnsi"]
+sources/0 = SubResource("TileSetAtlasSource_53bls")
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_qn0am")
+
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2(0, 1)
+script = ExtResource("2_1peg3")
+
+[node name="Enemy" type="CharacterBody2D" parent="enemies"]
+position = Vector2(-17, -1483)
+script = ExtResource("3_laf6e")
+difficulty = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy"]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_c2n8d")
+
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy"]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy/DetectionArea"]
+position = Vector2(22, 8)
+shape = SubResource("RectangleShape2D_5yh34")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy"]
+position = Vector2(31, 6)
+sprite_frames = SubResource("SpriteFrames_1yv1y")
+animation = &"walk_right"
+
+[node name="Enemy2" type="CharacterBody2D" parent="enemies"]
+position = Vector2(-1608, -1812)
+script = ExtResource("3_laf6e")
+difficulty = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2"]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_c2n8d")
+
+[node name="DetectionArea" type="Area2D" parent="enemies/Enemy2"]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy2/DetectionArea"]
+position = Vector2(22, 8)
+shape = SubResource("RectangleShape2D_5yh34")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Enemy2"]
+position = Vector2(31, 6)
+sprite_frames = SubResource("SpriteFrames_1yv1y")
+animation = &"walk_right"
+
+[node name="penguin" type="CharacterBody2D" parent="enemies" groups=["enemy"]]
+position = Vector2(-338, -108)
+collision_layer = 2
+collision_mask = 7
+collision_priority = 2.0
+script = ExtResource("16_j57tj")
+
+[node name="sprite" type="AnimatedSprite2D" parent="enemies/penguin"]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_birbe")
+animation = &"go"
+autoplay = "go"
+
+[node name="shape" type="CollisionShape2D" parent="enemies/penguin"]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_kkkcx")
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(-70, -79)
+collision_mask = 7
+safe_margin = 1.0
+script = ExtResource("26_wk4ad")
+
+[node name="sprite" type="AnimatedSprite2D" parent="Player"]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_kkkcx")
+animation = &"run_w"
+autoplay = "idle_s"
+
+[node name="CodeTimer" type="Timer" parent="Player"]
+
+[node name="shape" type="CollisionShape2D" parent="Player"]
+position = Vector2(3, 7)
+shape = SubResource("RectangleShape2D_jx0wj")
+
+[node name="Camera" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_speed = 1.0
+script = ExtResource("63_mtwo7")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("64_u4cpj")
+
+[node name="Laptop" type="Node2D" parent="UI"]
+z_index = 1
+texture_filter = 1
+position = Vector2(1182, 700)
+scale = Vector2(0.95, 0.95)
+script = ExtResource("65_k4qn6")
+
+[node name="Laptop_back" type="TextureRect" parent="UI/Laptop"]
+z_as_relative = false
+offset_left = -1194.0
+offset_top = -678.697
+offset_right = 726.0
+offset_bottom = 401.303
+texture = ExtResource("66_7m1rv")
+
+[node name="CodeEditor" type="CodeEdit" parent="UI/Laptop"]
+offset_left = -244.211
+offset_top = -650.526
+offset_right = 382.456
+offset_bottom = -49.8246
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 6
+theme_override_constants/caret_width = 2
+theme_override_fonts/font = ExtResource("67_514et")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_4c57u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_efxa6")
+text = "def main():
+	print(get_direction())
+	set_direction([0, 0.5])"
+placeholder_text = "main() is your main weapon ;)"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+caret_blink = true
+syntax_highlighter = SubResource("CodeHighlighter_0xm2m")
+draw_tabs = true
+
+[node name="SaveButton" type="Button" parent="UI/Laptop"]
+offset_left = -243.158
+offset_top = 261.053
+offset_right = 695.842
+offset_bottom = 369.053
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_kek77")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
+text = "SHIFT + ENTER"
+
+[node name="Logger" type="RichTextLabel" parent="UI/Laptop"]
+offset_left = -1155.0
+offset_top = -157.0
+offset_right = -597.632
+offset_bottom = 188.368
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/normal_font = ExtResource("68_ingjo")
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+bbcode_enabled = true
+autowrap_mode = 1
+
+[node name="Inventory" type="Node2D" parent="UI/Laptop"]
+
+[node name="laptop" type="Control" parent="UI/Laptop/Inventory"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="laptop" type="Button" parent="UI/Laptop/Inventory/laptop"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -1153.68
+offset_top = -640.0
+offset_right = -884.211
+offset_bottom = -600.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0n3wm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gngh3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2t1y")
+text = "laptop"
+script = ExtResource("69_cjkg8")
+
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/laptop"]
+position = Vector2(-1153.68, -640)
+script = SubResource("GDScript_abqjc")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab"]
+offset_left = 210.526
+offset_top = 120.0
+offset_right = 370.526
+offset_bottom = 170.0
+texture = ExtResource("70_e13yb")
+
+[node name="Automate" type="CheckButton" parent="UI/Laptop/Inventory/laptop/Tab"]
+offset_left = 9.47368
+offset_top = 120.0
+offset_right = 101.474
+offset_bottom = 168.0
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/font_focus_color = Color(0.94902, 0.94902, 0.94902, 0)
+theme_override_styles/focus = SubResource("StyleBoxFlat_wnkbs")
+theme_override_icons/checked = ExtResource("71_1jjjc")
+theme_override_icons/unchecked = ExtResource("72_xw1vq")
+
+[node name="Duration" type="OptionButton" parent="UI/Laptop/Inventory/laptop/Tab"]
+texture_filter = 1
+offset_left = 220.0
+offset_top = 120.0
+offset_right = 360.0
+offset_bottom = 169.474
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_wnkbs")
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxFlat_f6a44")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uypp3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hrvbo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cbny")
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "1s"
+popup/item_0/id = 0
+popup/item_1/text = "0.75s"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = "0.5s"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "0.25s"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "0.1s"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+
+[node name="Labels" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -77.8947
+offset_top = -84.2105
+offset_right = -77.8947
+offset_bottom = -84.2105
+
+[node name="Automate mode" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 89.4737
+offset_top = 163.158
+offset_right = 440.474
+offset_bottom = 207.368
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 32
+text = "Automatic mode"
+
+[node name="Every" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 186.316
+offset_top = 211.579
+offset_right = 276.316
+offset_bottom = 239.579
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+text = "every"
+
+[node name="Metrics" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+layout_mode = 0
+offset_left = 90.5263
+offset_top = 262.105
+offset_right = 252.526
+offset_bottom = 304.105
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 32
+text = "Metrics"
+
+[node name="logs quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+layout_mode = 0
+offset_left = 91.5789
+offset_top = 431.579
+offset_right = 289.579
+offset_bottom = 459.579
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+text = "logs quota"
+
+[node name="energy" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+layout_mode = 0
+offset_left = 93.6842
+offset_top = 354.737
+offset_right = 291.684
+offset_bottom = 382.737
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+text = "energy"
+
+[node name="temperature" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+layout_mode = 0
+offset_left = 90.5263
+offset_top = 316.842
+offset_right = 288.526
+offset_bottom = 344.842
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+text = "temperature"
+
+[node name="code quote" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Labels"]
+layout_mode = 0
+offset_left = 95.7895
+offset_top = 392.632
+offset_right = 293.79
+offset_bottom = 420.632
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+text = "code quota"
+
+[node name="Accessories" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="acess" type="TextureRect" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 449.474
+offset_top = 71.5789
+offset_right = 569.474
+offset_bottom = 441.579
+texture = ExtResource("73_gxpbs")
+
+[node name="icons" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+anchors_preset = 0
+offset_left = 449.474
+offset_top = 71.5789
+offset_right = 487.368
+offset_bottom = 73.6843
+
+[node name="hdd" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.5788
+offset_top = 216.842
+offset_right = 49.4738
+offset_bottom = 268.421
+grow_horizontal = 0
+script = ExtResource("74_e5we6")
+
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd"]
+visible = false
+layout_mode = 1
+offset_left = 84.2105
+offset_top = -2.10525
+offset_right = 438.947
+offset_bottom = 34.8948
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
+text = "Additional storage expands the system’s log and code storage capacity."
+autowrap_mode = 2
+
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -27.3683
+offset_top = 72.6317
+offset_right = 41.0528
+offset_bottom = 132.632
+grow_horizontal = 0
+script = ExtResource("74_e5we6")
+
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu"]
+visible = false
+layout_mode = 1
+offset_left = 81.0526
+offset_top = 1.05263
+offset_right = 435.79
+offset_bottom = 78.0526
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
+text = "The CPU determines how many lines of code can be executed per run. Upgrading it increases the number of lines executed in a single execution."
+autowrap_mode = 2
+
+[node name="cooler" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.4736
+offset_top = 140.0
+offset_right = 38.9475
+offset_bottom = 209.474
+grow_horizontal = 0
+script = ExtResource("74_e5we6")
+
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler"]
+visible = false
+layout_mode = 1
+offset_left = 73.6842
+offset_top = 1.05262
+offset_right = 428.421
+offset_bottom = 30.5263
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
+text = "The fan gradually reduces the laptop’s temperature. Upgrading it makes cooling more efficient and speeds up heat dissipation."
+autowrap_mode = 2
+
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.6314
+offset_top = 13.6844
+offset_right = 54.737
+offset_bottom = 57.8949
+grow_horizontal = 0
+script = ExtResource("74_e5we6")
+
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu"]
+visible = false
+layout_mode = 1
+offset_left = 90.5264
+offset_top = -1.05265
+offset_right = 445.263
+offset_bottom = 35.9474
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
+text = "The GPU increases how often processes can be executed."
+autowrap_mode = 2
+
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.7893
+offset_top = 276.842
+offset_right = 53.6843
+offset_bottom = 364.211
+grow_horizontal = 0
+script = ExtResource("74_e5we6")
+
+[node name="Text" type="Label" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power"]
+visible = false
+layout_mode = 1
+offset_left = 97.8947
+offset_top = -3.15791
+offset_right = 452.632
+offset_bottom = 53.8421
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_blkrb")
+text = "Power Supply increases the laptop’s maximum energy capacity."
+autowrap_mode = 2
+
+[node name="cpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+anchors_preset = 0
+offset_left = 449.474
+offset_top = 71.5789
+offset_right = 452.632
+offset_bottom = 75.7896
+script = ExtResource("75_tjefl")
+
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
+layout_mode = 0
+offset_left = 102.105
+offset_top = 85.2633
+offset_right = 342.105
+offset_bottom = 125.263
+max_value = 5.0
+value = 1.0
+texture_under = ExtResource("76_1jkra")
+texture_progress = ExtResource("77_ewr0u")
+
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu"]
+layout_mode = 0
+offset_left = 368.421
+offset_top = 78.9475
+offset_right = 416.421
+offset_bottom = 126.948
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
+icon = ExtResource("78_mk4p7")
+
+[node name="gpu" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+anchors_preset = 0
+offset_left = 448.421
+offset_top = 71.5791
+offset_right = 451.579
+offset_bottom = 76.8422
+script = ExtResource("79_3d4e8")
+
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
+layout_mode = 0
+offset_left = 103.158
+offset_top = 17.8949
+offset_right = 343.158
+offset_bottom = 57.8949
+max_value = 5.0
+value = 1.0
+texture_under = ExtResource("76_1jkra")
+texture_progress = ExtResource("77_ewr0u")
+
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu"]
+layout_mode = 0
+offset_left = 369.474
+offset_top = 13.6844
+offset_right = 417.474
+offset_bottom = 61.6844
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
+icon = ExtResource("78_mk4p7")
+
+[node name="power" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+anchors_preset = 0
+offset_left = 449.474
+offset_top = 278.948
+offset_right = 452.632
+offset_bottom = 283.158
+script = ExtResource("80_cuhd7")
+
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
+layout_mode = 0
+offset_left = 102.105
+offset_top = 86.3159
+offset_right = 342.105
+offset_bottom = 126.316
+max_value = 5.0
+value = 1.0
+texture_under = ExtResource("76_1jkra")
+texture_progress = ExtResource("77_ewr0u")
+
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/power"]
+layout_mode = 0
+offset_left = 368.421
+offset_top = 82.1054
+offset_right = 416.421
+offset_bottom = 130.105
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
+icon = ExtResource("78_mk4p7")
+
+[node name="storage" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+anchors_preset = 0
+offset_left = 449.474
+offset_top = 209.474
+offset_right = 452.632
+offset_bottom = 213.684
+script = ExtResource("81_lt518")
+
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
+layout_mode = 0
+offset_left = 102.105
+offset_top = 86.3159
+offset_right = 342.105
+offset_bottom = 126.316
+max_value = 5.0
+value = 1.0
+texture_under = ExtResource("76_1jkra")
+texture_progress = ExtResource("77_ewr0u")
+
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/storage"]
+layout_mode = 0
+offset_left = 368.421
+offset_top = 82.1054
+offset_right = 416.421
+offset_bottom = 130.105
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
+icon = ExtResource("78_mk4p7")
+
+[node name="fan" type="Control" parent="UI/Laptop/Inventory/laptop/Tab/Accessories"]
+anchors_preset = 0
+offset_left = 449.474
+offset_top = 143.158
+offset_right = 452.632
+offset_bottom = 147.369
+script = ExtResource("82_0onw0")
+
+[node name="progress" type="TextureProgressBar" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
+layout_mode = 0
+offset_left = 102.105
+offset_top = 83.158
+offset_right = 342.105
+offset_bottom = 123.158
+max_value = 5.0
+value = 1.0
+texture_under = ExtResource("76_1jkra")
+texture_progress = ExtResource("77_ewr0u")
+
+[node name="button" type="Button" parent="UI/Laptop/Inventory/laptop/Tab/Accessories/fan"]
+layout_mode = 0
+offset_left = 368.421
+offset_top = 77.8949
+offset_right = 416.421
+offset_bottom = 125.895
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_4w656")
+icon = ExtResource("78_mk4p7")
+
+[node name="Counters" type="Control" parent="UI/Laptop/Inventory/laptop/Tab"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("83_5qm3o")
+
+[node name="temp" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+layout_mode = 0
+offset_left = 234.737
+offset_top = 233.684
+offset_right = 361.053
+offset_bottom = 272.632
+theme_override_fonts/normal_font = ExtResource("68_ingjo")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[color=#a33939]0°C[/color]"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+wait_time = 0.5
+autostart = true
+
+[node name="logs" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+layout_mode = 0
+offset_left = 234.737
+offset_top = 347.368
+offset_right = 360.737
+offset_bottom = 375.368
+theme_override_fonts/normal_font = ExtResource("68_ingjo")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "0/200"
+horizontal_alignment = 2
+
+[node name="code" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+layout_mode = 0
+offset_left = 234.737
+offset_top = 309.474
+offset_right = 360.737
+offset_bottom = 337.474
+theme_override_fonts/normal_font = ExtResource("68_ingjo")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "100/200"
+horizontal_alignment = 2
+
+[node name="energy" type="RichTextLabel" parent="UI/Laptop/Inventory/laptop/Tab/Counters"]
+layout_mode = 0
+offset_left = 135.789
+offset_top = 273.684
+offset_right = 361.053
+offset_bottom = 307.369
+theme_override_fonts/normal_font = ExtResource("68_ingjo")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "3986/5000"
+horizontal_alignment = 2
+
+[node name="Clear" type="Button" parent="UI/Laptop/Inventory/laptop/Tab"]
+offset_left = 23.1578
+offset_top = 398.947
+offset_right = 121.158
+offset_bottom = 434.947
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxFlat_ruth0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uit24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vke2r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rnkwl")
+text = "clear"
+
+[node name="equipment" type="Control" parent="UI/Laptop/Inventory"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="equipment" type="Button" parent="UI/Laptop/Inventory/equipment"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -853.684
+offset_top = -640.0
+offset_right = -584.211
+offset_bottom = -600.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0n3wm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gngh3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2t1y")
+text = "equipment"
+script = ExtResource("69_cjkg8")
+
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/equipment"]
+visible = false
+position = Vector2(-853.684, -640)
+
+[node name="docs" type="Control" parent="UI/Laptop/Inventory"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="docs" type="Button" parent="UI/Laptop/Inventory/docs"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -553.684
+offset_top = -640.0
+offset_right = -284.211
+offset_bottom = -600.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("68_ingjo")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxFlat_qnost")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0n3wm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gngh3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2t1y")
+text = "docs"
+script = ExtResource("69_cjkg8")
+
+[node name="Tab" type="Node2D" parent="UI/Laptop/Inventory/docs"]
+visible = false
+position = Vector2(-553.684, -640)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Laptop/Inventory/docs/Tab"]
+offset_left = -596.842
+offset_top = 60.0
+offset_right = -163.158
+offset_bottom = 449.474
+bbcode_enabled = true
+text = "[url={https://vk.com}]текст ссылки[/url]
+"
+
+[node name="Messages" type="VBoxContainer" parent="UI"]
+offset_left = 11.0
+offset_top = 605.0
+offset_right = 644.0
+offset_bottom = 1071.0
+alignment = 2
+
+[node name="Health" type="TextureProgressBar" parent="UI"]
+texture_filter = 1
+offset_left = 1917.0
+offset_top = 54.0
+offset_right = 1942.36
+offset_bottom = 60.6442
+rotation = 1.5708
+scale = Vector2(7, 7)
+max_value = 1000.0
+value = 50.0
+texture_under = ExtResource("84_4kqj5")
+texture_over = ExtResource("85_wdvd3")
+texture_progress = ExtResource("86_nviri")
+
+[node name="talk" parent="UI" instance=ExtResource("87_8x18k")]
+position = Vector2(887, 847)
+
+[node name="Terminal" parent="." instance=ExtResource("88_upq5t")]
+position = Vector2(-2350, -1035)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(3030, -83)
+rotation = 6.28319
+scale = Vector2(8, 8)
+tile_map_data = PackedByteArray("AADh/wQAAAAAAAAAAADh/wMAAAAAAAEAAADh/wIAAAAAAAEAAADh/wEAAAAAAAEAAADh/wAAAAAAAAEAAADh////AAAAAAEAAADh//7/AAAAAAEAAADh//3/AAAAAAEAAADh//z/AAABAAIAAADi//z/AAABAAEAAADj//z/AAABAAAAAADi/wQAAAAAAAIAAADj/wQAAAABAAEAAADk/wQAAAACAAAAAADl/wQAAAACAAAAAADm/wQAAAAAAAAAAADn/wQAAAAAAAAAAADo/wQAAAACAAAAAADp/wQAAAAAAAAAAADq/wQAAAAAAAAAAADr/wQAAAAAAAAAAADs/wQAAAABAAAAAADt/wQAAAAAAAMAAADu/wQAAAABAAIAAADv/wQAAAAAAAAAAADv/wMAAAABAAEAAADv/wIAAAAAAAAAAADv/wEAAAABAAIAAADv/wAAAAABAAIAAADv////AAABAAEAAADv//7/AAABAAMAAADv//3/AAACAAAAAADv//z/AAABAAAAAADu//z/AAABAAMAAADt//z/AAABAAIAAADs//z/AAABAAAAAADr//z/AAACAAAAAADq//z/AAABAAMAAADk//z/AAACAAAAAADl//z/AAABAAAAAADm//z/AAACAAAAAADm//v/AAAAAAMAAADm//r/AAABAAAAAADm//n/AAAAAAMAAADm//j/AAABAAAAAADq//v/AAABAAMAAADq//r/AAABAAIAAADq//n/AAAAAAIAAADq//j/AAAAAAIAAADq//f/AAABAAAAAADm//f/AAAAAAAAAADl//f/AAACAAAAAADk//f/AAAAAAIAAADj//f/AAABAAAAAADi//f/AAACAAAAAADh//f/AAACAAAAAADg//f/AAAAAAAAAADf//f/AAAAAAMAAADe//f/AAAAAAAAAADd//f/AAACAAAAAADc//f/AAABAAIAAADb//f/AAAAAAMAAADb//b/AAABAAEAAADa//b/AAACAAAAAADa//X/AAABAAMAAADa//T/AAAAAAMAAADa//D/AAABAAMAAADa/+//AAAAAAIAAADa/+7/AAABAAIAAADa/+3/AAABAAAAAADb/+3/AAAAAAIAAADb/+z/AAAAAAMAAADc/+z/AAABAAMAAADd/+z/AAACAAAAAADe/+z/AAABAAMAAADf/+z/AAABAAMAAADg/+z/AAACAAAAAADh/+z/AAAAAAAAAADi/+z/AAAAAAMAAADj/+z/AAACAAAAAADk/+z/AAAAAAAAAADl/+z/AAABAAEAAADm/+z/AAABAAMAAADn/+z/AAABAAEAAADo/+z/AAABAAAAAADp/+z/AAABAAIAAADq/+z/AAAAAAIAAADr/+z/AAABAAMAAADs/+z/AAABAAAAAADt/+z/AAAAAAIAAADt/+3/AAAAAAIAAADu/+3/AAABAAAAAADr//f/AAAAAAAAAADs//f/AAABAAMAAADs//b/AAAAAAMAAADt//b/AAABAAIAAADu//b/AAAAAAAAAADu//X/AAABAAMAAADu//T/AAABAAEAAADu//P/AAAAAAMAAADu//L/AAABAAEAAADu//H/AAABAAAAAADu//D/AAABAAMAAADu/+//AAAAAAAAAADu/+7/AAAAAAAAAADZ//T/AAACAAAAAADY//T/AAAAAAMAAADX//T/AAABAAAAAADZ//D/AAABAAMAAADY//D/AAABAAEAAADX//D/AAABAAIAAADW//T/AAAAAAMAAADV//T/AAABAAEAAADU//T/AAABAAEAAADT//T/AAACAAAAAADW//D/AAABAAMAAADV//D/AAAAAAAAAADU//D/AAABAAAAAADT//D/AAABAAMAAADT/+//AAABAAIAAADT/+7/AAABAAMAAADT/+3/AAACAAAAAADS/+z/AAACAAAAAADR/+z/AAABAAAAAADQ/+z/AAACAAAAAADP/+z/AAABAAAAAADO/+z/AAABAAEAAADN/+z/AAABAAMAAADM/+z/AAAAAAAAAADL/+3/AAAAAAMAAADL/+7/AAABAAEAAADL/+//AAABAAAAAADL//D/AAABAAAAAADL//H/AAABAAIAAADL//L/AAABAAAAAADL//P/AAABAAMAAADL//T/AAABAAEAAADL//X/AAACAAAAAADL//b/AAAAAAIAAADL//f/AAABAAAAAADL//j/AAABAAMAAADL//n/AAABAAAAAADM//n/AAAAAAIAAADM//r/AAACAAAAAADN//r/AAABAAAAAADO//r/AAAAAAIAAADP//r/AAACAAAAAADQ//r/AAABAAEAAADR//r/AAABAAEAAADS//r/AAACAAAAAADS//n/AAABAAAAAADT//j/AAACAAAAAADT//f/AAABAAIAAADT//b/AAABAAEAAADT//X/AAABAAEAAADT//n/AAABAAIAAADM/+3/AAACAAAAAADS/+3/AAABAAMAAAA=")
+tile_set = SubResource("TileSet_h6isl")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+z_index = -1
+scale = Vector2(8, 8)
+tile_map_data = PackedByteArray("AADr//D/AAADAAEAAAD6/wIAAAADAAEAAAD5/wIAAAADAAEAAAD5/wMAAAADAAEAAAD6/wMAAAADAAEAAAD6/wEAAAADAAEAAAD5/wEAAAADAAEAAAD5/wAAAAADAAEAAAD5////AAADAAEAAAD5//7/AAADAAEAAAD5//3/AAADAAEAAAD6//3/AAADAAEAAAD6//7/AAADAAEAAAD6////AAADAAEAAAD6/wAAAAADAAEAAAD7/wAAAAADAAEAAAD7////AAADAAEAAAD7//7/AAADAAEAAAD7//3/AAADAAEAAAD6//z/AAADAAEAAAD5//z/AAADAAEAAAD7//z/AAADAAEAAAD7/wEAAAADAAEAAAD7/wIAAAADAAEAAAD7/wMAAAADAAEAAAD8/wMAAAADAAEAAAD8/wIAAAADAAEAAAD8/wEAAAADAAEAAAD8/wAAAAADAAEAAAD8////AAADAAEAAAD8//7/AAADAAEAAAD8//3/AAADAAEAAAD8//z/AAADAAEAAAD9//z/AAADAAEAAAD9//3/AAADAAEAAAD9//7/AAADAAEAAAD9////AAADAAEAAAD9/wAAAAADAAEAAAD9/wEAAAADAAEAAAD9/wIAAAADAAEAAAD9/wMAAAADAAEAAAD+/wMAAAADAAEAAAD//wMAAAADAAEAAAD//wIAAAADAAEAAAD+/wIAAAADAAEAAAD+//3/AAADAAEAAAD+//z/AAADAAEAAAD+//7/AAADAAEAAAD+////AAADAAEAAAD+/wAAAAADAAEAAAD+/wEAAAADAAEAAAD//wEAAAADAAEAAAD//wAAAAADAAEAAAD/////AAADAAEAAAD///7/AAADAAEAAAD///3/AAADAAEAAAD///z/AAADAAEAAAD///v/AAADAAEAAAD+//v/AAADAAEAAAAAAPv/AAADAAEAAAAAAPz/AAADAAEAAAABAPz/AAADAAEAAAABAPv/AAADAAEAAAACAPz/AAADAAEAAAADAPz/AAADAAEAAAAEAPz/AAADAAEAAAAFAPz/AAADAAEAAAAGAPz/AAADAAEAAAAGAP3/AAADAAEAAAAGAP7/AAADAAEAAAAGAP//AAADAAEAAAAGAAAAAAADAAEAAAAGAAEAAAADAAEAAAAGAAIAAAADAAEAAAAFAAIAAAADAAEAAAAEAAIAAAADAAEAAAADAAIAAAADAAEAAAACAAIAAAADAAEAAAABAAIAAAADAAEAAAAAAAIAAAADAAEAAAABAAMAAAADAAEAAAAAAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAADAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAFAAEAAAADAAEAAAAFAAAAAAADAAEAAAAFAP//AAADAAEAAAAFAP7/AAADAAEAAAAFAP3/AAADAAEAAAAEAP3/AAADAAEAAAAEAP7/AAADAAEAAAADAP7/AAADAAEAAAADAP//AAADAAEAAAADAAAAAAADAAEAAAADAAEAAAADAAEAAAAEAAAAAAADAAEAAAAEAP//AAADAAEAAAAEAAEAAAADAAEAAAADAP3/AAADAAEAAAACAP3/AAADAAEAAAABAP3/AAADAAEAAAABAP7/AAADAAEAAAABAP//AAADAAEAAAACAP//AAADAAEAAAACAAAAAAADAAEAAAACAP7/AAADAAEAAAACAAEAAAADAAEAAAABAAEAAAADAAEAAAABAAAAAAADAAEAAAAAAP7/AAADAAEAAAAAAP//AAADAAEAAAAAAAAAAAADAAEAAAAAAAEAAAADAAEAAAAAAP3/AAADAAEAAAABAPr/AAADAAEAAAABAPn/AAADAAEAAAABAPj/AAADAAEAAAABAPf/AAADAAEAAAABAPb/AAADAAEAAAABAPX/AAADAAEAAAABAPT/AAADAAEAAAABAPP/AAADAAEAAAABAPL/AAADAAEAAAABAPH/AAADAAEAAAABAPD/AAADAAEAAAABAO//AAADAAEAAAABAO7/AAADAAEAAAABAO3/AAADAAEAAAABAOz/AAADAAEAAAACAOz/AAADAAEAAAACAO3/AAADAAEAAAACAO7/AAADAAEAAAACAO//AAADAAEAAAACAPD/AAADAAEAAAACAPH/AAADAAEAAAACAPL/AAADAAEAAAACAPP/AAADAAEAAAACAPT/AAADAAEAAAACAPX/AAADAAEAAAACAPb/AAADAAEAAAADAPb/AAADAAEAAAADAPX/AAADAAEAAAADAPT/AAADAAEAAAADAPP/AAADAAEAAAADAPL/AAADAAEAAAADAPH/AAADAAEAAAADAPD/AAADAAEAAAADAO//AAADAAEAAAADAO7/AAADAAEAAAADAO3/AAADAAEAAAADAOz/AAADAAEAAAAEAOz/AAADAAEAAAAEAO3/AAADAAEAAAAEAO7/AAADAAEAAAAEAO//AAADAAEAAAAEAPD/AAADAAEAAAAEAPH/AAADAAEAAAAEAPL/AAADAAEAAAAEAPP/AAADAAEAAAAEAPT/AAADAAEAAAAEAPX/AAADAAEAAAAFAPX/AAADAAEAAAAFAPT/AAADAAEAAAAFAPP/AAADAAEAAAAFAPL/AAADAAEAAAAFAPH/AAADAAEAAAAFAPD/AAADAAEAAAAFAO//AAADAAEAAAAFAO7/AAADAAEAAAAFAO3/AAADAAEAAAAAAOz/AAADAAEAAAAAAO3/AAADAAEAAAAAAO7/AAADAAEAAAAAAO//AAADAAEAAAAAAPD/AAADAAEAAAAAAPH/AAADAAEAAAAAAPL/AAADAAEAAAAAAPP/AAADAAEAAAAAAPT/AAADAAEAAAAAAPX/AAADAAEAAAAAAPb/AAADAAEAAAAAAPf/AAADAAEAAAAAAPj/AAADAAEAAAAAAPn/AAADAAEAAAAAAPr/AAADAAEAAAD///r/AAADAAEAAAD///n/AAADAAEAAAD///j/AAADAAEAAAD///f/AAADAAEAAAD///b/AAADAAEAAAD///X/AAADAAEAAAD///T/AAADAAEAAAD///P/AAADAAEAAAD///L/AAADAAEAAAD///H/AAADAAEAAAD///D/AAADAAEAAAD//+//AAADAAEAAAD//+7/AAADAAEAAAD//+3/AAADAAEAAAD//+z/AAADAAEAAAD+//r/AAADAAEAAAD+//n/AAADAAEAAAD+//j/AAADAAEAAAD+//f/AAADAAEAAAD+//b/AAADAAEAAAD+//X/AAADAAEAAAD+//T/AAADAAEAAAD+//P/AAADAAEAAAD+//L/AAADAAEAAAD+//H/AAADAAEAAAD+//D/AAADAAEAAAD+/+//AAADAAEAAAD+/+7/AAADAAEAAAD+/+3/AAADAAEAAAD+/+z/AAADAAEAAAD9/+z/AAADAAEAAAD9/+3/AAADAAEAAAD9/+7/AAADAAEAAAD9/+//AAADAAEAAAD9//D/AAADAAEAAAD9//H/AAADAAEAAAD9//L/AAADAAEAAAD9//P/AAADAAEAAAD9//T/AAADAAEAAAD9//X/AAADAAEAAAD9//b/AAADAAEAAAD8//b/AAADAAEAAAD8//X/AAADAAEAAAD8//T/AAADAAEAAAD8//P/AAADAAEAAAD8//L/AAADAAEAAAD8//H/AAADAAEAAAD8//D/AAADAAEAAAD8/+//AAADAAEAAAD8/+7/AAADAAEAAAD8/+3/AAADAAEAAAD8/+z/AAADAAEAAAD7/+z/AAADAAEAAAD6/+z/AAADAAEAAAD5/+z/AAADAAEAAAD4/+z/AAADAAEAAAD3/+z/AAADAAEAAAD2/+z/AAADAAEAAAD1/+z/AAADAAEAAAD0/+z/AAADAAEAAADz/+z/AAADAAEAAADy/+z/AAADAAEAAADz/+3/AAADAAEAAAD0/+3/AAADAAEAAAD1/+3/AAADAAEAAAD2/+3/AAADAAEAAAD3/+3/AAADAAEAAAD4/+3/AAADAAEAAAD0/+7/AAADAAEAAADz/+7/AAADAAEAAADy/+7/AAADAAEAAADx/+7/AAADAAEAAADy/+//AAADAAEAAADz/+//AAADAAEAAAD0/+//AAADAAEAAAD1/+//AAADAAEAAAD2/+//AAADAAEAAAD3/+//AAADAAEAAAD4/+//AAADAAEAAAD5/+//AAADAAEAAAD5//D/AAADAAEAAAD4//D/AAADAAEAAAD3//D/AAADAAEAAAD2//D/AAADAAEAAAD1//D/AAADAAEAAAD0//D/AAADAAEAAAD1//H/AAADAAEAAAD2//H/AAADAAEAAAD3//H/AAADAAEAAAD4//H/AAADAAEAAAD5//H/AAADAAEAAAD0//H/AAADAAEAAADz//H/AAADAAEAAADy//H/AAADAAEAAADz//D/AAADAAEAAAD1/+7/AAADAAEAAAD2/+7/AAADAAEAAAD3/+7/AAADAAEAAAD4/+7/AAADAAEAAAD5/+7/AAADAAEAAAD6/+7/AAADAAEAAAD7/+7/AAADAAEAAAD7/+3/AAADAAEAAAD6/+3/AAADAAEAAAD5/+3/AAADAAEAAAD7/+//AAADAAEAAAD6/+//AAADAAEAAAD6//D/AAADAAEAAAD7//D/AAADAAEAAAD6//H/AAADAAEAAAD7//H/AAADAAEAAAD7//L/AAADAAEAAAD6//L/AAADAAEAAAD5//L/AAADAAEAAAD4//L/AAADAAEAAAD3//L/AAADAAEAAAD2//L/AAADAAEAAAD1//L/AAADAAEAAAD0//L/AAADAAEAAADz//L/AAADAAEAAADy//L/AAADAAEAAAD7//P/AAADAAEAAAD7//T/AAADAAEAAAD6//T/AAADAAEAAAD6//X/AAADAAEAAAD7//X/AAADAAEAAAD6//b/AAADAAEAAAD7//b/AAADAAEAAAD6//P/AAADAAEAAAD5//P/AAADAAEAAAD4//P/AAADAAEAAAD4//T/AAADAAEAAAD4//X/AAADAAEAAAD5//X/AAADAAEAAAD5//T/AAADAAEAAAD5//b/AAADAAEAAAD4//b/AAADAAEAAAD3//b/AAADAAEAAAD3//X/AAADAAEAAAD3//T/AAADAAEAAAD3//P/AAADAAEAAAD2//P/AAADAAEAAAD2//T/AAADAAEAAAD2//X/AAADAAEAAAD2//b/AAADAAEAAAD1//b/AAADAAEAAAD1//X/AAADAAEAAAD1//T/AAADAAEAAAD1//P/AAADAAEAAAD0//P/AAADAAEAAAD0//T/AAADAAEAAAD0//X/AAADAAEAAAD0//b/AAADAAEAAADz//b/AAADAAEAAADz//X/AAADAAEAAADz//T/AAADAAEAAADz//P/AAADAAEAAADy//P/AAADAAEAAADy//T/AAADAAEAAADy//X/AAADAAEAAADy//D/AAADAAEAAADr//H/AAADAAEAAADr//L/AAADAAEAAADr//P/AAADAAEAAADs//P/AAADAAEAAADt//P/AAADAAEAAADu//P/AAADAAEAAADv//P/AAADAAEAAADw//P/AAADAAEAAADx//P/AAADAAEAAADx//L/AAADAAEAAADw//L/AAADAAEAAADv//L/AAADAAEAAADu//L/AAADAAEAAADt//L/AAADAAEAAADs//L/AAADAAEAAADs//H/AAADAAEAAADs//D/AAADAAEAAADt//D/AAADAAEAAADu//D/AAADAAEAAADv//D/AAADAAEAAADw//D/AAADAAEAAADx//D/AAADAAEAAADw//H/AAADAAEAAADv//H/AAADAAEAAADu//H/AAADAAEAAADt//H/AAADAAEAAADx//H/AAADAAEAAADk//j/AAADAAEAAADl//j/AAADAAEAAADm//j/AAADAAEAAADm//n/AAADAAEAAADl//n/AAADAAEAAADk//n/AAADAAEAAADn//n/AAADAAEAAADn//j/AAADAAEAAADo//j/AAADAAEAAADo//n/AAADAAEAAADp//n/AAADAAEAAADp//j/AAADAAEAAADq//j/AAADAAEAAADq//f/AAADAAEAAADq//b/AAADAAEAAADq//X/AAADAAEAAADq//T/AAADAAEAAADq//P/AAADAAEAAADq//L/AAADAAEAAADq//H/AAADAAEAAADq//D/AAADAAEAAADq/+//AAADAAEAAADq/+7/AAADAAEAAADq/+3/AAADAAEAAADp/+3/AAADAAEAAADp/+z/AAADAAEAAADo/+z/AAADAAEAAADn/+z/AAADAAEAAADm/+z/AAADAAEAAADl/+z/AAADAAEAAADl/+3/AAADAAEAAADk/+3/AAADAAEAAADk/+z/AAADAAEAAADm/+3/AAADAAEAAADl/+7/AAADAAEAAADm/+7/AAADAAEAAADn/+7/AAADAAEAAADn/+3/AAADAAEAAADo/+3/AAADAAEAAADo/+7/AAADAAEAAADo/+//AAADAAEAAADn/+//AAADAAEAAADm/+//AAADAAEAAADl/+//AAADAAEAAADk/+//AAADAAEAAADk/+7/AAADAAEAAADj/+3/AAADAAEAAADj/+7/AAADAAEAAADj/+//AAADAAEAAADj//D/AAADAAEAAADj//H/AAADAAEAAADj//L/AAADAAEAAADj//P/AAADAAEAAADj//T/AAADAAEAAADj//X/AAADAAEAAADj//b/AAADAAEAAADj//f/AAADAAEAAADk//f/AAADAAEAAADl//f/AAADAAEAAADl//b/AAADAAEAAADl//X/AAADAAEAAADl//T/AAADAAEAAADl//P/AAADAAEAAADl//L/AAADAAEAAADl//H/AAADAAEAAADm//D/AAADAAEAAADl//D/AAADAAEAAADk//D/AAADAAEAAADk//H/AAADAAEAAADk//L/AAADAAEAAADk//P/AAADAAEAAADk//T/AAADAAEAAADk//X/AAADAAEAAADk//b/AAADAAEAAADm//P/AAADAAEAAADm//L/AAADAAEAAADm//H/AAADAAEAAADn//D/AAADAAEAAADn//H/AAADAAEAAADn//L/AAADAAEAAADn//P/AAADAAEAAADn//T/AAADAAEAAADn//X/AAADAAEAAADn//b/AAADAAEAAADm//T/AAADAAEAAADm//X/AAADAAEAAADm//b/AAADAAEAAADn//f/AAADAAEAAADm//f/AAADAAEAAADo//f/AAADAAEAAADo//b/AAADAAEAAADp//b/AAADAAEAAADp//X/AAADAAEAAADp//T/AAADAAEAAADp//P/AAADAAEAAADp//L/AAADAAEAAADp//H/AAADAAEAAADp//D/AAADAAEAAADp/+//AAADAAEAAADp/+7/AAADAAEAAADp//f/AAADAAEAAADo//X/AAADAAEAAADo//T/AAADAAEAAADo//P/AAADAAEAAADo//L/AAADAAEAAADo//H/AAADAAEAAADo//D/AAADAAEAAAA=")
+tile_set = SubResource("TileSet_lwnsi")
+
+[connection signal="timeout" from="Player/CodeTimer" to="Player" method="_on_code_timer_timeout"]
+[connection signal="button_down" from="UI/Laptop/Inventory/laptop/laptop" to="UI/Laptop/Inventory/laptop/laptop" method="_on_button_down"]
+[connection signal="toggled" from="UI/Laptop/Inventory/laptop/Tab/Automate" to="Player" method="_on_automate_toggled"]
+[connection signal="item_selected" from="UI/Laptop/Inventory/laptop/Tab/Duration" to="Player" method="_on_duration_item_selected"]
+[connection signal="mouse_entered" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/hdd" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cpu" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/cooler" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/gpu" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power" to="UI/Laptop/Inventory/laptop/Tab/Accessories/icons/power" method="_on_mouse_exited"]
+[connection signal="button_down" from="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu/button" to="UI/Laptop/Inventory/laptop/Tab/Accessories/cpu" method="_on_button_button_down"]
+[connection signal="button_down" from="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu/button" to="UI/Laptop/Inventory/laptop/Tab/Accessories/gpu" method="_on_button_button_down"]
+[connection signal="button_down" from="UI/Laptop/Inventory/laptop/Tab/Accessories/power/button" to="UI/Laptop/Inventory/laptop/Tab/Accessories/power" method="_on_button_button_down"]
+[connection signal="button_down" from="UI/Laptop/Inventory/laptop/Tab/Accessories/storage/button" to="UI/Laptop/Inventory/laptop/Tab/Accessories/storage" method="_on_button_button_down"]
+[connection signal="button_down" from="UI/Laptop/Inventory/laptop/Tab/Accessories/fan/button" to="UI/Laptop/Inventory/laptop/Tab/Accessories/fan" method="_on_button_button_down"]
+[connection signal="timeout" from="UI/Laptop/Inventory/laptop/Tab/Counters/Timer" to="UI/Laptop/Inventory/laptop/Tab/Counters" method="_on_timer_timeout"]
+[connection signal="button_down" from="UI/Laptop/Inventory/laptop/Tab/Clear" to="UI/Laptop" method="_on_clear_button_down"]
+[connection signal="button_down" from="UI/Laptop/Inventory/equipment/equipment" to="UI/Laptop/Inventory/equipment/equipment" method="_on_button_down"]
+[connection signal="button_down" from="UI/Laptop/Inventory/docs/docs" to="UI/Laptop/Inventory/docs/docs" method="_on_button_down"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://far2704wflar"
-path="res://.godot/imported/phone.jpg-f1f5ec222fa29f29ec5d254f4dd1b4fd.ctex"
+uid="uid://n4hlcyd71l1n"
+path="res://.godot/imported/Tilemap.png-c428b723cb6476f8dea131caca91604d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/phone.jpg"
-dest_files=["res://.godot/imported/phone.jpg-f1f5ec222fa29f29ec5d254f4dd1b4fd.ctex"]
+source_file="res://Tilemap.png"
+dest_files=["res://.godot/imported/Tilemap.png-c428b723cb6476f8dea131caca91604d.ctex"]
 
 [params]
 
